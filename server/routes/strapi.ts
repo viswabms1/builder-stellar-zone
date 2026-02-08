@@ -221,19 +221,10 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
   try {
     const departmentCode = req.query.department_code as string | undefined;
 
-    // Build the Strapi URL with populate parameter to include related fields like pdf_link
-    // NOTE: Temporarily removing department_code filter to diagnose the issue
-    let query = "?pagination[limit]=100&populate=*";
-
-    // Filter by department_code if provided
-    // Will try different field name variations if one fails
-    if (departmentCode) {
-      // Strapi field names are case-sensitive, trying lowercase first
-      query += `&filters[department_code][$eq]=${departmentCode}`;
-    }
-
-    const strapiUrl = `${STRAPI_URL}/api/announcements${query}`;
-    console.log(`[ANNOUNCEMENTS] Fetching from: ${strapiUrl}`);
+    // Build the Strapi URL - fetch all announcements for now (no filter)
+    // TODO: Once we see announcement structure, add proper department filtering
+    const strapiUrl = `${STRAPI_URL}/api/announcements?pagination[limit]=100&populate=*`;
+    console.log(`[ANNOUNCEMENTS] Fetching from: ${strapiUrl}` + (departmentCode ? ` (requested department: ${departmentCode})` : ''));
 
     const response = await fetch(strapiUrl, {
       headers: {
@@ -246,39 +237,18 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     if (!response.ok) {
       console.error(`[ANNOUNCEMENTS] Error: ${response.status} ${response.statusText}`);
       const errorText = await response.text();
-      console.error(`[ANNOUNCEMENTS] Error response: ${errorText}`);
-
-      // If filter failed, try fetching without filter to see what announcements exist
-      if (departmentCode) {
-        console.log(`[ANNOUNCEMENTS] Filter failed, trying without department_code filter...`);
-        const fallbackUrl = `${STRAPI_URL}/api/announcements?pagination[limit]=100&populate=*`;
-        const fallbackResponse = await fetch(fallbackUrl, {
-          headers: {
-            "Content-Type": "application/json",
-            ...(STRAPI_API_TOKEN && { Authorization: `Bearer ${STRAPI_API_TOKEN}` }),
-          },
-        });
-
-        if (fallbackResponse.ok) {
-          const fallbackData = await fallbackResponse.json();
-          console.log(`[ANNOUNCEMENTS] Fetched ${fallbackData.data?.length || 0} announcements (no filter)`);
-          if (fallbackData.data?.[0]) {
-            console.log(`[ANNOUNCEMENTS] Sample announcement (ALL FIELDS):`, JSON.stringify(fallbackData.data[0], null, 2));
-            console.log(`[ANNOUNCEMENTS] All field names:`, Object.keys(fallbackData.data[0]));
-          }
-          // Return all announcements for now (client will filter if needed)
-          return res.json(fallbackData);
-        }
-      }
-
+      console.error(`[ANNOUNCEMENTS] Error response:`, errorText);
       throw new Error(`Strapi API error: ${response.statusText}`);
     }
 
     const data = await response.json();
-    console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} announcements`);
-    if (data.data?.[0]) {
+    console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} total announcements`);
+
+    if (data.data && data.data.length > 0) {
       console.log(`[ANNOUNCEMENTS] Sample announcement fields:`, Object.keys(data.data[0]));
-      console.log(`[ANNOUNCEMENTS] Full first announcement object:`, JSON.stringify(data.data[0], null, 2));
+      console.log(`[ANNOUNCEMENTS] First announcement (all fields):`, JSON.stringify(data.data[0], null, 2));
+    } else {
+      console.log(`[ANNOUNCEMENTS] No announcements found in Strapi`);
     }
 
     res.json(data);
