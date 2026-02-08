@@ -251,10 +251,7 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} announcements`);
     if (data.data?.[0]) {
       console.log(`[ANNOUNCEMENTS] Sample announcement fields:`, Object.keys(data.data[0]));
-      console.log(`[ANNOUNCEMENTS] Sample announcement Title:`, data.data[0].Title);
-      console.log(`[ANNOUNCEMENTS] Sample announcement Description (raw):`, JSON.stringify(data.data[0].Description, null, 2));
-      console.log(`[ANNOUNCEMENTS] Sample announcement Description type:`, typeof data.data[0].Description);
-      console.log(`[ANNOUNCEMENTS] Sample announcement Description is array:`, Array.isArray(data.data[0].Description));
+      console.log(`[ANNOUNCEMENTS] Full first announcement object:`, JSON.stringify(data.data[0], null, 2));
     }
 
     res.json(data);
