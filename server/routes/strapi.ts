@@ -252,7 +252,12 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} announcements`);
 
     if (data.data && data.data.length > 0) {
-      console.log(`[ANNOUNCEMENTS] Sample announcement:`, JSON.stringify(data.data[0], null, 2));
+      console.log(`[ANNOUNCEMENTS] All announcements:`, JSON.stringify(data.data, null, 2));
+      data.data.forEach((announcement: any, index: number) => {
+        console.log(`[ANNOUNCEMENTS] [${index}] Title: "${announcement.Title}", Department: ${announcement.department ? announcement.department.Dept_code : 'null'}`);
+      });
+    } else {
+      console.log(`[ANNOUNCEMENTS] No announcements found`);
     }
 
     res.json(data);
