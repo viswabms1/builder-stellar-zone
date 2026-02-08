@@ -221,10 +221,17 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
   try {
     const departmentCode = req.query.department_code as string | undefined;
 
-    // Build the Strapi URL - fetch all announcements for now (no filter)
-    // TODO: Once we see announcement structure, add proper department filtering
-    const strapiUrl = `${STRAPI_URL}/api/announcements?pagination[limit]=100&populate=*`;
-    console.log(`[ANNOUNCEMENTS] Fetching from: ${strapiUrl}` + (departmentCode ? ` (requested department: ${departmentCode})` : ''));
+    // Build the Strapi URL with department relation populated
+    let query = "?pagination[limit]=100&populate=department";
+
+    if (departmentCode) {
+      // Filter by department's department_code field
+      // The department is a relation, so we filter on department[Dept_code]
+      query += `&filters[department][Dept_code][$eq]=${departmentCode}`;
+    }
+
+    const strapiUrl = `${STRAPI_URL}/api/announcements${query}`;
+    console.log(`[ANNOUNCEMENTS] Fetching from: ${strapiUrl}`);
 
     const response = await fetch(strapiUrl, {
       headers: {
@@ -242,13 +249,10 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     }
 
     const data = await response.json();
-    console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} total announcements`);
+    console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} announcements`);
 
     if (data.data && data.data.length > 0) {
-      console.log(`[ANNOUNCEMENTS] Sample announcement fields:`, Object.keys(data.data[0]));
-      console.log(`[ANNOUNCEMENTS] First announcement (all fields):`, JSON.stringify(data.data[0], null, 2));
-    } else {
-      console.log(`[ANNOUNCEMENTS] No announcements found in Strapi`);
+      console.log(`[ANNOUNCEMENTS] Sample announcement:`, JSON.stringify(data.data[0], null, 2));
     }
 
     res.json(data);
