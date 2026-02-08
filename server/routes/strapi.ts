@@ -225,7 +225,8 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     let query = "?pagination[limit]=100&populate=*";
 
     if (departmentCode) {
-      query += `&filters[Department_code][$eq]=${departmentCode}`;
+      // Try the correct field name format - Strapi uses snake_case for filter parameters
+      query += `&filters[department_code][$eq]=${departmentCode}`;
     }
 
     const strapiUrl = `${STRAPI_URL}/api/announcements${query}`;
