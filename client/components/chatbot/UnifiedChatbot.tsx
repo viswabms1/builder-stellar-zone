@@ -58,20 +58,12 @@ export function UnifiedChatbot() {
   const inputRef = useRef<HTMLInputElement>(null);
   const chatRef = useRef<HTMLDivElement>(null);
 
-  // Show/hide the injected FAB based on chat open state
-  useEffect(() => {
-    const btn = document.getElementById("dsu-smart-assistant-fab");
-    if (btn) {
-      btn.style.display = isOpen ? "none" : "flex";
-    }
-  }, [isOpen]);
-
   const handleOpen = useCallback(() => {
     setIsOpen(true);
   }, []);
 
-  // Inject the FAB button into the DOM
-  useInjectedButton(handleOpen);
+  // Hook into the static HTML button from index.html
+  useFabButton(handleOpen, isOpen);
 
   // Auto-scroll to bottom
   useEffect(() => {
