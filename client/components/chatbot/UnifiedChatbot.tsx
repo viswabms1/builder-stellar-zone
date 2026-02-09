@@ -159,30 +159,28 @@ export function UnifiedChatbot() {
 
   return (
     <>
-      {/* Floating Action Button - Always rendered, stays visible */}
-      {!isOpen && (
-        <motion.button
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0, opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          onClick={() => setIsOpen(true)}
-          className="fixed z-[9999] rounded-full flex items-center justify-center text-white cursor-pointer"
-          style={{
-            bottom: "1.5rem",
-            right: "1.5rem",
-            width: "56px",
-            height: "56px",
-            background: "linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(168, 85, 247) 50%, rgb(236, 72, 153) 100%)",
-            boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
-            border: "none",
-            display: "flex",
-          }}
-          aria-label="Open Smart Assistant"
-        >
-          <MessageCircle className="w-6 h-6" />
-        </motion.button>
-      )}
+      {/* Floating Action Button - Simple version, always visible */}
+      <button
+        onClick={() => setIsOpen(true)}
+        className={cn(
+          "fixed rounded-full flex items-center justify-center text-white cursor-pointer transition-opacity",
+          isOpen ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
+        )}
+        style={{
+          bottom: "24px",
+          right: "24px",
+          width: "56px",
+          height: "56px",
+          background: "linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%)",
+          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
+          border: "none",
+          zIndex: 9999,
+          padding: 0,
+        }}
+        aria-label="Open Smart Assistant"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </button>
 
       {/* Chat Window */}
       <AnimatePresence>
