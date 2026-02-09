@@ -45,6 +45,9 @@ export function createServer() {
   app.post("/api/rag-chat", handleRagChat);
   app.get("/api/rag-chat/health", handleRagHealthCheck);
 
+  // Smart Chat - unified AI intent detection + navigation + RAG
+  app.post("/api/smart-chat", handleSmartChat);
+
   // ============================================
   // STRAPI CMS INTEGRATION ROUTES
   // ============================================
