@@ -1879,8 +1879,8 @@ function App() {
               </Routes>
             </main>
             <Footer />
-            <UnifiedChatbot />
           </div>
+          <UnifiedChatbot />
         </BrowserRouter>
       </ThemeProvider>
     </LanguageProvider>
