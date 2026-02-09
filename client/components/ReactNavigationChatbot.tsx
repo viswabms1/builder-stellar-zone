@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { MessageCircle, ChevronDown, Sparkles, ArrowRight, Lightbulb, MapPin, BookOpen } from "lucide-react";
+import { MessageCircle, ChevronDown, Sparkles, ArrowRight, Lightbulb, MapPin, BookOpen, Search, X } from "lucide-react";
 
 interface AcademicProgram {
   title: string;
