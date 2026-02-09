@@ -16,15 +16,8 @@ import {
   getStaffs,
 } from "./routes/strapi";
 
-// CRITICAL: Force override of cached environment variables
-// This ensures that environment variables set via DevServerControl take precedence
-// over any cached values in the Docker container
-if (process.env.OPENAI_API_KEY === "REPLACE_ENV.OPENAI_API_KEY") {
-  // This placeholder means the secure key should be injected by the system
-  console.log(
-    "[Server] Detected REPLACE_ENV placeholder - awaiting system injection",
-  );
-}
+// Environment variables are loaded from system
+// OpenAI API key validation happens in route handlers
 
 export function createServer() {
   const app = express();
