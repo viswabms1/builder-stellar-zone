@@ -11,6 +11,7 @@ import {
   Search,
   ArrowRight,
   Home as HomeIcon,
+  MessageCircle,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
@@ -793,6 +794,19 @@ export default function Navigation() {
               }`}
             />
             <LanguageSwitcher />
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => window.dispatchEvent(new CustomEvent('toggle-chatbot'))}
+              className={`rounded-md hover:scale-105 transition-all p-1.5 ${
+                theme === "light"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
+              }`}
+              title="Smart Assistant"
+            >
+              <MessageCircle className="w-4 h-4" />
+            </Button>
           </div>
         </div>
       </div>
@@ -1351,6 +1365,22 @@ export default function Navigation() {
                   })}
                 </nav>
               </div>
+            </div>
+
+            {/* Chatbot button - mobile */}
+            <div className="lg:hidden">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => window.dispatchEvent(new CustomEvent('toggle-chatbot'))}
+                className={`${
+                  theme === "light"
+                    ? "text-gray-700 hover:text-orange-600"
+                    : "text-white/80 hover:text-white"
+                } !bg-transparent`}
+              >
+                <MessageCircle className="w-5 h-5" />
+              </Button>
             </div>
 
             {/* Mobile menu button */}
@@ -1917,6 +1947,21 @@ export default function Navigation() {
                   onToggle={() => setIsOpen(false)}
                 />
                 <LanguageSwitcher />
+                <Button
+                  variant="ghost"
+                  onClick={() => {
+                    window.dispatchEvent(new CustomEvent('toggle-chatbot'));
+                    setIsOpen(false);
+                  }}
+                  className={`w-full text-left justify-start gap-3 text-base sm:text-lg ${
+                    theme === "light"
+                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Smart Assistant</span>
+                </Button>
                 <a
                   href="https://ums.mydsi.org/Login.aspx/DSU"
                   target="_blank"
