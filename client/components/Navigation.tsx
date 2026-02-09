@@ -11,7 +11,6 @@ import {
   Search,
   ArrowRight,
   Home as HomeIcon,
-  MessageCircle,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
