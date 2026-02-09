@@ -528,24 +528,71 @@ export function ReactNavigationChatbot() {
           {/* Content */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
 
-            {/* Home View */}
+            {/* Current Page Info */}
+            {currentPageInfo && (
+              <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/30 mb-2">
+                <p className="text-xs text-slate-400 mb-1">Currently Viewing</p>
+                <p className="text-sm font-semibold text-blue-300">{currentPageInfo.emoji} {currentPageInfo.title}</p>
+              </div>
+            )}
+
+            {/* Context-Aware View */}
             {navState.view === "home" && (
               <div className="space-y-3">
-                {/* Academics Section */}
-                <div>
-                  <p className="text-xs font-semibold text-slate-400 uppercase px-2 mb-2">📚 Academics</p>
-                  <div className="space-y-1">
-                    {academicSchools.map((school) => (
-                      <button
-                        key={school.title}
-                        onClick={() => handleSchoolClick(school)}
-                        className="w-full p-2 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 transition-colors text-left group"
-                      >
-                        <p className="text-xs font-semibold text-white group-hover:text-purple-300">{school.emoji} {school.title}</p>
-                      </button>
-                    ))}
+                {/* If on a School page, show its departments */}
+                {currentSchool && (
+                  <div>
+                    <p className="text-xs font-semibold text-slate-400 uppercase px-2 mb-2">📚 {currentSchool.title} Departments</p>
+                    <div className="space-y-1">
+                      {currentSchool.departments.map((dept, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleDepartmentClick(dept)}
+                          className="w-full p-2 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 transition-colors text-left group"
+                        >
+                          <p className="text-xs font-semibold text-white group-hover:text-blue-300">{dept.title}</p>
+                          <p className="text-xs text-slate-400">{dept.programs.length} programs</p>
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
+
+                {/* If on a Department page, show its programs */}
+                {currentSchool && currentDepartment && (
+                  <div>
+                    <p className="text-xs font-semibold text-slate-400 uppercase px-2 mb-2">📖 Programs in {currentDepartment.title}</p>
+                    <div className="space-y-1">
+                      {currentDepartment.programs.map((prog, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleNavigate(prog.path)}
+                          className="w-full p-2 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 transition-colors text-left group"
+                        >
+                          <p className="text-xs font-semibold text-white group-hover:text-green-300">{prog.title}</p>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* If not on academics page, show all schools */}
+                {!currentSchool && (
+                  <div>
+                    <p className="text-xs font-semibold text-slate-400 uppercase px-2 mb-2">📚 Academics</p>
+                    <div className="space-y-1">
+                      {academicSchools.map((school) => (
+                        <button
+                          key={school.title}
+                          onClick={() => handleSchoolClick(school)}
+                          className="w-full p-2 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 transition-colors text-left group"
+                        >
+                          <p className="text-xs font-semibold text-white group-hover:text-purple-300">{school.emoji} {school.title}</p>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Other Categories */}
                 {otherCategories.map((cat) => (
