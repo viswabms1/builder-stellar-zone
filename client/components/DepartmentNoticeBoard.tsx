@@ -81,146 +81,112 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
     }
 
     const currentItem = items[currentIndex];
-    const otherItems = items.filter((_, idx) => idx !== currentIndex);
 
     return (
-      <div className="space-y-6">
-        {/* Featured Item */}
-        <div>
-          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor} mb-4`}>
-            <h3 className={`headline-4 font-display ${styles.textColor}`}>{title} - Featured</h3>
-            <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
-          </div>
-
-          <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
-            {currentItem.image && (
-              <div
-                className="relative h-48 overflow-hidden cursor-pointer"
-                onClick={() => setSelectedImage({ src: currentItem.image!, alt: currentItem.title, title: currentItem.title })}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    setSelectedImage({ src: currentItem.image!, alt: currentItem.title, title: currentItem.title });
-                  }
-                }}
-                aria-label={`Click to view ${currentItem.title} image in larger size`}
-              >
-                <img
-                  src={currentItem.image}
-                  alt={currentItem.title}
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold">
-                    Click to enlarge
-                  </span>
-                </div>
-              </div>
-            )}
-            <CardContent className="p-4 space-y-3">
-              <div className="flex items-start justify-between gap-2">
-                <div className="flex-1">
-                  <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
-                  <ReadMore
-                    contentId={currentItem.id}
-                    type={category.toLowerCase() as "announcement" | "news" | "event"}
-                    maxLines={2}
-                    className="text-xs text-foreground/70"
-                    showReadMore={currentItem.description && currentItem.description.length > 150}
-                  >
-                    {currentItem.description}
-                  </ReadMore>
-                </div>
-              </div>
-              <div className="flex items-center justify-between pt-2 border-t border-border/20">
-                <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
-                {currentItem.link && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
-                    onClick={() => {
-                      // Ensure absolute URL
-                      let absoluteUrl = currentItem.link;
-                      if (!absoluteUrl.startsWith('http')) {
-                        absoluteUrl = `${window.location.origin}${absoluteUrl}`;
-                      }
-                      window.open(absoluteUrl, '_blank');
-                    }}
-                  >
-                    <Download className="h-3 w-3 mr-1" />
-                    PDF
-                  </Button>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="flex items-center justify-between gap-2 mt-4">
-            <div className="flex gap-1">
-              {items.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-1.5 rounded-full transition-all ${
-                    idx === currentIndex
-                      ? `${styles.bgColor} w-6`
-                      : "bg-border/40 w-1.5 hover:bg-border/60"
-                  }`}
-                />
-              ))}
-            </div>
-            <div className="flex gap-1">
-              <Button
-                variant="outline"
-                size="sm"
-                className="h-7 px-2 text-xs"
-                onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
-              >
-                ←
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="h-7 px-2 text-xs"
-                onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
-              >
-                →
-              </Button>
-            </div>
-          </div>
+      <div className="space-y-4">
+        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}>
+          <h3 className={`headline-4 font-display ${styles.textColor}`}>{title}</h3>
+          <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
         </div>
 
-        {/* All Items Grid */}
-        {otherItems.length > 0 && (
-          <div>
-            <h4 className={`text-xs font-semibold uppercase tracking-wider ${styles.textColor} mb-3`}>All {title}</h4>
-            <div className="grid grid-cols-2 gap-2">
-              {otherItems.map((item, idx) => (
-                <Card
-                  key={idx}
-                  className="group overflow-hidden rounded-lg border border-border/30 bg-card/20 backdrop-blur-sm hover:bg-card/40 transition-all cursor-pointer"
-                  onClick={() => setCurrentIndex(items.indexOf(item))}
-                >
-                  {item.image && (
-                    <div className="relative h-16 overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform"
-                      />
-                    </div>
-                  )}
-                  <CardContent className="p-2">
-                    <p className="text-xs font-semibold text-foreground line-clamp-2">{item.title}</p>
-                    <p className="text-xs text-foreground/50 mt-1">{item.date}</p>
-                  </CardContent>
-                </Card>
-              ))}
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div
+              className="relative h-48 overflow-hidden cursor-pointer"
+              onClick={() => setSelectedImage({ src: currentItem.image!, alt: currentItem.title, title: currentItem.title })}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setSelectedImage({ src: currentItem.image!, alt: currentItem.title, title: currentItem.title });
+                }
+              }}
+              aria-label={`Click to view ${currentItem.title} image in larger size`}
+            >
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold">
+                  Click to enlarge
+                </span>
+              </div>
             </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
+                <ReadMore
+                  contentId={currentItem.id}
+                  type={category.toLowerCase() as "announcement" | "news" | "event"}
+                  maxLines={2}
+                  className="text-xs text-foreground/70"
+                  showReadMore={currentItem.description && currentItem.description.length > 150}
+                >
+                  {currentItem.description}
+                </ReadMore>
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                  onClick={() => {
+                    // Ensure absolute URL
+                    let absoluteUrl = currentItem.link;
+                    if (!absoluteUrl.startsWith('http')) {
+                      absoluteUrl = `${window.location.origin}${absoluteUrl}`;
+                    }
+                    window.open(absoluteUrl, '_blank');
+                  }}
+                >
+                  <Download className="h-3 w-3 mr-1" />
+                  PDF
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? `${styles.bgColor} w-6`
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
           </div>
-        )}
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+            >
+              →
+            </Button>
+          </div>
+        </div>
       </div>
     );
   };
