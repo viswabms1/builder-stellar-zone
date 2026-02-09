@@ -221,10 +221,9 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
   try {
     const departmentCode = req.query.department_code as string | undefined;
 
-    // Build the Strapi URL with department relation populated
-    let query = "?pagination[limit]=100&populate=*";
-
-    // First, fetch all announcements to see the data structure
+    // Fetch ALL announcements without pagination limit
+    // Use pageSize with a very large number to get everything
+    const query = "?populate=*&pagination[pageSize]=1000&pagination[page]=1";
     const strapiUrl = `${STRAPI_URL}/api/announcements${query}`;
     console.log(`[ANNOUNCEMENTS] Fetching from: ${strapiUrl}`);
 
@@ -243,7 +242,7 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     }
 
     const data = await response.json();
-    console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} total announcements`);
+    console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} total announcements from Strapi`);
 
     // Log all announcements with their departments
     if (data.data && data.data.length > 0) {
@@ -255,7 +254,7 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
       });
     }
 
-    // If department_code filter is provided, filter on client side
+    // If department_code filter is provided, filter on client side to get ALL matching
     if (departmentCode) {
       console.log(`[ANNOUNCEMENTS] Filtering for department code: ${departmentCode}`);
 
@@ -263,17 +262,15 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
         ...data,
         data: (data.data || []).filter((announcement: any) => {
           const annDeptCode = (announcement.department?.Dept_code || announcement.Department_code || '').toLowerCase();
-          return annDeptCode === departmentCode.toLowerCase();
+          const matches = annDeptCode === departmentCode.toLowerCase();
+          if (matches) {
+            console.log(`[ANNOUNCEMENTS] MATCH: "${announcement.Title || announcement.title}" (${annDeptCode})`);
+          }
+          return matches;
         })
       };
 
       console.log(`[ANNOUNCEMENTS] Filtered to ${filteredData.data.length} announcements for department: ${departmentCode}`);
-      if (filteredData.data.length > 0) {
-        filteredData.data.forEach((announcement: any, index: number) => {
-          console.log(`[ANNOUNCEMENTS] [Filtered ${index}] "${announcement.Title || announcement.title}"`);
-        });
-      }
-
       return res.json(filteredData);
     }
 
