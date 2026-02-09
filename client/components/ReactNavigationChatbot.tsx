@@ -29,9 +29,7 @@ interface PageRoute {
 }
 
 interface NavigationState {
-  view: "home" | "academics" | "school" | "department";
-  currentSchool?: AcademicSchool;
-  currentDepartment?: AcademicDepartment;
+  view: "home";
 }
 
 export function ReactNavigationChatbot() {
