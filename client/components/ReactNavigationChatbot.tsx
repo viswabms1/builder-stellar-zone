@@ -558,65 +558,6 @@ export function ReactNavigationChatbot() {
               </div>
             )}
 
-            {/* Academics View - All Schools */}
-            {navState.view === "academics" && (
-              <div className="space-y-2">
-                <p className="text-xs font-semibold text-slate-400 uppercase px-2">All Schools</p>
-                {academicSchools.map((school) => (
-                  <button
-                    key={school.title}
-                    onClick={() => handleSchoolClick(school)}
-                    className="w-full p-3 rounded-lg bg-gradient-to-r from-slate-700/30 to-slate-800/30 border border-slate-600/30 hover:border-purple-500/50 hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300 text-left group"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-semibold text-white group-hover:text-purple-300">{school.emoji} {school.title}</p>
-                        <p className="text-xs text-slate-400 mt-0.5">Visit school page</p>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-purple-400" />
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {/* School View - All Departments */}
-            {navState.view === "school" && navState.currentSchool && (
-              <div className="space-y-2">
-                <p className="text-sm font-bold text-white mb-3">{navState.currentSchool.emoji} {navState.currentSchool.title}</p>
-                {navState.currentSchool.departments.map((dept, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleDepartmentClick(navState.currentSchool!, dept)}
-                    className="w-full p-3 rounded-lg bg-gradient-to-r from-slate-700/30 to-slate-800/30 border border-slate-600/30 hover:border-blue-500/50 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-cyan-500/20 transition-all duration-300 text-left group"
-                  >
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-semibold text-white group-hover:text-blue-300">{dept.title}</p>
-                      <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-blue-400" />
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {/* Department View - Programs */}
-            {navState.view === "department" && navState.currentSchool && navState.currentDepartment && (
-              <div className="space-y-2">
-                <p className="text-sm font-bold text-white mb-3">{navState.currentDepartment.title}</p>
-                {navState.currentDepartment.programs.map((prog, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleNavigate(prog.path)}
-                    className="w-full p-3 rounded-lg bg-gradient-to-r from-slate-700/30 to-slate-800/30 border border-slate-600/30 hover:border-green-500/50 hover:bg-gradient-to-r hover:from-green-500/20 hover:to-emerald-500/20 transition-all duration-300 text-left group"
-                  >
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-semibold text-white group-hover:text-green-300">{prog.title}</p>
-                      <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-green-400" />
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
           </div>
 
           {/* Footer */}
