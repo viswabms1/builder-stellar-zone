@@ -1,4 +1,6 @@
-import "dotenv/config";
+import dotenv from "dotenv";
+dotenv.config({ override: true });
+
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -15,9 +17,6 @@ import {
   serveImage,
   getStaffs,
 } from "./routes/strapi";
-
-// Environment variables are loaded from system
-// OpenAI API key validation happens in route handlers
 
 export function createServer() {
   const app = express();
