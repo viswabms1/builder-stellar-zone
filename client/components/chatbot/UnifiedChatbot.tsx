@@ -25,56 +25,25 @@ interface SmartChatResponse {
 }
 
 /**
- * Injects a persistent chatbot FAB button directly into the DOM.
- * This guarantees visibility regardless of React rendering or CSS stacking contexts.
+ * Hooks into the static HTML button defined in index.html.
+ * The button is already in the DOM — we just attach click handler and visibility control.
  */
-function useInjectedButton(onOpen: () => void) {
+function useFabButton(onOpen: () => void, isOpen: boolean) {
   useEffect(() => {
-    // Create button element
-    const btn = document.createElement("button");
-    btn.id = "dsu-smart-assistant-fab";
-    btn.setAttribute("aria-label", "Open Smart Assistant");
-    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>`;
-    
-    // Apply styles directly
-    Object.assign(btn.style, {
-      position: "fixed",
-      bottom: "24px",
-      right: "24px",
-      width: "56px",
-      height: "56px",
-      background: "linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%)",
-      boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
-      border: "none",
-      borderRadius: "50%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "white",
-      cursor: "pointer",
-      zIndex: "2147483647",
-      padding: "0",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease",
-    });
+    const btn = document.getElementById("dsu-chatbot-fab");
+    if (!btn) return;
 
-    btn.addEventListener("mouseenter", () => {
-      btn.style.transform = "scale(1.1)";
-      btn.style.boxShadow = "0 6px 28px rgba(0, 0, 0, 0.4)";
-    });
-    btn.addEventListener("mouseleave", () => {
-      btn.style.transform = "scale(1)";
-      btn.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.3)";
-    });
-    btn.addEventListener("click", () => {
-      onOpen();
-    });
-
-    document.body.appendChild(btn);
-
-    return () => {
-      document.body.removeChild(btn);
-    };
+    const handleClick = () => onOpen();
+    btn.addEventListener("click", handleClick);
+    return () => btn.removeEventListener("click", handleClick);
   }, [onOpen]);
+
+  useEffect(() => {
+    const btn = document.getElementById("dsu-chatbot-fab");
+    if (btn) {
+      btn.style.display = isOpen ? "none" : "flex";
+    }
+  }, [isOpen]);
 }
 
 export function UnifiedChatbot() {
