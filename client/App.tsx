@@ -1882,7 +1882,6 @@ function App() {
             </main>
             <Footer />
           </div>
-          <ChatbotFAB />
           <UnifiedChatbot />
         </BrowserRouter>
       </ThemeProvider>
