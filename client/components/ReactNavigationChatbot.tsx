@@ -618,8 +618,16 @@ export function ReactNavigationChatbot() {
                   <button
                     key={idx}
                     onClick={() => {
-                      if (result.program) {
+                      if (result.type === "school" && result.school) {
+                        handleSchoolClick(result.school);
+                        setSearchQuery("");
+                      } else if (result.type === "department" && result.school && result.department) {
+                        setCurrentSchool(result.school);
+                        setCurrentDepartment(result.department);
+                        setSearchQuery("");
+                      } else if (result.program) {
                         handleNavigate(result.program.path);
+                        setSearchQuery("");
                       }
                     }}
                     className="w-full p-3 rounded-lg bg-gradient-to-r from-slate-700/30 to-slate-800/30 border border-slate-600/30 hover:border-pink-500/50 hover:bg-gradient-to-r hover:from-pink-500/20 hover:to-rose-500/20 transition-all duration-300 text-left group"
@@ -628,9 +636,9 @@ export function ReactNavigationChatbot() {
                       <div>
                         <p className="text-xs font-semibold text-white group-hover:text-pink-300">{result.title}</p>
                         <p className="text-xs text-slate-400 mt-0.5">
-                          {result.type === "school" && "School"}
-                          {result.type === "department" && "Department"}
-                          {result.type === "program" && "Program"}
+                          {result.type === "school" && "🏫 School"}
+                          {result.type === "department" && "📚 Department"}
+                          {result.type === "program" && "📖 Program"}
                         </p>
                       </div>
                       <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-pink-400" />
