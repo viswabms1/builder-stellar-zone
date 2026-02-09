@@ -585,11 +585,69 @@ export function ReactNavigationChatbot() {
             </button>
           </div>
 
+          {/* Search Bar */}
+          <div className="p-3 border-b border-slate-700/50 sticky top-0 z-20 bg-slate-900/80 backdrop-blur">
+            <div className="relative">
+              <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-500" />
+              <input
+                type="text"
+                placeholder="Search schools, programs..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-9 pr-9 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors text-xs"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-2.5 hover:text-slate-300 transition-colors"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+          </div>
+
           {/* Content */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
 
+            {/* Search Results */}
+            {searchQuery && searchResults.length > 0 && (
+              <div className="space-y-2 animate-in fade-in duration-200">
+                <p className="text-xs font-semibold text-slate-400 uppercase px-2">Search Results</p>
+                {searchResults.map((result, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      if (result.program) {
+                        handleNavigate(result.program.path);
+                      }
+                    }}
+                    className="w-full p-3 rounded-lg bg-gradient-to-r from-slate-700/30 to-slate-800/30 border border-slate-600/30 hover:border-pink-500/50 hover:bg-gradient-to-r hover:from-pink-500/20 hover:to-rose-500/20 transition-all duration-300 text-left group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-xs font-semibold text-white group-hover:text-pink-300">{result.title}</p>
+                        <p className="text-xs text-slate-400 mt-0.5">
+                          {result.type === "school" && "School"}
+                          {result.type === "department" && "Department"}
+                          {result.type === "program" && "Program"}
+                        </p>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-pink-400" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {searchQuery && searchResults.length === 0 && (
+              <div className="p-4 text-center">
+                <p className="text-sm text-slate-400">No results found for "{searchQuery}"</p>
+              </div>
+            )}
+
             {/* Current Page Info */}
-            {currentPageInfo && (
+            {!searchQuery && currentPageInfo && (
               <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/30 mb-2">
                 <p className="text-xs text-slate-400 mb-1">Currently Viewing</p>
                 <p className="text-sm font-semibold text-blue-300">{currentPageInfo.emoji} {currentPageInfo.title}</p>
