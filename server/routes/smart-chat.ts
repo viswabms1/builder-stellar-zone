@@ -305,22 +305,58 @@ export const handleSmartChat = async (req: Request, res: Response) => {
     try {
       parsed = JSON.parse(content);
     } catch {
-      // If JSON parsing fails, treat as a plain answer
       parsed = { type: "answer", message: content };
     }
 
-    // Validate the path exists in our site map if type is navigate
-    if (parsed.type === "navigate" && parsed.path) {
+    // Normalize: if AI returned suggestedPath instead of path, use it
+    if (!parsed.path && parsed.suggestedPath) {
+      parsed.path = parsed.suggestedPath;
+    }
+
+    // If AI returned "answer" but included a path, upgrade to "navigate"
+    if (parsed.type === "answer" && parsed.path) {
+      parsed.type = "navigate";
+      if (!parsed.label) {
+        const route = SITE_MAP.find(r => r.path === parsed.path);
+        parsed.label = route?.label || "Page";
+      }
+    }
+
+    // If AI returned "answer" with no path, try keyword matching to find a page
+    if (parsed.type === "answer" && !parsed.path) {
+      const queryLower = message.toLowerCase();
+      let bestMatch: { path: string; label: string; score: number } | null = null;
+
+      for (const route of SITE_MAP) {
+        let score = 0;
+        const routeKeywords = (route.keywords + " " + route.label).toLowerCase().split(/\s+/);
+        for (const kw of routeKeywords) {
+          if (kw.length > 2 && queryLower.includes(kw)) score += 3;
+        }
+        if (route.label.toLowerCase().includes(queryLower)) score += 10;
+        if (score > 0 && (!bestMatch || score > bestMatch.score)) {
+          bestMatch = { path: route.path, label: route.label, score };
+        }
+      }
+
+      if (bestMatch && bestMatch.score >= 3) {
+        parsed.type = "navigate";
+        parsed.path = bestMatch.path;
+        parsed.label = bestMatch.label;
+        console.log(`[SMART-CHAT] Keyword fallback matched: ${bestMatch.label} (score: ${bestMatch.score})`);
+      }
+    }
+
+    // Validate the path exists in our site map
+    if (parsed.path) {
       const validRoute = SITE_MAP.find(r => r.path === parsed.path);
       if (!validRoute) {
-        // Try to find closest match
         const pathLower = parsed.path.toLowerCase();
         const closest = SITE_MAP.find(r => r.path.toLowerCase() === pathLower);
         if (closest) {
           parsed.path = closest.path;
           parsed.label = closest.label;
         } else {
-          // Fall back to answer type if path is invalid
           parsed.type = "answer";
           parsed.path = undefined;
         }
@@ -331,7 +367,7 @@ export const handleSmartChat = async (req: Request, res: Response) => {
 
     res.json({
       success: true,
-      type: parsed.type || "answer",
+      type: parsed.type || "navigate",
       path: parsed.path,
       label: parsed.label,
       message: parsed.message || "I'm not sure how to help with that. Could you rephrase?",
