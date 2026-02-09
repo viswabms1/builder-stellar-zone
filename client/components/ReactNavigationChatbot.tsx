@@ -37,10 +37,12 @@ export function ReactNavigationChatbot() {
   const location = useLocation();
   const chatbotRef = useRef<HTMLDivElement>(null);
   const floatingButtonRef = useRef<HTMLDivElement>(null);
-  
+
   const [isMinimized, setIsMinimized] = useState(true);
   const [currentPageInfo, setCurrentPageInfo] = useState<PageRoute | null>(null);
   const [navState, setNavState] = useState<NavigationState>({ view: "home" });
+  const [currentSchool, setCurrentSchool] = useState<AcademicSchool | null>(null);
+  const [currentDepartment, setCurrentDepartment] = useState<AcademicDepartment | null>(null);
 
   // Comprehensive Academic Structure
   const academicSchools: AcademicSchool[] = [
