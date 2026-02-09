@@ -38,11 +38,20 @@
 <body>
   <div id="root"></div>
 
-  <!-- Chatbot FAB Button - AI Girl Avatar -->
+  <!-- Chatbot FAB Button - AI Girl Avatar with Floating Animation -->
   <style>
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
     #dsu-chat-fab {
       position: fixed;
-      bottom: 30px;
+      bottom: 100px;
       right: 30px;
       width: 70px;
       height: 70px;
@@ -56,16 +65,18 @@
       box-shadow: 0 8px 32px rgba(255, 20, 147, 0.5);
       padding: 0;
       margin: 0;
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       font-size: 40px;
       z-index: 9999;
       outline: none;
       -webkit-appearance: none;
       appearance: none;
+      animation: float 3s ease-in-out infinite;
+      transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     #dsu-chat-fab:hover {
       box-shadow: 0 12px 40px rgba(255, 20, 147, 0.7);
+      animation: none;
       transform: translateY(-4px) scale(1.1);
     }
 
