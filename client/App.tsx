@@ -410,7 +410,6 @@ function App() {
       <ThemeProvider>
         <BrowserRouter>
           <ScrollToTop />
-          <ChatbotFAB />
           <div className="relative min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
             <Navigation />
             <main className="w-full">
