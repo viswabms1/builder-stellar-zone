@@ -174,7 +174,7 @@ export function UnifiedChatbot() {
           background: "linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%)",
           boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
           border: "none",
-          zIndex: 9999,
+          zIndex: 10002,
           padding: 0,
         }}
         aria-label="Open Smart Assistant"
