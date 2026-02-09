@@ -452,11 +452,15 @@ export function ReactNavigationChatbot() {
   };
 
   const handleSchoolClick = (school: AcademicSchool) => {
-    setNavState({ view: "school", currentSchool: school });
+    // Navigate directly to school's overview page
+    navigate(school.path);
   };
 
-  const handleDepartmentClick = (school: AcademicSchool, department: AcademicDepartment) => {
-    setNavState({ view: "department", currentSchool: school, currentDepartment: department });
+  const handleDepartmentClick = (department: AcademicDepartment) => {
+    // Navigate to first program in the department
+    if (department.programs.length > 0) {
+      navigate(department.programs[0].path);
+    }
   };
 
   const handleBackToHome = () => {
