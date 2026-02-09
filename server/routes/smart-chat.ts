@@ -88,7 +88,7 @@ const SITE_MAP = [
   { path: "/", label: "Home Page", keywords: "home main landing" },
   { path: "/about", label: "About DSU", keywords: "about university history story" },
   { path: "/vision-mission", label: "Vision & Mission", keywords: "vision mission purpose goal" },
-  { path: "/leadership", label: "Leadership", keywords: "leadership chancellor vice chancellor leaders" },
+  { path: "/about/leadership", label: "Leadership", keywords: "leadership chancellor vice chancellor leaders" },
   { path: "/academics", label: "All Academics", keywords: "academics schools all programs courses" },
   { path: "/admissions", label: "Admissions", keywords: "admissions apply application process how to join" },
   { path: "/admissions/international", label: "International Admissions", keywords: "international foreign students nri admissions" },
