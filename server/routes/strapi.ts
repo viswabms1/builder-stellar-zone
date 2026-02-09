@@ -224,12 +224,7 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     // Build the Strapi URL with department relation populated
     let query = "?pagination[limit]=100&populate=*";
 
-    if (departmentCode) {
-      // Filter by department's Dept_code field (note: Strapi field names are case-sensitive)
-      // Try filtering on the department relation
-      query += `&filters[department][Dept_code][$eq]=${departmentCode}`;
-    }
-
+    // First, fetch all announcements to see the data structure
     const strapiUrl = `${STRAPI_URL}/api/announcements${query}`;
     console.log(`[ANNOUNCEMENTS] Fetching from: ${strapiUrl}`);
 
@@ -244,40 +239,42 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
       console.error(`[ANNOUNCEMENTS] Error: ${response.status} ${response.statusText}`);
       const errorText = await response.text();
       console.error(`[ANNOUNCEMENTS] Error response:`, errorText);
-
-      // If filter fails, fetch all announcements as fallback
-      if (departmentCode) {
-        console.log(`[ANNOUNCEMENTS] Filter with Dept_code failed, fetching all announcements...`);
-        const fallbackUrl = `${STRAPI_URL}/api/announcements?pagination[limit]=100&populate=*`;
-        const fallbackResponse = await fetch(fallbackUrl, {
-          headers: {
-            "Content-Type": "application/json",
-            ...(STRAPI_API_TOKEN && { Authorization: `Bearer ${STRAPI_API_TOKEN}` }),
-          },
-        });
-
-        if (fallbackResponse.ok) {
-          const fallbackData = await fallbackResponse.json();
-          console.log(`[ANNOUNCEMENTS] Fetched ${fallbackData.data?.length || 0} announcements (fallback - all)`);
-          if (fallbackData.data && fallbackData.data.length > 0) {
-            console.log(`[ANNOUNCEMENTS] All announcements:`, JSON.stringify(fallbackData.data, null, 2));
-          }
-          return res.json(fallbackData);
-        }
-      }
-
       throw new Error(`Strapi API error: ${response.statusText}`);
     }
 
     const data = await response.json();
-    console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} announcements`);
+    console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} total announcements`);
 
+    // Log all announcements with their departments
     if (data.data && data.data.length > 0) {
-      console.log(`[ANNOUNCEMENTS] All announcements:`, JSON.stringify(data.data, null, 2));
+      console.log(`[ANNOUNCEMENTS] All announcements in Strapi:`);
       data.data.forEach((announcement: any, index: number) => {
-        const deptCode = announcement.department?.Dept_code || 'null';
-        console.log(`[ANNOUNCEMENTS] [${index}] "${announcement.Title}" -> Department: ${deptCode}`);
+        const deptCode = announcement.department?.Dept_code || announcement.Department_code || 'null';
+        const deptName = announcement.department?.name || announcement.department?.title || 'unnamed';
+        console.log(`[ANNOUNCEMENTS] [${index}] "${announcement.Title || announcement.title}" -> Dept Code: ${deptCode}, Dept Name: ${deptName}`);
       });
+    }
+
+    // If department_code filter is provided, filter on client side
+    if (departmentCode) {
+      console.log(`[ANNOUNCEMENTS] Filtering for department code: ${departmentCode}`);
+
+      const filteredData = {
+        ...data,
+        data: (data.data || []).filter((announcement: any) => {
+          const annDeptCode = (announcement.department?.Dept_code || announcement.Department_code || '').toLowerCase();
+          return annDeptCode === departmentCode.toLowerCase();
+        })
+      };
+
+      console.log(`[ANNOUNCEMENTS] Filtered to ${filteredData.data.length} announcements for department: ${departmentCode}`);
+      if (filteredData.data.length > 0) {
+        filteredData.data.forEach((announcement: any, index: number) => {
+          console.log(`[ANNOUNCEMENTS] [Filtered ${index}] "${announcement.Title || announcement.title}"`);
+        });
+      }
+
+      return res.json(filteredData);
     }
 
     res.json(data);
