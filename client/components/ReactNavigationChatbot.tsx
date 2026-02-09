@@ -678,7 +678,7 @@ export function ReactNavigationChatbot() {
             )}
 
             {/* Context-Aware View */}
-            {navState.view === "home" && (
+            {!searchQuery && navState.view === "home" && (
               <div className="space-y-3">
                 {/* If on a School page, show its departments */}
                 {currentSchool && (
