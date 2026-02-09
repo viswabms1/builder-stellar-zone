@@ -1957,12 +1957,8 @@ export default function Navigation() {
         {/* Floating Chatbot FAB - bottom right */}
         <button
           onClick={() => window.dispatchEvent(new CustomEvent('toggle-chatbot'))}
-          className="fixed flex items-center justify-center rounded-full text-white shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110"
+          className="fixed bottom-6 right-6 w-14 h-14 rounded-full text-white flex items-center justify-center shadow-[0_4px_14px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.35)] transition-all duration-300 hover:scale-110 active:scale-95"
           style={{
-            bottom: "12px",
-            right: "24px",
-            width: "56px",
-            height: "56px",
             background: "linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%)",
             zIndex: 10002,
           }}
