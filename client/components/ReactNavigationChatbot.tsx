@@ -379,11 +379,73 @@ export function ReactNavigationChatbot() {
     },
   ];
 
+  // Handle search
+  useEffect(() => {
+    if (!searchQuery.trim()) {
+      setSearchResults([]);
+      return;
+    }
+
+    const query = searchQuery.toLowerCase();
+    const results: typeof searchResults = [];
+
+    // Search schools
+    academicSchools.forEach((school) => {
+      if (school.title.toLowerCase().includes(query)) {
+        results.push({
+          type: "school",
+          school,
+          title: school.title,
+        });
+      }
+
+      // Search departments within school
+      school.departments.forEach((dept) => {
+        if (dept.title.toLowerCase().includes(query)) {
+          results.push({
+            type: "department",
+            school,
+            department: dept,
+            title: `${dept.title} (${school.title})`,
+          });
+        }
+
+        // Search programs within department
+        dept.programs.forEach((prog) => {
+          if (prog.title.toLowerCase().includes(query)) {
+            results.push({
+              type: "program",
+              school,
+              department: dept,
+              program: prog,
+              title: `${prog.title} (${dept.title})`,
+            });
+          }
+        });
+      });
+    });
+
+    // Search other categories
+    otherCategories.forEach((cat) => {
+      cat.pages.forEach((page) => {
+        if (page.title.toLowerCase().includes(query)) {
+          results.push({
+            type: "program",
+            program: { title: page.title, path: page.path },
+            title: `${page.title} (${cat.name})`,
+          });
+        }
+      });
+    });
+
+    setSearchResults(results.slice(0, 8)); // Limit to 8 results
+  }, [searchQuery]);
+
   // Handle clicks outside chatbot to minimize
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
-      
+
       if (
         chatbotRef.current &&
         floatingButtonRef.current &&
