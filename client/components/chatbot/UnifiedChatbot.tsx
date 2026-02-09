@@ -24,28 +24,6 @@ interface SmartChatResponse {
   message: string;
 }
 
-/**
- * Hooks into the static HTML button defined in index.html.
- * The button is already in the DOM — we just attach click handler and visibility control.
- */
-function useFabButton(onOpen: () => void, isOpen: boolean) {
-  useEffect(() => {
-    const btn = document.getElementById("dsu-chatbot-fab");
-    if (!btn) return;
-
-    const handleClick = () => onOpen();
-    btn.addEventListener("click", handleClick);
-    return () => btn.removeEventListener("click", handleClick);
-  }, [onOpen]);
-
-  useEffect(() => {
-    const btn = document.getElementById("dsu-chatbot-fab");
-    if (btn) {
-      btn.style.display = isOpen ? "none" : "flex";
-    }
-  }, [isOpen]);
-}
-
 export function UnifiedChatbot() {
   const navigate = useNavigate();
   const { theme } = useTheme();
@@ -58,12 +36,12 @@ export function UnifiedChatbot() {
   const inputRef = useRef<HTMLInputElement>(null);
   const chatRef = useRef<HTMLDivElement>(null);
 
-  const handleOpen = useCallback(() => {
-    setIsOpen(true);
+  // Listen for toggle-chatbot event from Navigation component
+  useEffect(() => {
+    const handleToggle = () => setIsOpen(prev => !prev);
+    window.addEventListener("toggle-chatbot", handleToggle);
+    return () => window.removeEventListener("toggle-chatbot", handleToggle);
   }, []);
-
-  // Hook into the static HTML button from index.html
-  useFabButton(handleOpen, isOpen);
 
   // Auto-scroll to bottom
   useEffect(() => {
