@@ -486,6 +486,16 @@ export function ReactNavigationChatbot() {
     }
   };
 
+  const handleBackToSchool = () => {
+    if (currentSchool) {
+      navigate(currentSchool.path);
+    }
+  };
+
+  const handleBackToAllSchools = () => {
+    navigate("/academics");
+  };
+
 
   return (
     <>
