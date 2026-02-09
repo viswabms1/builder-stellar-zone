@@ -517,30 +517,6 @@ export function ReactNavigationChatbot() {
 
           {/* Content */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
-            {/* Navigation Breadcrumb */}
-            {navState.view !== "home" && (
-              <div className="text-xs flex items-center gap-1 text-slate-400 mb-3">
-                <button onClick={handleBackToHome} className="hover:text-white transition-colors">
-                  Home
-                </button>
-                {navState.view !== "academics" && (
-                  <>
-                    <span>/</span>
-                    <button onClick={handleBackToSchools} className="hover:text-white transition-colors">
-                      Academics
-                    </button>
-                  </>
-                )}
-                {navState.view === "department" && (
-                  <>
-                    <span>/</span>
-                    <button onClick={handleBackToSchool} className="hover:text-white transition-colors">
-                      {navState.currentSchool?.title}
-                    </button>
-                  </>
-                )}
-              </div>
-            )}
 
             {/* Home View */}
             {navState.view === "home" && (
