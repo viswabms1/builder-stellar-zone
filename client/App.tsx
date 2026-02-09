@@ -1881,6 +1881,7 @@ function App() {
             </main>
             <Footer />
             <RagChatWidget />
+            <ReactNavigationChatbot />
           </div>
         </BrowserRouter>
       </ThemeProvider>
