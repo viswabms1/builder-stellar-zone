@@ -349,4 +349,6 @@ export function UnifiedChatbot() {
       </AnimatePresence>
     </>
   );
+
+  return createPortal(chatbotContent, document.body);
 }
