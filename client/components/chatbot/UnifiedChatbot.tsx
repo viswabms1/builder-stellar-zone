@@ -158,7 +158,7 @@ export function UnifiedChatbot() {
     }]);
   };
 
-  return (
+  const chatbotContent = (
     <>
       {/* Floating Action Button - Always rendered, controlled by opacity */}
       <motion.button
