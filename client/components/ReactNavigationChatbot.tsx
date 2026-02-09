@@ -663,7 +663,7 @@ export function ReactNavigationChatbot() {
             )}
 
             {/* Navigation Breadcrumbs and Back Buttons */}
-            {currentDepartment && currentSchool && (
+            {!searchQuery && currentDepartment && currentSchool && (
               <div className="space-y-2">
                 <button
                   onClick={handleBackToSchool}
@@ -674,7 +674,7 @@ export function ReactNavigationChatbot() {
               </div>
             )}
 
-            {currentSchool && !currentDepartment && (
+            {!searchQuery && currentSchool && !currentDepartment && (
               <div className="space-y-2">
                 <button
                   onClick={handleBackToAllSchools}
