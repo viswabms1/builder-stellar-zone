@@ -546,6 +546,29 @@ export function ReactNavigationChatbot() {
               </div>
             )}
 
+            {/* Navigation Breadcrumbs and Back Buttons */}
+            {currentDepartment && currentSchool && (
+              <div className="space-y-2">
+                <button
+                  onClick={handleBackToSchool}
+                  className="w-full p-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/30 transition-colors text-left"
+                >
+                  <p className="text-xs font-semibold text-amber-300">← Back to {currentSchool.emoji} {currentSchool.title}</p>
+                </button>
+              </div>
+            )}
+
+            {currentSchool && !currentDepartment && (
+              <div className="space-y-2">
+                <button
+                  onClick={handleBackToAllSchools}
+                  className="w-full p-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/30 transition-colors text-left"
+                >
+                  <p className="text-xs font-semibold text-amber-300">← Back to All Schools</p>
+                </button>
+              </div>
+            )}
+
             {/* Context-Aware View */}
             {navState.view === "home" && (
               <div className="space-y-3">
