@@ -463,19 +463,6 @@ export function ReactNavigationChatbot() {
     }
   };
 
-  const handleBackToHome = () => {
-    setNavState({ view: "home" });
-  };
-
-  const handleBackToSchools = () => {
-    setNavState({ view: "academics" });
-  };
-
-  const handleBackToSchool = () => {
-    if (navState.currentSchool) {
-      setNavState({ view: "school", currentSchool: navState.currentSchool });
-    }
-  };
 
   return (
     <>
