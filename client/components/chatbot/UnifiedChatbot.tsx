@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   MessageCircle,
@@ -157,16 +158,14 @@ export function UnifiedChatbot() {
     }]);
   };
 
-  return (
+  const chatbotUI = (
     <>
       {/* Floating Action Button - Simple version, always visible */}
       <button
+        id="dsu-chatbot-btn"
         onClick={() => setIsOpen(true)}
-        className={cn(
-          "fixed rounded-full flex items-center justify-center text-white cursor-pointer transition-opacity",
-          isOpen ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
-        )}
         style={{
+          position: "fixed",
           bottom: "24px",
           right: "24px",
           width: "56px",
@@ -174,12 +173,18 @@ export function UnifiedChatbot() {
           background: "linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%)",
           boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
           border: "none",
-          zIndex: 10010,
+          borderRadius: "50%",
+          display: isOpen ? "none" : "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "white",
+          cursor: "pointer",
+          zIndex: 2147483647,
           padding: 0,
         }}
         aria-label="Open Smart Assistant"
       >
-        <MessageCircle className="w-6 h-6" />
+        <MessageCircle style={{ width: "24px", height: "24px" }} />
       </button>
 
       {/* Chat Window */}
@@ -192,17 +197,18 @@ export function UnifiedChatbot() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "fixed z-[9999] rounded-2xl shadow-2xl flex flex-col overflow-hidden",
+              "rounded-2xl shadow-2xl flex flex-col overflow-hidden",
               theme === "light"
                 ? "bg-white border border-gray-200"
                 : "bg-slate-900 border border-slate-700"
             )}
             style={{
+              position: "fixed",
               bottom: "clamp(1.5rem, 4vh, 2rem)",
               right: "clamp(1rem, 3vw, 1.5rem)",
               width: "clamp(300px, 90vw, 400px)",
               height: "clamp(350px, 75vh, 600px)",
-              zIndex: 10010,
+              zIndex: 2147483647,
             }}
           >
             {/* Header */}
@@ -350,4 +356,6 @@ export function UnifiedChatbot() {
       </AnimatePresence>
     </>
   );
+
+  return createPortal(chatbotUI, document.body);
 }
