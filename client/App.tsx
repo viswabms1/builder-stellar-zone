@@ -399,8 +399,7 @@ import LibraryGallery from "./pages/LibraryGallery";
 import LibraryAdvisoryCommittee from "./pages/LibraryAdvisoryCommittee";
 import LibraryContact from "./pages/LibraryContact";
 import NotFound from "./pages/NotFound";
-import { RagChatWidget } from "./components/RagChatWidget";
-import { ReactNavigationChatbot } from "./components/ReactNavigationChatbot";
+import { UnifiedChatbot } from "./components/chatbot/UnifiedChatbot";
 import AnnouncementDetail from "./pages/AnnouncementDetail";
 import NewsDetail from "./pages/NewsDetail";
 import EventDetail from "./pages/EventDetail";
@@ -1880,8 +1879,7 @@ function App() {
               </Routes>
             </main>
             <Footer />
-            <RagChatWidget />
-            <ReactNavigationChatbot />
+            <UnifiedChatbot />
           </div>
         </BrowserRouter>
       </ThemeProvider>
