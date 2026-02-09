@@ -157,7 +157,7 @@ export function UnifiedChatbot() {
     }]);
   };
 
-  const chatbotContent = (
+  return (
     <>
       {/* Floating Action Button - Always rendered, stays visible */}
       <motion.button
