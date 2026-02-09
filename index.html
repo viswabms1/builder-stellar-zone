@@ -37,6 +37,18 @@
 
 <body>
   <div id="root"></div>
+
+  <!-- Chatbot FAB Button -->
+  <button id="dsu-chat-fab" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#a855f7,#ec4899);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:9999;padding:0;margin:0;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+  </button>
+
+  <script>
+    document.getElementById('dsu-chat-fab').addEventListener('click', function() {
+      window.dispatchEvent(new CustomEvent('toggle-chatbot'));
+    });
+  </script>
+
   <script type="module" src="/client/main.tsx"></script>
 </body>
 
