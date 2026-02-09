@@ -17,6 +17,7 @@ import {
   serveImage,
   getStaffs,
 } from "./routes/strapi";
+import { handleSmartChat } from "./routes/smart-chat";
 
 export function createServer() {
   const app = express();
