@@ -412,13 +412,34 @@ export function ReactNavigationChatbot() {
     }
   }, [isMinimized]);
 
-  // Detect current page
+  // Detect current page and related context
   useEffect(() => {
+    let foundSchool: AcademicSchool | null = null;
+    let foundDept: AcademicDepartment | null = null;
+
     // Check in academics schools
     for (const school of academicSchools) {
+      // Check if we're on this school's overview page
+      if (location.pathname === school.path) {
+        setCurrentSchool(school);
+        setCurrentDepartment(null);
+        setCurrentPageInfo({
+          path: location.pathname,
+          title: school.title,
+          category: "Academics",
+          emoji: school.emoji,
+        });
+        return;
+      }
+
+      // Check departments and programs
       for (const dept of school.departments) {
         for (const prog of dept.programs) {
           if (prog.path === location.pathname) {
+            foundSchool = school;
+            foundDept = dept;
+            setCurrentSchool(school);
+            setCurrentDepartment(dept);
             setCurrentPageInfo({
               path: location.pathname,
               title: prog.title,
@@ -432,6 +453,8 @@ export function ReactNavigationChatbot() {
     }
 
     // Check in other categories
+    setCurrentSchool(null);
+    setCurrentDepartment(null);
     for (const cat of otherCategories) {
       for (const page of cat.pages) {
         if (page.path === location.pathname) {
