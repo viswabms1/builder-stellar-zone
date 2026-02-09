@@ -1919,21 +1919,6 @@ export default function Navigation() {
                   onToggle={() => setIsOpen(false)}
                 />
                 <LanguageSwitcher />
-                <Button
-                  variant="ghost"
-                  onClick={() => {
-                    window.dispatchEvent(new CustomEvent('toggle-chatbot'));
-                    setIsOpen(false);
-                  }}
-                  className={`w-full text-left justify-start gap-3 text-base sm:text-lg ${
-                    theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Smart Assistant</span>
-                </Button>
                 <a
                   href="https://ums.mydsi.org/Login.aspx/DSU"
                   target="_blank"
