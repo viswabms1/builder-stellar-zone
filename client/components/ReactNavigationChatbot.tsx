@@ -43,6 +43,8 @@ export function ReactNavigationChatbot() {
   const [navState, setNavState] = useState<NavigationState>({ view: "home" });
   const [currentSchool, setCurrentSchool] = useState<AcademicSchool | null>(null);
   const [currentDepartment, setCurrentDepartment] = useState<AcademicDepartment | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<Array<{ type: "school" | "department" | "program", school?: AcademicSchool, department?: AcademicDepartment, program?: AcademicProgram, title: string }>>([]);
 
   // Comprehensive Academic Structure
   const academicSchools: AcademicSchool[] = [
