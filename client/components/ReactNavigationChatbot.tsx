@@ -1,17 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { MessageCircle, ChevronDown, Sparkles, ArrowRight, Lightbulb } from "lucide-react";
-
-interface PageCategory {
-  name: string;
-  emoji: string;
-  pages: {
-    title: string;
-    path: string;
-    description: string;
-    category?: string;
-  }[];
-}
+import { MessageCircle, ChevronDown, Sparkles, ArrowRight, Lightbulb, MapPin } from "lucide-react";
 
 interface PageRoute {
   path: string;
@@ -21,17 +10,23 @@ interface PageRoute {
   relatedPages: string[];
 }
 
+interface PageInfo {
+  title: string;
+  path: string;
+  category: string;
+  categoryEmoji: string;
+}
+
 export function ReactNavigationChatbot() {
   const navigate = useNavigate();
   const location = useLocation();
+  const chatbotRef = useRef<HTMLDivElement>(null);
+  const floatingButtonRef = useRef<HTMLDivElement>(null);
   
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [displayedText, setDisplayedText] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
-  const [currentPageInfo, setCurrentPageInfo] = useState<PageRoute | null>(null);
+  const [isMinimized, setIsMinimized] = useState(true);
+  const [navigationHistory, setNavigationHistory] = useState<PageInfo[]>([]);
 
-  const pageCategories: PageCategory[] = [
+  const pageCategories = [
     {
       name: "About DSU",
       emoji: "🏫",
@@ -92,66 +87,47 @@ export function ReactNavigationChatbot() {
     }))
   );
 
-  // Detect current page and show related suggestions
+  // Detect current page and update navigation history
   useEffect(() => {
     const current = allPages.find((p) => p.path === location.pathname);
     if (current) {
-      setCurrentPageInfo({
+      const newPageInfo: PageInfo = {
         path: location.pathname,
         title: current.title,
         category: current.category,
-        emoji: current.categoryEmoji,
-        relatedPages: allPages
-          .filter((p) => p.category === current.category && p.path !== location.pathname)
-          .slice(0, 3)
-          .map((p) => p.path),
-      });
-      // Switch to home view when on a page
-      setSelectedCategory(null);
+        categoryEmoji: current.categoryEmoji,
+      };
+      
+      // Replace the last item in history or add new one
+      setNavigationHistory([newPageInfo]);
     }
   }, [location.pathname]);
 
-  // Typing animation effect
+  // Handle clicks outside chatbot to minimize
   useEffect(() => {
-    if (!isTyping) return;
-
-    const messages = [
-      "Welcome to React Navigation Chatbot! 👋",
-      "I'm here to help you explore DSU's amazing pages.",
-      "Pick a category below to get started! 🚀",
-    ];
-
-    let currentMessageIndex = 0;
-    let currentCharIndex = 0;
-    let fullText = "";
-
-    const typeInterval = setInterval(() => {
-      if (currentMessageIndex < messages.length) {
-        if (currentCharIndex < messages[currentMessageIndex].length) {
-          fullText += messages[currentMessageIndex][currentCharIndex];
-          setDisplayedText(fullText);
-          currentCharIndex++;
-        } else {
-          fullText += "\n\n";
-          currentMessageIndex++;
-          currentCharIndex = 0;
-        }
-      } else {
-        setIsTyping(false);
-        clearInterval(typeInterval);
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      
+      // Check if click is outside chatbot and floating button
+      if (
+        chatbotRef.current &&
+        floatingButtonRef.current &&
+        !chatbotRef.current.contains(target) &&
+        !floatingButtonRef.current.contains(target)
+      ) {
+        setIsMinimized(true);
       }
-    }, 30);
+    };
 
-    return () => clearInterval(typeInterval);
-  }, [isTyping]);
-
-  const handleCategoryClick = (categoryName: string) => {
-    setSelectedCategory(categoryName);
-  };
+    if (!isMinimized) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [isMinimized]);
 
   const handlePageClick = (path: string) => {
     navigate(path);
-    // Don't minimize - keep chatbot open with dynamic suggestions
+    // History is automatically updated by the useEffect above
   };
 
   const handleMinimize = () => {
@@ -163,15 +139,18 @@ export function ReactNavigationChatbot() {
   };
 
   const getRelatedPages = () => {
-    if (!currentPageInfo) return [];
-    return allPages.filter((p) => currentPageInfo.relatedPages.includes(p.path));
+    if (!navigationHistory[0]) return [];
+    const currentInfo = navigationHistory[0];
+    return allPages.filter((p) => p.category === currentInfo.category && p.path !== currentInfo.path);
   };
+
+  const currentPageInfo = navigationHistory[0];
 
   return (
     <>
       {/* Floating Button - Only show when minimized */}
       {isMinimized && (
-        <div className="fixed bottom-6 right-6 z-40">
+        <div ref={floatingButtonRef} className="fixed bottom-6 right-6 z-40">
           <button
             onClick={handleExpand}
             className="group relative h-16 w-16 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 flex items-center justify-center text-white animate-bounce"
@@ -184,9 +163,12 @@ export function ReactNavigationChatbot() {
 
       {/* Chat Modal - Always visible unless minimized */}
       {!isMinimized && (
-        <div className="fixed bottom-6 right-6 z-50 w-96 max-h-[85vh] flex flex-col rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-black border border-slate-700/50 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
+        <div
+          ref={chatbotRef}
+          className="fixed bottom-6 right-6 z-50 w-96 max-h-[85vh] flex flex-col rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-black border border-slate-700/50 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300"
+        >
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 border-b border-slate-700/50 p-4 flex items-center justify-between sticky top-0">
+          <div className="bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 border-b border-slate-700/50 p-4 flex items-center justify-between sticky top-0 z-10">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg">
                 <Sparkles className="h-5 w-5 text-white" />
@@ -206,56 +188,95 @@ export function ReactNavigationChatbot() {
 
           {/* Content */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {/* Show current page info if on a page */}
-            {currentPageInfo && !selectedCategory && (
-              <div className="mb-4 p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30">
-                <div className="flex items-start gap-2 mb-3">
-                  <Lightbulb className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-xs font-semibold text-green-300 uppercase tracking-wide">You are viewing</p>
-                    <p className="text-sm font-bold text-white mt-1">{currentPageInfo.emoji} {currentPageInfo.title}</p>
+            {/* Show current page navigation with related pages */}
+            {currentPageInfo && (
+              <div>
+                {/* Current Page Info */}
+                <div className="mb-4 p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30">
+                  <div className="flex items-start gap-2">
+                    <MapPin className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <div className="flex-1">
+                      <p className="text-xs font-semibold text-green-300 uppercase tracking-wide">Current Page</p>
+                      <p className="text-sm font-bold text-white mt-1">{currentPageInfo.categoryEmoji} {currentPageInfo.title}</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Related pages suggestion */}
+                {/* Related Pages - Replace navigation */}
                 {getRelatedPages().length > 0 && (
-                  <div className="mt-3 pt-3 border-t border-green-500/20">
-                    <p className="text-xs text-green-300 font-semibold mb-2">Related pages:</p>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 px-2">
+                      <Lightbulb className="h-4 w-4 text-amber-400" />
+                      <p className="text-xs font-semibold text-amber-300 uppercase tracking-wide">Explore More</p>
+                    </div>
                     <div className="space-y-2">
                       {getRelatedPages().map((page) => (
                         <button
                           key={page.path}
                           onClick={() => handlePageClick(page.path)}
-                          className="w-full text-left p-2 rounded-lg bg-slate-700/40 hover:bg-green-500/30 transition-all duration-200 group"
+                          className="w-full p-3 rounded-xl bg-gradient-to-r from-slate-700/20 to-slate-800/20 border border-slate-600/30 hover:border-purple-500/50 hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300 text-left group"
                         >
-                          <p className="text-xs font-semibold text-green-300 group-hover:text-green-200">
-                            {page.title}
-                          </p>
-                          <p className="text-xs text-slate-400 mt-0.5">{page.description}</p>
+                          <div className="flex items-center justify-between">
+                            <div className="flex-1">
+                              <p className="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors">
+                                {page.title}
+                              </p>
+                              <p className="text-xs text-slate-400 mt-1">{page.description}</p>
+                            </div>
+                            <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-purple-400 transition-colors flex-shrink-0 ml-2" />
+                          </div>
                         </button>
                       ))}
                     </div>
                   </div>
                 )}
+
+                {/* Browse all categories */}
+                <div className="mt-6 pt-4 border-t border-slate-700/30">
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3 px-2">Browse All Categories</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {pageCategories.map((category) => (
+                      <button
+                        key={category.name}
+                        onClick={() => {
+                          // Show pages from this category
+                          const firstPage = category.pages[0];
+                          if (firstPage) {
+                            handlePageClick(firstPage.path);
+                          }
+                        }}
+                        className="p-3 rounded-lg bg-gradient-to-br from-slate-700/30 to-slate-800/30 border border-slate-600/50 hover:border-blue-500/50 hover:bg-gradient-to-br hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 text-left group"
+                      >
+                        <div className="text-xl mb-1">{category.emoji}</div>
+                        <p className="text-xs font-semibold text-white group-hover:text-blue-300 transition-colors">
+                          {category.name}
+                        </p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
 
-            {!selectedCategory ? (
-              <>
-                {/* Welcome Message */}
-                {displayedText && !currentPageInfo && (
-                  <div className="text-sm text-slate-300 whitespace-pre-wrap mb-4">
-                    {displayedText}
-                    {isTyping && <span className="animate-pulse">▋</span>}
-                  </div>
-                )}
+            {/* Empty state - show categories on first load */}
+            {!currentPageInfo && (
+              <div>
+                <div className="text-sm text-slate-300 mb-4">
+                  <p>Welcome to React Navigation Chatbot! 👋</p>
+                  <p className="mt-2">I'm here to help you explore DSU's amazing pages.</p>
+                  <p className="mt-2">Pick a category below to get started! 🚀</p>
+                </div>
 
-                {/* Categories Grid */}
                 <div className="grid grid-cols-2 gap-3">
                   {pageCategories.map((category) => (
                     <button
                       key={category.name}
-                      onClick={() => handleCategoryClick(category.name)}
+                      onClick={() => {
+                        const firstPage = category.pages[0];
+                        if (firstPage) {
+                          handlePageClick(firstPage.path);
+                        }
+                      }}
                       className="group p-3 rounded-xl bg-gradient-to-br from-slate-700/30 to-slate-800/30 border border-slate-600/50 hover:border-blue-500/50 hover:bg-gradient-to-br hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-300 text-left"
                     >
                       <div className="text-2xl mb-2">{category.emoji}</div>
@@ -266,51 +287,12 @@ export function ReactNavigationChatbot() {
                     </button>
                   ))}
                 </div>
-              </>
-            ) : (
-              <>
-                {/* Back Button & Category Title */}
-                <div className="flex items-center justify-between mb-2">
-                  <button
-                    onClick={() => setSelectedCategory(null)}
-                    className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1"
-                  >
-                    ← Back
-                  </button>
-                  <h4 className="text-sm font-semibold text-white">
-                    {pageCategories.find((c) => c.name === selectedCategory)?.emoji}{" "}
-                    {selectedCategory}
-                  </h4>
-                </div>
-
-                {/* Pages List */}
-                <div className="space-y-2">
-                  {pageCategories
-                    .find((c) => c.name === selectedCategory)
-                    ?.pages.map((page) => (
-                      <button
-                        key={page.path}
-                        onClick={() => handlePageClick(page.path)}
-                        className="w-full p-3 rounded-xl bg-gradient-to-r from-slate-700/20 to-slate-800/20 border border-slate-600/30 hover:border-purple-500/50 hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 transition-all duration-300 text-left group"
-                      >
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <p className="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors">
-                              {page.title}
-                            </p>
-                            <p className="text-xs text-slate-400 mt-1">{page.description}</p>
-                          </div>
-                          <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-purple-400 transition-colors flex-shrink-0" />
-                        </div>
-                      </button>
-                    ))}
-                </div>
-              </>
+              </div>
             )}
           </div>
 
           {/* Footer */}
-          <div className="border-t border-slate-700/50 bg-slate-900/50 p-3 text-center sticky bottom-0">
+          <div className="border-t border-slate-700/50 bg-slate-900/50 p-3 text-center sticky bottom-0 z-10">
             <p className="text-xs text-slate-500">
               Built with <span className="text-blue-400 font-semibold">React</span> &{" "}
               <span className="text-pink-400 font-semibold">Tailwind</span>
