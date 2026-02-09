@@ -1959,7 +1959,7 @@ export default function Navigation() {
           onClick={() => window.dispatchEvent(new CustomEvent('toggle-chatbot'))}
           className="fixed flex items-center justify-center rounded-full text-white shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110"
           style={{
-            bottom: "24px",
+            bottom: "12px",
             right: "24px",
             width: "56px",
             height: "56px",
