@@ -794,18 +794,6 @@ export default function Navigation() {
               }`}
             />
             <LanguageSwitcher />
-            <button
-              onClick={() => window.dispatchEvent(new CustomEvent('toggle-chatbot'))}
-              className={`flex items-center gap-1 rounded-full font-medium transition-all duration-200 hover:scale-105 bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 shadow-sm`}
-              style={{
-                fontSize: "clamp(0.65rem, 0.9vw, 0.75rem)",
-                padding: "0.3rem 0.65rem",
-              }}
-              title="Smart Assistant"
-            >
-              <MessageCircle className="w-3 h-3" />
-              <span>Ask AI</span>
-            </button>
           </div>
         </div>
       </div>
@@ -1365,22 +1353,6 @@ export default function Navigation() {
                 </nav>
 
               </div>
-            </div>
-
-            {/* Chatbot button - mobile */}
-            <div className="lg:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => window.dispatchEvent(new CustomEvent('toggle-chatbot'))}
-                className={`${
-                  theme === "light"
-                    ? "text-gray-700 hover:text-orange-600"
-                    : "text-white/80 hover:text-white"
-                } !bg-transparent`}
-              >
-                <MessageCircle className="w-5 h-5" />
-              </Button>
             </div>
 
             {/* Mobile menu button */}
@@ -1981,6 +1953,23 @@ export default function Navigation() {
         )}
 
         <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+
+        {/* Floating Chatbot FAB - bottom right */}
+        <button
+          onClick={() => window.dispatchEvent(new CustomEvent('toggle-chatbot'))}
+          className="fixed flex items-center justify-center rounded-full text-white shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110"
+          style={{
+            bottom: "24px",
+            right: "24px",
+            width: "56px",
+            height: "56px",
+            background: "linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%)",
+            zIndex: 10002,
+          }}
+          aria-label="Open Smart Assistant"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </button>
       </nav>
     </>
   );
