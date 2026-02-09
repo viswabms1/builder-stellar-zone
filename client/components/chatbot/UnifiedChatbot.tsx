@@ -202,6 +202,7 @@ export function UnifiedChatbot() {
               right: "clamp(1rem, 3vw, 1.5rem)",
               width: "clamp(300px, 90vw, 400px)",
               height: "clamp(350px, 75vh, 600px)",
+              zIndex: 10002,
             }}
           >
             {/* Header */}
