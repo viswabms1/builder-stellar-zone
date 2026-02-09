@@ -794,19 +794,6 @@ export default function Navigation() {
               }`}
             />
             <LanguageSwitcher />
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => window.dispatchEvent(new CustomEvent('toggle-chatbot'))}
-              className={`rounded-md hover:scale-105 transition-all p-1.5 ${
-                theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
-              title="Smart Assistant"
-            >
-              <MessageCircle className="w-4 h-4" />
-            </Button>
           </div>
         </div>
       </div>
@@ -1364,6 +1351,24 @@ export default function Navigation() {
                     );
                   })}
                 </nav>
+
+                {/* Smart Assistant button - desktop */}
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent('toggle-chatbot'))}
+                  className={`flex items-center gap-1.5 rounded-full font-medium transition-all duration-200 hover:scale-105 ${
+                    theme === "light"
+                      ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 shadow-md"
+                      : "bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 shadow-md"
+                  }`}
+                  style={{
+                    fontSize: "clamp(0.75rem, 1vw, 0.85rem)",
+                    padding: "0.35rem 0.75rem",
+                  }}
+                  title="Smart Assistant"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>Ask AI</span>
+                </button>
               </div>
             </div>
 
