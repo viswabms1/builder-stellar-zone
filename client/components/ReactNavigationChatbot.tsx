@@ -306,21 +306,7 @@ export function ReactNavigationChatbot() {
       ],
     },
     {
-      title: "School of Humanities & Social Sciences",
-      emoji: "📖",
-      path: "/academics/humanities-social-sciences",
-      departments: [
-        {
-          title: "Faculty & Programs",
-          programs: [
-            { title: "Overview", path: "/academics/humanities-social-sciences" },
-            { title: "Faculty", path: "/academics/humanities-social-sciences/faculty" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "School of Design",
+      title: "School of Design & Digital Trans-Media",
       emoji: "🎨",
       path: "/academics/design/bdesign",
       departments: [
@@ -334,7 +320,7 @@ export function ReactNavigationChatbot() {
       ],
     },
     {
-      title: "Journalism & Mass Communication",
+      title: "School of Arts, Design & Humanities",
       emoji: "📰",
       path: "/academics/journalism-mass-communication",
       departments: [
