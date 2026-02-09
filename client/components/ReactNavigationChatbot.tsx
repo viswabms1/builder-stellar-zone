@@ -545,19 +545,23 @@ export function ReactNavigationChatbot() {
             {/* Home View */}
             {navState.view === "home" && (
               <div className="space-y-3">
-                <button
-                  onClick={() => setNavState({ view: "academics" })}
-                  className="w-full p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 hover:border-blue-500/60 hover:bg-gradient-to-br hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 text-left group"
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-bold text-white">📚 Academics</p>
-                      <p className="text-xs text-slate-400 mt-1">All schools & departments</p>
-                    </div>
-                    <ArrowRight className="h-5 w-5 text-blue-400" />
+                {/* Academics Section */}
+                <div>
+                  <p className="text-xs font-semibold text-slate-400 uppercase px-2 mb-2">📚 Academics</p>
+                  <div className="space-y-1">
+                    {academicSchools.map((school) => (
+                      <button
+                        key={school.title}
+                        onClick={() => handleSchoolClick(school)}
+                        className="w-full p-2 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 transition-colors text-left group"
+                      >
+                        <p className="text-xs font-semibold text-white group-hover:text-purple-300">{school.emoji} {school.title}</p>
+                      </button>
+                    ))}
                   </div>
-                </button>
+                </div>
 
+                {/* Other Categories */}
                 {otherCategories.map((cat) => (
                   <div key={cat.name} className="space-y-2">
                     <p className="text-xs font-semibold text-slate-400 uppercase px-2">{cat.emoji} {cat.name}</p>
