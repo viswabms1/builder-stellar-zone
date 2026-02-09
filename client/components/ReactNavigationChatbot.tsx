@@ -591,7 +591,7 @@ export function ReactNavigationChatbot() {
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-sm font-semibold text-white group-hover:text-purple-300">{school.emoji} {school.title}</p>
-                        <p className="text-xs text-slate-400 mt-0.5">{school.departments.length} departments</p>
+                        <p className="text-xs text-slate-400 mt-0.5">Visit school page</p>
                       </div>
                       <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-purple-400" />
                     </div>
