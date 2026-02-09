@@ -160,13 +160,12 @@ export function UnifiedChatbot() {
 
   const chatbotContent = (
     <>
-      {/* Floating Action Button - Always rendered, controlled by opacity */}
+      {/* Floating Action Button - Always rendered, stays visible */}
       <motion.button
-        initial={{ scale: 0, opacity: 0 }}
+        initial={{ scale: 1, opacity: 1 }}
         animate={{
           scale: isOpen ? 0 : 1,
           opacity: isOpen ? 0 : 1,
-          pointerEvents: isOpen ? "none" : "auto"
         }}
         transition={{ duration: 0.2 }}
         onClick={() => setIsOpen(true)}
@@ -176,6 +175,7 @@ export function UnifiedChatbot() {
           right: "clamp(1rem, 3vw, 1.5rem)",
           width: "56px",
           height: "56px",
+          pointerEvents: isOpen ? "none" : "auto",
         }}
         aria-label="Open Smart Assistant"
       >
