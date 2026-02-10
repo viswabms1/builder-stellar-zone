@@ -223,6 +223,7 @@ You MUST respond with valid JSON only. No markdown, no code fences, no extra tex
 Examples:
 - "Take me to computer science" → {"type":"navigate","path":"/academics/engineering/computer-science","label":"Computer Science & Engineering","message":"Taking you to Computer Science & Engineering."}
 - "What are the fees?" → {"type":"navigate","path":"/admissions","label":"Admissions","message":"Taking you to the Admissions page where you can find all fee details."}
+- "Civil Engineering?" → {"type":"navigate","path":"/academics/engineering","label":"School of Engineering","message":"Civil Engineering is not currently offered at DSU. Here are our available engineering programs."}
 - "Tell me about placements" → {"type":"navigate","path":"/placements","label":"Placements","message":"Taking you to the Placements page with career and recruitment info."}
 - "How to apply?" → {"type":"navigate","path":"/admissions","label":"Admissions","message":"Taking you to the Admissions page for application details."}
 - "Campus life" → {"type":"navigate","path":"/campus-life","label":"Campus Life","message":"Taking you to Campus Life to explore student activities and facilities."}
