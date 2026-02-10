@@ -196,7 +196,7 @@ Examples of when to NAVIGATE:
 - "How are placements?" → Navigate to /placements
 - "Campus facilities" → Navigate to /campus-life
 - "MBA program" → Navigate to /academics/commerce-and-management/mba
-- "Contact details" → Navigate to /contact-complaints
+- "Contact details" → Navigate to /admissions
 - "Who are the leaders?" → Navigate to /about/leadership
 - "Library resources" → Navigate to /library
 - "Exam schedule" → Navigate to /examinations
