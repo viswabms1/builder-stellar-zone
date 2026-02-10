@@ -102,7 +102,7 @@ const SITE_MAP = [
   { path: "/library/e-resources", label: "E-Resources (Digital Library)", keywords: "e-resources digital library online journals" },
   { path: "/examinations", label: "Examinations", keywords: "examinations exams results timetable schedule" },
   { path: "/alumni", label: "Alumni", keywords: "alumni graduates network former students" },
-  { path: "/contact-complaints", label: "Contact Us", keywords: "contact phone email address location directions inquiry" },
+  { path: "/admissions", label: "Admissions - Contact & Inquiries", keywords: "contact phone email address inquiry reach out get in touch" },
   { path: "/events", label: "Events", keywords: "events activities happenings" },
   { path: "/careers", label: "Careers", keywords: "careers jobs openings vacancies recruitment" },
 ];
