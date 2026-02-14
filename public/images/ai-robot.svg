@@ -9,7 +9,7 @@
   <rect x="88" y="118" width="24" height="12" rx="4" fill="#E0E0E0"/>
   <!-- AI Badge -->
   <rect x="82" y="155" width="36" height="28" rx="5" fill="#5B5B6E"/>
-  <text x="100" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">AI</text>
+  <text x="100" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white">AI</text>
   <!-- Left Arm -->
   <line x1="58" y1="150" x2="30" y2="170" stroke="#E0E0E0" stroke-width="6" stroke-linecap="round"/>
   <circle cx="27" cy="173" r="8" fill="#F0F0F0" stroke="#E0E0E0" stroke-width="2"/>
