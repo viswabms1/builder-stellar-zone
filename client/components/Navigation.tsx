@@ -1025,7 +1025,7 @@ export default function Navigation() {
                           <div
                             onMouseEnter={handleAcademicsMenuEnter}
                             onMouseLeave={handleAcademicsMenuLeave}
-                            className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                            className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-3xl rounded-2xl shadow-2xl transition-all duration-300 py-4 px-4 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
                               academicsMenuOpen
                                 ? "opacity-100 visible pointer-events-auto"
                                 : "opacity-0 invisible pointer-events-none"
@@ -1043,7 +1043,7 @@ export default function Navigation() {
                             <Link
                               to="/academics"
                               onClick={() => setAcademicsMenuOpen(false)}
-                              className={`w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm ${
+                              className={`w-full block rounded-xl p-3 mb-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm ${
                                 theme === "light"
                                   ? "bg-gradient-to-r from-blue-100 to-blue-50 border border-blue-200/50 text-blue-900 hover:bg-blue-100 hover:text-brand-blue"
                                   : "bg-gradient-to-r from-brand-blue/30 to-brand-blue/10 border border-brand-blue/30 text-brand-blue hover:bg-brand-blue/40 hover:text-brand-blue"
@@ -1053,7 +1053,7 @@ export default function Navigation() {
                               <ArrowRight className="w-4 h-4 inline ml-2" />
                             </Link>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-3 gap-3">
                               {academicsSubmenus.schools.map(
                                 (school, schoolIdx) => {
                                   const cardColors = [
@@ -1100,14 +1100,14 @@ export default function Navigation() {
                                   return (
                                     <div
                                       key={school.name}
-                                      className={`${colors.bg} ${colors.border} border rounded-xl p-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group`}
+                                      className={`${colors.bg} ${colors.border} border rounded-lg p-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group`}
                                     >
                                       {school.external ? (
                                         <a
                                           href={school.href}
                                           target="_blank"
                                           rel="noreferrer"
-                                          className={`block font-bold text-sm mb-2 transition-colors ${
+                                          className={`block font-bold text-xs mb-1.5 transition-colors ${
                                             theme === "light"
                                               ? "text-gray-900 group-hover:text-brand-blue"
                                               : "text-white group-hover:text-white/80"
@@ -1121,7 +1121,7 @@ export default function Navigation() {
                                           onClick={() =>
                                             setAcademicsMenuOpen(false)
                                           }
-                                          className={`block font-bold text-sm mb-2 transition-colors ${
+                                          className={`block font-bold text-xs mb-1.5 transition-colors ${
                                             theme === "light"
                                               ? "text-gray-900 group-hover:text-brand-blue"
                                               : "text-white group-hover:text-white/80"
@@ -1132,7 +1132,7 @@ export default function Navigation() {
                                       )}
 
                                       {(school as any).hasSubGroups ? (
-                                        <div className="space-y-2">
+                                        <div className="space-y-1">
                                           {(school as any).subGroups.map(
                                             (group: any) => {
                                               const isExpanded =
@@ -1148,7 +1148,7 @@ export default function Navigation() {
                                                         group.name,
                                                       )
                                                     }
-                                                    className={`text-xs font-semibold flex items-center gap-2 transition-all w-full p-2 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
+                                                    className={`text-xs font-semibold flex items-center gap-1.5 transition-all w-full p-1.5 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
                                                       theme === "light"
                                                         ? "text-gray-700 hover:text-brand-blue"
                                                         : "text-white/80 hover:text-white"
@@ -1160,7 +1160,7 @@ export default function Navigation() {
                                                     {group.name}
                                                   </button>
                                                   {isExpanded && (
-                                                    <div className="space-y-1 ml-2 pl-2 border-l border-white/20">
+                                                    <div className="space-y-0.5 ml-2 pl-2 border-l border-white/20">
                                                       {group.departments.map(
                                                         (dept: any) => (
                                                           <Link
@@ -1171,7 +1171,7 @@ export default function Navigation() {
                                                                 false,
                                                               )
                                                             }
-                                                            className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
+                                                            className={`block text-xs py-0.5 px-1.5 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
                                                               theme === "light"
                                                                 ? "text-gray-700 hover:text-orange-700"
                                                                 : "text-white/70 hover:text-white"
@@ -1190,7 +1190,7 @@ export default function Navigation() {
                                         </div>
                                       ) : (
                                         school.departments.length > 0 && (
-                                          <div className="space-y-2">
+                                          <div className="space-y-0.5">
                                             {school.departments.map((dept) => (
                                               <Link
                                                 key={dept.name}
@@ -1198,7 +1198,7 @@ export default function Navigation() {
                                                 onClick={() =>
                                                   setAcademicsMenuOpen(false)
                                                 }
-                                                className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
+                                                className={`block text-xs py-0.5 px-1.5 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
                                                   theme === "light"
                                                     ? "text-gray-700 hover:text-orange-700"
                                                     : "text-white/70 hover:text-white"
