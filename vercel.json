@@ -21,6 +21,34 @@
       "destination": "/api/chat/health"
     },
     {
+      "source": "/api/page/:slug",
+      "destination": "/api/page/[slug]"
+    },
+    {
+      "source": "/api/pages",
+      "destination": "/api/pages"
+    },
+    {
+      "source": "/api/strapi/announcements",
+      "destination": "/api/strapi/announcements"
+    },
+    {
+      "source": "/api/strapi/staffs",
+      "destination": "/api/strapi/staffs"
+    },
+    {
+      "source": "/api/strapi/image",
+      "destination": "/api/strapi/image"
+    },
+    {
+      "source": "/api/strapi/health",
+      "destination": "/api/strapi/health"
+    },
+    {
+      "source": "/api/strapi/download-pdf",
+      "destination": "/api/strapi/download-pdf"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
