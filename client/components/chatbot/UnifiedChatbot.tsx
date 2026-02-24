@@ -105,11 +105,11 @@ export function UnifiedChatbot() {
         body: JSON.stringify({ message: messageText, conversationHistory }),
       });
 
-      const data: SmartChatResponse = await response.json();
-
       if (!response.ok) {
-        throw new Error(data.message || "Failed to get response");
+        throw new Error(`Server error: ${response.status} ${response.statusText}`);
       }
+
+      const data: SmartChatResponse = await response.json();
 
       const assistantMsg: ChatMessageData = {
         id: `msg_${Date.now()}_resp`,
