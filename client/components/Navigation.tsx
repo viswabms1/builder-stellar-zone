@@ -1025,7 +1025,7 @@ export default function Navigation() {
                           <div
                             onMouseEnter={handleAcademicsMenuEnter}
                             onMouseLeave={handleAcademicsMenuLeave}
-                            className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-2xl rounded-lg shadow-xl transition-all duration-300 py-2 px-2.5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                            className={`absolute left-0 top-full mt-0 w-auto min-w-max rounded-lg shadow-xl transition-all duration-300 py-1.5 px-1.5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
                               academicsMenuOpen
                                 ? "opacity-100 visible pointer-events-auto"
                                 : "opacity-0 invisible pointer-events-none"
@@ -1037,23 +1037,10 @@ export default function Navigation() {
                             style={{
                               scrollbarWidth: "thin",
                               scrollbarColor: "rgba(0, 136, 255, 0.5) rgba(0, 136, 255, 0.1)",
+                              maxWidth: "calc(100vw - 40px)",
                             }}
                           >
-                            {/* Academics Overview Link */}
-                            <Link
-                              to="/academics"
-                              onClick={() => setAcademicsMenuOpen(false)}
-                              className={`w-full block rounded-lg p-2 mb-2 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 font-semibold text-xs ${
-                                theme === "light"
-                                  ? "bg-gradient-to-r from-blue-100 to-blue-50 border border-blue-200/50 text-blue-900 hover:bg-blue-100 hover:text-brand-blue"
-                                  : "bg-gradient-to-r from-brand-blue/30 to-brand-blue/10 border border-brand-blue/30 text-brand-blue hover:bg-brand-blue/40 hover:text-brand-blue"
-                              }`}
-                            >
-                              Explore All Academics
-                              <ArrowRight className="w-3 h-3 inline ml-1" />
-                            </Link>
-
-                            <div className="grid grid-cols-3 gap-2">
+                            <div className="grid grid-cols-4 gap-1">
                               {academicsSubmenus.schools.map(
                                 (school, schoolIdx) => {
                                   const cardColors = [
@@ -1100,14 +1087,14 @@ export default function Navigation() {
                                   return (
                                     <div
                                       key={school.name}
-                                      className={`${colors.bg} ${colors.border} border rounded-md p-1.5 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 group`}
+                                      className={`${colors.bg} ${colors.border} border rounded p-1 transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 group`}
                                     >
                                       {school.external ? (
                                         <a
                                           href={school.href}
                                           target="_blank"
                                           rel="noreferrer"
-                                          className={`block font-bold text-xs mb-1 transition-colors line-clamp-1 ${
+                                          className={`block font-bold text-xs mb-0.5 transition-colors line-clamp-2 leading-tight ${
                                             theme === "light"
                                               ? "text-gray-900 group-hover:text-brand-blue"
                                               : "text-white group-hover:text-white/80"
@@ -1121,7 +1108,7 @@ export default function Navigation() {
                                           onClick={() =>
                                             setAcademicsMenuOpen(false)
                                           }
-                                          className={`block font-bold text-xs mb-1 transition-colors line-clamp-1 ${
+                                          className={`block font-bold text-xs mb-0.5 transition-colors line-clamp-2 leading-tight ${
                                             theme === "light"
                                               ? "text-gray-900 group-hover:text-brand-blue"
                                               : "text-white group-hover:text-white/80"
@@ -1132,7 +1119,7 @@ export default function Navigation() {
                                       )}
 
                                       {(school as any).hasSubGroups ? (
-                                        <div className="space-y-0.5">
+                                        <div className="space-y-0">
                                           {(school as any).subGroups.map(
                                             (group: any) => {
                                               const isExpanded =
@@ -1148,19 +1135,19 @@ export default function Navigation() {
                                                         group.name,
                                                       )
                                                     }
-                                                    className={`text-xs font-semibold flex items-center gap-1 transition-all w-full p-1 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
+                                                    className={`text-xs font-semibold flex items-center gap-0.5 transition-all w-full p-0.5 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
                                                       theme === "light"
                                                         ? "text-gray-700 hover:text-brand-blue"
                                                         : "text-white/80 hover:text-white"
                                                     }`}
                                                   >
                                                     <ChevronDown
-                                                      className={`w-3 h-3 transition-transform flex-shrink-0 ${isExpanded ? "rotate-0" : "-rotate-90"}`}
+                                                      className={`w-2.5 h-2.5 transition-transform flex-shrink-0 ${isExpanded ? "rotate-0" : "-rotate-90"}`}
                                                     />
-                                                    <span className="text-xs truncate">{group.name}</span>
+                                                    <span className="text-xs truncate text-left">{group.name}</span>
                                                   </button>
                                                   {isExpanded && (
-                                                    <div className="space-y-0 ml-1 pl-2 border-l border-white/20">
+                                                    <div className="space-y-0 ml-0.5 pl-1.5 border-l border-white/20">
                                                       {group.departments.map(
                                                         (dept: any) => (
                                                           <Link
@@ -1171,7 +1158,7 @@ export default function Navigation() {
                                                                 false,
                                                               )
                                                             }
-                                                            className={`block text-xs py-0.5 px-1 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate ${
+                                                            className={`block text-xs py-0.5 px-0.5 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate text-left ${
                                                               theme === "light"
                                                                 ? "text-gray-700 hover:text-orange-700"
                                                                 : "text-white/70 hover:text-white"
@@ -1198,7 +1185,7 @@ export default function Navigation() {
                                                 onClick={() =>
                                                   setAcademicsMenuOpen(false)
                                                 }
-                                                className={`block text-xs py-0.5 px-1 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate ${
+                                                className={`block text-xs py-0.5 px-0.5 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate text-left ${
                                                   theme === "light"
                                                     ? "text-gray-700 hover:text-orange-700"
                                                     : "text-white/70 hover:text-white"
