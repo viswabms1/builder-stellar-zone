@@ -1025,7 +1025,7 @@ export default function Navigation() {
                           <div
                             onMouseEnter={handleAcademicsMenuEnter}
                             onMouseLeave={handleAcademicsMenuLeave}
-                            className={`absolute left-0 top-full mt-0 w-auto min-w-max rounded-lg shadow-xl transition-all duration-300 py-1.5 px-1.5 max-h-[700px] overflow-y-auto overflow-x-hidden backdrop-blur-sm z-[9999] ${
+                            className={`absolute left-0 top-full mt-0 w-auto min-w-max rounded-lg shadow-xl transition-all duration-300 py-1 px-1 max-h-screen overflow-y-auto overflow-x-hidden backdrop-blur-sm z-[9999] ${
                               academicsMenuOpen
                                 ? "opacity-100 visible pointer-events-auto"
                                 : "opacity-0 invisible pointer-events-none"
@@ -1040,7 +1040,7 @@ export default function Navigation() {
                               maxWidth: "calc(100vw - 40px)",
                             }}
                           >
-                            <div className="grid grid-cols-4 gap-1.5">
+                            <div className="grid grid-cols-4 gap-1">
                               {academicsSubmenus.schools.map(
                                 (school, schoolIdx) => {
                                   const cardColors = [
@@ -1087,14 +1087,14 @@ export default function Navigation() {
                                   return (
                                     <div
                                       key={school.name}
-                                      className={`${colors.bg} ${colors.border} border rounded p-1.5 transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 group`}
+                                      className={`${colors.bg} ${colors.border} border rounded p-1 transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 group`}
                                     >
                                       {school.external ? (
                                         <a
                                           href={school.href}
                                           target="_blank"
                                           rel="noreferrer"
-                                          className={`block font-bold text-xs mb-1 transition-colors line-clamp-2 leading-tight ${
+                                          className={`block font-bold text-xs mb-0.5 transition-colors line-clamp-2 leading-tight ${
                                             theme === "light"
                                               ? "text-gray-900 group-hover:text-brand-blue"
                                               : "text-white group-hover:text-white/80"
@@ -1108,7 +1108,7 @@ export default function Navigation() {
                                           onClick={() =>
                                             setAcademicsMenuOpen(false)
                                           }
-                                          className={`block font-bold text-xs mb-1 transition-colors line-clamp-2 leading-tight ${
+                                          className={`block font-bold text-xs mb-0.5 transition-colors line-clamp-2 leading-tight ${
                                             theme === "light"
                                               ? "text-gray-900 group-hover:text-brand-blue"
                                               : "text-white group-hover:text-white/80"
@@ -1119,7 +1119,7 @@ export default function Navigation() {
                                       )}
 
                                       {(school as any).hasSubGroups ? (
-                                        <div className="space-y-0">
+                                        <div className="space-y-0.5">
                                           {(school as any).subGroups.map(
                                             (group: any) => {
                                               const isExpanded =
@@ -1135,7 +1135,7 @@ export default function Navigation() {
                                                         group.name,
                                                       )
                                                     }
-                                                    className={`text-xs font-semibold flex items-center gap-1 transition-all w-full p-1 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
+                                                    className={`text-xs font-semibold flex items-center gap-0.5 transition-all w-full p-0.5 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
                                                       theme === "light"
                                                         ? "text-gray-700 hover:text-brand-blue"
                                                         : "text-white/80 hover:text-white"
@@ -1158,7 +1158,7 @@ export default function Navigation() {
                                                                 false,
                                                               )
                                                             }
-                                                            className={`block text-xs py-0.5 px-1 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate text-left ${
+                                                            className={`block text-xs py-0.5 px-0.5 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate text-left ${
                                                               theme === "light"
                                                                 ? "text-gray-700 hover:text-orange-700"
                                                                 : "text-white/70 hover:text-white"
@@ -1177,7 +1177,7 @@ export default function Navigation() {
                                         </div>
                                       ) : (
                                         school.departments.length > 0 && (
-                                          <div className="space-y-0">
+                                          <div className="space-y-0.5">
                                             {school.departments.map((dept) => (
                                               <Link
                                                 key={dept.name}
@@ -1185,7 +1185,7 @@ export default function Navigation() {
                                                 onClick={() =>
                                                   setAcademicsMenuOpen(false)
                                                 }
-                                                className={`block text-xs py-0.5 px-1 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate text-left ${
+                                                className={`block text-xs py-0.5 px-0.5 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate text-left ${
                                                   theme === "light"
                                                     ? "text-gray-700 hover:text-orange-700"
                                                     : "text-white/70 hover:text-white"
