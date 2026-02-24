@@ -175,7 +175,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({ error: "Message is required" });
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = process.env.OPENAI_API_KEY || "REPLACE_ENV.OPENAI_API_KEY";
     if (!apiKey) {
       return res.status(500).json({
         success: false,
