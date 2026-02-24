@@ -1021,11 +1021,11 @@ export default function Navigation() {
                             )}
                           </button>
 
-                          {/* Academics Mega Menu - Modern Card-Based Layout */}
+                          {/* Academics Mega Menu */}
                           <div
                             onMouseEnter={handleAcademicsMenuEnter}
                             onMouseLeave={handleAcademicsMenuLeave}
-                            className={`absolute left-0 top-full mt-0 w-auto min-w-max rounded-lg shadow-xl transition-all duration-300 py-1 px-1 max-h-screen overflow-y-auto overflow-x-hidden backdrop-blur-sm z-[9999] ${
+                            className={`absolute left-0 top-full mt-0 rounded-lg shadow-xl transition-all duration-300 p-2 backdrop-blur-sm z-[9999] ${
                               academicsMenuOpen
                                 ? "opacity-100 visible pointer-events-auto"
                                 : "opacity-0 invisible pointer-events-none"
@@ -1034,162 +1034,89 @@ export default function Navigation() {
                                 ? "bg-white/95 border border-brand-blue/30"
                                 : "bg-slate-800/95 border border-brand-blue/30"
                             }`}
-                            style={{
-                              scrollbarWidth: "thin",
-                              scrollbarColor: "rgba(0, 136, 255, 0.5) rgba(0, 136, 255, 0.1)",
-                              maxWidth: "calc(100vw - 40px)",
-                            }}
+                            style={{ width: "720px" }}
                           >
-                            <div className="grid grid-cols-4 gap-1">
+                            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "6px" }}>
                               {academicsSubmenus.schools.map(
                                 (school, schoolIdx) => {
                                   const cardColors = [
-                                    {
-                                      bg:
-                                        theme === "light"
-                                          ? "bg-blue-50"
-                                          : "bg-brand-blue/20",
-                                      border:
-                                        "border-blue-200/50 dark:border-brand-blue/30",
-                                      text: "text-blue-900 dark:text-white",
-                                    },
-                                    {
-                                      bg:
-                                        theme === "light"
-                                          ? "bg-purple-50"
-                                          : "bg-brand-magenta/20",
-                                      border:
-                                        "border-purple-200/50 dark:border-brand-magenta/30",
-                                      text: "text-purple-900 dark:text-white",
-                                    },
-                                    {
-                                      bg:
-                                        theme === "light"
-                                          ? "bg-orange-50"
-                                          : "bg-brand-orange/20",
-                                      border:
-                                        "border-orange-200/50 dark:border-brand-orange/30",
-                                      text: "text-orange-900 dark:text-white",
-                                    },
-                                    {
-                                      bg:
-                                        theme === "light"
-                                          ? "bg-indigo-50"
-                                          : "bg-blue-600/20",
-                                      border:
-                                        "border-indigo-200/50 dark:border-blue-600/30",
-                                      text: "text-indigo-900 dark:text-white",
-                                    },
+                                    { bg: theme === "light" ? "#EFF6FF" : "rgba(0,136,255,0.15)", border: theme === "light" ? "#BFDBFE" : "rgba(0,136,255,0.3)" },
+                                    { bg: theme === "light" ? "#F5F3FF" : "rgba(139,92,246,0.15)", border: theme === "light" ? "#DDD6FE" : "rgba(139,92,246,0.3)" },
+                                    { bg: theme === "light" ? "#FFF7ED" : "rgba(249,115,22,0.15)", border: theme === "light" ? "#FED7AA" : "rgba(249,115,22,0.3)" },
+                                    { bg: theme === "light" ? "#F0FDF4" : "rgba(34,197,94,0.15)", border: theme === "light" ? "#BBF7D0" : "rgba(34,197,94,0.3)" },
+                                    { bg: theme === "light" ? "#FFF1F2" : "rgba(244,63,94,0.15)", border: theme === "light" ? "#FECDD3" : "rgba(244,63,94,0.3)" },
                                   ];
-                                  const colors =
-                                    cardColors[schoolIdx % cardColors.length];
+                                  const c = cardColors[schoolIdx % cardColors.length];
 
                                   return (
                                     <div
                                       key={school.name}
-                                      className={`${colors.bg} ${colors.border} border rounded p-1 transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 group`}
+                                      style={{ background: c.bg, border: `1px solid ${c.border}`, borderRadius: "6px", padding: "6px" }}
                                     >
                                       {school.external ? (
                                         <a
                                           href={school.href}
                                           target="_blank"
                                           rel="noreferrer"
-                                          className={`block font-bold text-xs mb-0.5 transition-colors line-clamp-2 leading-tight ${
-                                            theme === "light"
-                                              ? "text-gray-900 group-hover:text-brand-blue"
-                                              : "text-white group-hover:text-white/80"
-                                          }`}
+                                          className={`block font-bold leading-tight mb-1 transition-colors hover:underline ${theme === "light" ? "text-gray-900 hover:text-brand-blue" : "text-white hover:text-white/80"}`}
+                                          style={{ fontSize: "11px" }}
                                         >
                                           {school.name}
                                         </a>
                                       ) : (
                                         <Link
                                           to={school.href}
-                                          onClick={() =>
-                                            setAcademicsMenuOpen(false)
-                                          }
-                                          className={`block font-bold text-xs mb-0.5 transition-colors line-clamp-2 leading-tight ${
-                                            theme === "light"
-                                              ? "text-gray-900 group-hover:text-brand-blue"
-                                              : "text-white group-hover:text-white/80"
-                                          }`}
+                                          onClick={() => setAcademicsMenuOpen(false)}
+                                          className={`block font-bold leading-tight mb-1 transition-colors hover:underline ${theme === "light" ? "text-gray-900 hover:text-brand-blue" : "text-white hover:text-white/80"}`}
+                                          style={{ fontSize: "11px" }}
                                         >
                                           {school.name}
                                         </Link>
                                       )}
 
                                       {(school as any).hasSubGroups ? (
-                                        <div className="space-y-0.5">
-                                          {(school as any).subGroups.map(
-                                            (group: any) => {
-                                              const isExpanded =
-                                                expandedSubGroups.has(
-                                                  `${school.name}-${group.name}`,
-                                                );
-                                              return (
-                                                <div key={group.name}>
-                                                  <button
-                                                    onClick={() =>
-                                                      toggleSubGroup(
-                                                        school.name,
-                                                        group.name,
-                                                      )
-                                                    }
-                                                    className={`text-xs font-semibold flex items-center gap-0.5 transition-all w-full p-0.5 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
-                                                      theme === "light"
-                                                        ? "text-gray-700 hover:text-brand-blue"
-                                                        : "text-white/80 hover:text-white"
-                                                    }`}
-                                                  >
-                                                    <ChevronDown
-                                                      className={`w-2.5 h-2.5 transition-transform flex-shrink-0 ${isExpanded ? "rotate-0" : "-rotate-90"}`}
-                                                    />
-                                                    <span className="text-xs truncate text-left">{group.name}</span>
-                                                  </button>
-                                                  {isExpanded && (
-                                                    <div className="space-y-0 ml-0.5 pl-1.5 border-l border-white/20">
-                                                      {group.departments.map(
-                                                        (dept: any) => (
-                                                          <Link
-                                                            key={dept.name}
-                                                            to={dept.href}
-                                                            onClick={() =>
-                                                              setAcademicsMenuOpen(
-                                                                false,
-                                                              )
-                                                            }
-                                                            className={`block text-xs py-0.5 px-0.5 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate text-left ${
-                                                              theme === "light"
-                                                                ? "text-gray-700 hover:text-orange-700"
-                                                                : "text-white/70 hover:text-white"
-                                                            }`}
-                                                          >
-                                                            {dept.name}
-                                                          </Link>
-                                                        ),
-                                                      )}
-                                                    </div>
-                                                  )}
-                                                </div>
-                                              );
-                                            },
-                                          )}
+                                        <div>
+                                          {(school as any).subGroups.map((group: any) => {
+                                            const isExpanded = expandedSubGroups.has(`${school.name}-${group.name}`);
+                                            return (
+                                              <div key={group.name}>
+                                                <button
+                                                  onClick={() => toggleSubGroup(school.name, group.name)}
+                                                  className={`flex items-center gap-1 w-full rounded transition-colors hover:underline ${theme === "light" ? "text-gray-600 hover:text-brand-blue" : "text-white/70 hover:text-white"}`}
+                                                  style={{ fontSize: "10px", fontWeight: 600, padding: "2px 0" }}
+                                                >
+                                                  <ChevronDown className={`w-2.5 h-2.5 flex-shrink-0 transition-transform ${isExpanded ? "rotate-0" : "-rotate-90"}`} />
+                                                  {group.name}
+                                                </button>
+                                                {isExpanded && (
+                                                  <div className={`pl-3 border-l ${theme === "light" ? "border-gray-200" : "border-white/20"}`}>
+                                                    {group.departments.map((dept: any) => (
+                                                      <Link
+                                                        key={dept.name}
+                                                        to={dept.href}
+                                                        onClick={() => setAcademicsMenuOpen(false)}
+                                                        className={`block truncate transition-colors hover:underline ${theme === "light" ? "text-gray-600 hover:text-orange-700" : "text-white/60 hover:text-white"}`}
+                                                        style={{ fontSize: "10px", padding: "1px 0" }}
+                                                      >
+                                                        {dept.name}
+                                                      </Link>
+                                                    ))}
+                                                  </div>
+                                                )}
+                                              </div>
+                                            );
+                                          })}
                                         </div>
                                       ) : (
                                         school.departments.length > 0 && (
-                                          <div className="space-y-0.5">
+                                          <div>
                                             {school.departments.map((dept) => (
                                               <Link
                                                 key={dept.name}
                                                 to={dept.href}
-                                                onClick={() =>
-                                                  setAcademicsMenuOpen(false)
-                                                }
-                                                className={`block text-xs py-0.5 px-0.5 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 truncate text-left ${
-                                                  theme === "light"
-                                                    ? "text-gray-700 hover:text-orange-700"
-                                                    : "text-white/70 hover:text-white"
-                                                }`}
+                                                onClick={() => setAcademicsMenuOpen(false)}
+                                                className={`block truncate transition-colors hover:underline ${theme === "light" ? "text-gray-600 hover:text-orange-700" : "text-white/60 hover:text-white"}`}
+                                                style={{ fontSize: "10px", padding: "1px 0" }}
                                               >
                                                 {dept.name}
                                               </Link>
