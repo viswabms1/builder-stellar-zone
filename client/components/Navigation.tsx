@@ -1025,7 +1025,7 @@ export default function Navigation() {
                           <div
                             onMouseEnter={handleAcademicsMenuEnter}
                             onMouseLeave={handleAcademicsMenuLeave}
-                            className={`absolute left-0 top-full mt-0 rounded-lg shadow-xl transition-all duration-300 p-2 backdrop-blur-sm z-[9999] ${
+                            className={`absolute left-0 top-full mt-1 rounded-lg shadow-xl transition-all duration-300 p-3 backdrop-blur-sm z-[9999] ${
                               academicsMenuOpen
                                 ? "opacity-100 visible pointer-events-auto"
                                 : "opacity-0 invisible pointer-events-none"
@@ -1034,9 +1034,9 @@ export default function Navigation() {
                                 ? "bg-white/95 border border-brand-blue/30"
                                 : "bg-slate-800/95 border border-brand-blue/30"
                             }`}
-                            style={{ width: "720px" }}
+                            style={{ width: "900px" }}
                           >
-                            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "6px" }}>
+                            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "8px" }}>
                               {academicsSubmenus.schools.map(
                                 (school, schoolIdx) => {
                                   const cardColors = [
@@ -1051,15 +1051,15 @@ export default function Navigation() {
                                   return (
                                     <div
                                       key={school.name}
-                                      style={{ background: c.bg, border: `1px solid ${c.border}`, borderRadius: "6px", padding: "6px" }}
+                                      style={{ background: c.bg, border: `1px solid ${c.border}`, borderRadius: "8px", padding: "10px" }}
                                     >
                                       {school.external ? (
                                         <a
                                           href={school.href}
                                           target="_blank"
                                           rel="noreferrer"
-                                          className={`block font-bold leading-tight mb-1 transition-colors hover:underline ${theme === "light" ? "text-gray-900 hover:text-brand-blue" : "text-white hover:text-white/80"}`}
-                                          style={{ fontSize: "11px" }}
+                                          className={`block font-bold leading-tight mb-1.5 transition-colors hover:underline ${theme === "light" ? "text-gray-900 hover:text-brand-blue" : "text-white hover:text-white/80"}`}
+                                          style={{ fontSize: "12px" }}
                                         >
                                           {school.name}
                                         </a>
@@ -1067,8 +1067,8 @@ export default function Navigation() {
                                         <Link
                                           to={school.href}
                                           onClick={() => setAcademicsMenuOpen(false)}
-                                          className={`block font-bold leading-tight mb-1 transition-colors hover:underline ${theme === "light" ? "text-gray-900 hover:text-brand-blue" : "text-white hover:text-white/80"}`}
-                                          style={{ fontSize: "11px" }}
+                                          className={`block font-bold leading-tight mb-1.5 transition-colors hover:underline ${theme === "light" ? "text-gray-900 hover:text-brand-blue" : "text-white hover:text-white/80"}`}
+                                          style={{ fontSize: "12px" }}
                                         >
                                           {school.name}
                                         </Link>
@@ -1083,7 +1083,7 @@ export default function Navigation() {
                                                 <button
                                                   onClick={() => toggleSubGroup(school.name, group.name)}
                                                   className={`flex items-center gap-1 w-full rounded transition-colors hover:underline ${theme === "light" ? "text-gray-600 hover:text-brand-blue" : "text-white/70 hover:text-white"}`}
-                                                  style={{ fontSize: "10px", fontWeight: 600, padding: "2px 0" }}
+                                                  style={{ fontSize: "11px", fontWeight: 600, padding: "3px 0" }}
                                                 >
                                                   <ChevronDown className={`w-2.5 h-2.5 flex-shrink-0 transition-transform ${isExpanded ? "rotate-0" : "-rotate-90"}`} />
                                                   {group.name}
@@ -1096,7 +1096,7 @@ export default function Navigation() {
                                                         to={dept.href}
                                                         onClick={() => setAcademicsMenuOpen(false)}
                                                         className={`block truncate transition-colors hover:underline ${theme === "light" ? "text-gray-600 hover:text-orange-700" : "text-white/60 hover:text-white"}`}
-                                                        style={{ fontSize: "10px", padding: "1px 0" }}
+                                                        style={{ fontSize: "11px", padding: "2px 0" }}
                                                       >
                                                         {dept.name}
                                                       </Link>
@@ -1116,7 +1116,7 @@ export default function Navigation() {
                                                 to={dept.href}
                                                 onClick={() => setAcademicsMenuOpen(false)}
                                                 className={`block truncate transition-colors hover:underline ${theme === "light" ? "text-gray-600 hover:text-orange-700" : "text-white/60 hover:text-white"}`}
-                                                style={{ fontSize: "10px", padding: "1px 0" }}
+                                                style={{ fontSize: "11px", padding: "2px 0" }}
                                               >
                                                 {dept.name}
                                               </Link>
