@@ -12,7 +12,7 @@
   force = true
   from = "/api/*"
   status = 200
-  to = "/.netlify/functions/api/:splat"
+  to = "/.netlify/functions/api"
 
 # SPA fallback: Route all unmatched requests to index.html for client-side routing
 [[redirects]]
