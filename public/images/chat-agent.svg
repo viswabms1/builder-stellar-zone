@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" fill="none">
+  <!-- Hair (back) -->
+  <ellipse cx="100" cy="72" rx="56" ry="58" fill="#2C1810"/>
+  
+  <!-- Face -->
+  <ellipse cx="100" cy="78" rx="44" ry="46" fill="#F5D0A9"/>
+  
+  <!-- Hair (front/bangs) -->
+  <path d="M56 60 Q58 30 100 22 Q142 30 144 60 Q142 50 130 45 Q118 38 100 38 Q82 38 70 45 Q58 50 56 60Z" fill="#2C1810"/>
+  <!-- Side hair left -->
+  <path d="M52 65 Q48 80 50 110 Q52 115 56 110 Q54 85 58 70Z" fill="#2C1810"/>
+  <!-- Side hair right -->
+  <path d="M148 65 Q152 80 150 110 Q148 115 144 110 Q146 85 142 70Z" fill="#2C1810"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="82" cy="80" rx="6" ry="7" fill="#3D3D4D"/>
+  <ellipse cx="118" cy="80" rx="6" ry="7" fill="#3D3D4D"/>
+  <!-- Eye shine -->
+  <circle cx="84" cy="78" r="2" fill="white"/>
+  <circle cx="120" cy="78" r="2" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path d="M72 70 Q78 65 90 68" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M128 70 Q122 65 110 68" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Smile -->
+  <path d="M88 98 Q100 110 112 98" stroke="#D4845A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Blush -->
+  <ellipse cx="72" cy="95" rx="8" ry="5" fill="#F5B0A0" opacity="0.5"/>
+  <ellipse cx="128" cy="95" rx="8" ry="5" fill="#F5B0A0" opacity="0.5"/>
+  
+  <!-- Headset band -->
+  <path d="M48 70 Q48 28 100 22 Q152 28 152 70" stroke="#4A4A5A" stroke-width="5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Headset ear pieces -->
+  <rect x="40" y="65" width="16" height="24" rx="8" fill="#4A4A5A"/>
+  <rect x="144" y="65" width="16" height="24" rx="8" fill="#4A4A5A"/>
+  
+  <!-- Microphone arm -->
+  <path d="M44 85 Q40 100 55 115 Q65 122 75 120" stroke="#4A4A5A" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Microphone -->
+  <circle cx="78" cy="119" r="6" fill="#4A4A5A"/>
+  <circle cx="78" cy="119" r="3" fill="#6A6A7A"/>
+  
+  <!-- Neck -->
+  <rect x="90" y="122" width="20" height="12" rx="4" fill="#F5D0A9"/>
+  
+  <!-- Body / Shirt -->
+  <path d="M60 134 Q60 130 70 130 L130 130 Q140 130 140 134 L145 195 Q145 200 140 200 L60 200 Q55 200 55 195Z" fill="#1E6BB8"/>
+  
+  <!-- Collar -->
+  <path d="M85 130 L100 150 L115 130" stroke="#1555A0" stroke-width="2" fill="#1555A0" opacity="0.5"/>
+  
+  <!-- Name badge -->
+  <rect x="110" y="155" width="24" height="16" rx="3" fill="white" opacity="0.9"/>
+  <rect x="118" y="159" width="12" height="2" rx="1" fill="#1E6BB8"/>
+  <rect x="115" y="163" width="16" height="2" rx="1" fill="#ccc"/>
+  
+  <!-- Chat bubble -->
+  <g transform="translate(145, 20)">
+    <rect x="0" y="0" width="44" height="32" rx="10" fill="#1E6BB8"/>
+    <polygon points="8,32 16,32 4,42" fill="#1E6BB8"/>
+    <!-- Chat dots -->
+    <circle cx="14" cy="16" r="3" fill="white" opacity="0.9"/>
+    <circle cx="24" cy="16" r="3" fill="white" opacity="0.7"/>
+    <circle cx="34" cy="16" r="3" fill="white" opacity="0.5"/>
+  </g>
+</svg>
