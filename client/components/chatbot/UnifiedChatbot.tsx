@@ -106,7 +106,12 @@ export function UnifiedChatbot() {
       });
 
       if (!response.ok) {
-        throw new Error(`Server error: ${response.status} ${response.statusText}`);
+        let errorDetail = `${response.status}`;
+        try {
+          const errBody = await response.json();
+          errorDetail = errBody.message || errBody.error || errorDetail;
+        } catch {}
+        throw new Error(errorDetail);
       }
 
       const data: SmartChatResponse = await response.json();

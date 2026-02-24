@@ -6,6 +6,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import OpenAI from "openai";
 
 const SITE_MAP = [
   { path: "/academics/engineering", label: "School of Engineering", keywords: "engineering btech b.tech" },
@@ -187,37 +188,32 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const systemPrompt = buildSystemPrompt();
 
     // Build messages array
-    const messages: any[] = [{ role: "system", content: systemPrompt }];
+    const chatMessages: Array<{ role: "system" | "user" | "assistant"; content: string }> = [
+      { role: "system", content: systemPrompt },
+    ];
 
     if (conversationHistory && Array.isArray(conversationHistory)) {
-      messages.push(...conversationHistory.slice(-6));
+      for (const msg of conversationHistory.slice(-6)) {
+        if (msg.role === "user" || msg.role === "assistant") {
+          chatMessages.push({ role: msg.role, content: msg.content });
+        }
+      }
     }
 
-    messages.push({ role: "user", content: message });
+    chatMessages.push({ role: "user", content: message });
 
-    // Call OpenAI
-    const apiResponse = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages,
-        temperature: 0,
-        max_tokens: 512,
-        response_format: { type: "json_object" },
-      }),
+    // Call OpenAI using the SDK (same pattern as rag-chat)
+    const openai = new OpenAI({ apiKey });
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: chatMessages,
+      temperature: 0,
+      max_tokens: 512,
+      response_format: { type: "json_object" },
     });
 
-    if (!apiResponse.ok) {
-      const errorData = await apiResponse.json();
-      throw new Error(errorData.error?.message || "OpenAI API error");
-    }
-
-    const response = await apiResponse.json();
-    const content = response.choices?.[0]?.message?.content;
+    const content = completion.choices[0]?.message?.content;
 
     if (!content) {
       throw new Error("Empty response from OpenAI");
