@@ -22,29 +22,41 @@ export function DepartmentPageMenu({
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Determine if we should show sticky menu
-      const heroSection = document.querySelector(".dept-hero-section");
-      if (heroSection) {
-        const heroBottom = heroSection.getBoundingClientRect().bottom;
-        setIsSticky(heroBottom <= 0);
-      }
+    // Track hero section visibility for sticky behavior
+    const heroSection = document.querySelector(".dept-hero-section");
+    if (heroSection) {
+      const heroObserver = new IntersectionObserver(
+        ([entry]) => {
+          setIsSticky(!entry.isIntersecting);
+        },
+        { threshold: 0 }
+      );
+      heroObserver.observe(heroSection);
+      return () => heroObserver.disconnect();
+    }
+  }, []);
 
-      // Update active section based on scroll position
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
+  useEffect(() => {
+    // Track active section based on scroll position using IntersectionObserver
+    const observers = sections.map((section) => {
+      const element = document.getElementById(section.id);
+      if (!element) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
             setActive(section.id);
-            break;
           }
-        }
-      }
-    };
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(element);
+      return observer;
+    });
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
   }, [sections]);
 
   const handleClick = (sectionId: string) => {
