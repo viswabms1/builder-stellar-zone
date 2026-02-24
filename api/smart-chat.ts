@@ -290,11 +290,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
   } catch (error: any) {
     console.error("[SMART-CHAT] Error:", error?.message || error);
+    const errorMsg = error?.message || "Unknown error";
     return res.status(500).json({
       success: false,
       type: "answer",
-      message: "Sorry, I encountered an error. Please try again.",
-      error: error?.message,
+      message: `Error: ${errorMsg}`,
     });
   }
 }
