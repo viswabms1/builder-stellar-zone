@@ -1025,7 +1025,7 @@ export default function Navigation() {
                           <div
                             onMouseEnter={handleAcademicsMenuEnter}
                             onMouseLeave={handleAcademicsMenuLeave}
-                            className={`absolute left-0 top-full mt-0 w-auto min-w-max rounded-lg shadow-xl transition-all duration-300 py-1.5 px-1.5 max-h-[600px] overflow-y-auto overflow-x-hidden backdrop-blur-sm z-[9999] ${
+                            className={`absolute left-0 top-full mt-0 w-auto min-w-max rounded-lg shadow-xl transition-all duration-300 py-1.5 px-1.5 max-h-[700px] overflow-y-auto overflow-x-hidden backdrop-blur-sm z-[9999] ${
                               academicsMenuOpen
                                 ? "opacity-100 visible pointer-events-auto"
                                 : "opacity-0 invisible pointer-events-none"
@@ -1040,7 +1040,7 @@ export default function Navigation() {
                               maxWidth: "calc(100vw - 40px)",
                             }}
                           >
-                            <div className="grid grid-cols-3 gap-1.5">
+                            <div className="grid grid-cols-4 gap-1.5">
                               {academicsSubmenus.schools.map(
                                 (school, schoolIdx) => {
                                   const cardColors = [
