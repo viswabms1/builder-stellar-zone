@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 
 export function VirtualTourSection() {
@@ -6,6 +6,7 @@ export function VirtualTourSection() {
   const tourLink =
     "https://dsu.edu.in/virtual-tour/#DayanandaSagarUniversity_01,2.01108,-3.39268,75,4";
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   // Automatically click start button when section becomes visible
   useEffect(() => {
@@ -61,13 +62,15 @@ export function VirtualTourSection() {
           <iframe
             ref={iframeRef}
             title="DSU Virtual Tour"
-            src={tourLink}
+            src={isVisible && iframeLoaded ? tourLink : "about:blank"}
             frameBorder="0"
             sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
             className="w-full h-full"
             style={{
               border: "none",
+              backgroundColor: !iframeLoaded ? "#1a1a1a" : undefined,
             }}
+            onLoad={() => setIframeLoaded(true)}
           />
         </div>
       </div>
