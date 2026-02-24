@@ -5,9 +5,16 @@
 
 
 [functions]
-  external_node_modules = ["express"]
   node_bundler = "esbuild"
 
+# Smart chat endpoint - dedicated function
+[[redirects]]
+  force = true
+  from = "/api/smart-chat"
+  status = 200
+  to = "/.netlify/functions/smart-chat"
+
+# Other API endpoints
 [[redirects]]
   force = true
   from = "/api/*"
