@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/api/smart-chat",
+      "destination": "/api/smart-chat"
+    },
+    {
       "source": "/api/rag-chat",
       "destination": "/api/rag-chat"
     },
