@@ -1,7 +1,15 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-const SARVAM_API_KEY = process.env.SARVAM_API_KEY || "";
 const SARVAM_STT_URL = "https://api.sarvam.ai/speech-to-text";
+
+// Increase body size limit for audio payloads
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "50mb",
+    },
+  },
+};
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -11,8 +19,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
+  const SARVAM_API_KEY = process.env.SARVAM_API_KEY || "";
+
+  if (!SARVAM_API_KEY) {
+    return res.status(500).json({ error: "SARVAM_API_KEY not configured on server" });
+  }
+
   try {
-    const { audio, mimeType = "audio/webm", model = "saarika:v2.5", language_code } = req.body || {};
+    const { audio, mimeType = "audio/wav", model = "saarika:v2.5", language_code } = req.body || {};
 
     if (!audio) return res.status(400).json({ error: "audio (base64) is required" });
 
@@ -21,7 +35,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Build multipart form manually
     const boundary = `----FormBoundary${Date.now()}`;
-    const ext = mimeType.includes("webm") ? "webm" : mimeType.includes("ogg") ? "ogg" : "wav";
+    const ext = mimeType.includes("wav") ? "wav" : mimeType.includes("webm") ? "webm" : mimeType.includes("ogg") ? "ogg" : "wav";
 
     const parts: Buffer[] = [];
 
@@ -54,12 +68,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (!sarvamRes.ok) {
       console.error("[Sarvam STT Vercel] Error:", data);
-      return res.status(sarvamRes.status).json({ error: data?.message || "Sarvam STT error", detail: data });
+      return res.status(sarvamRes.status).json({
+        error: data?.error?.message || data?.message || data?.detail || "Sarvam STT error",
+        detail: data,
+      });
     }
 
     return res.status(200).json(data);
   } catch (err: any) {
     console.error("[Sarvam STT Vercel] Exception:", err);
-    return res.status(500).json({ error: "Internal server error", detail: err?.message });
+    return res.status(500).json({ error: err?.message || "Internal server error" });
   }
 }
