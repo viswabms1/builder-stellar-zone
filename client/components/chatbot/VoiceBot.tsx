@@ -28,16 +28,24 @@ async function convertBlobToWav(blob: Blob): Promise<{ base64: string; mimeType:
   const arrayBuffer = await blob.arrayBuffer();
   const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
 
-  // Downmix to mono, 16kHz for speech (smaller payload, Sarvam-friendly)
-  const sampleRate = 16000;
-  const offlineCtx = new OfflineAudioContext(1, Math.ceil(audioBuffer.duration * sampleRate), sampleRate);
-  const source = offlineCtx.createBufferSource();
-  source.buffer = audioBuffer;
-  source.connect(offlineCtx.destination);
-  source.start();
-  const rendered = await offlineCtx.startRendering();
+  // Use original sample rate to preserve audio quality
+  const sampleRate = audioBuffer.sampleRate;
 
-  const pcmData = rendered.getChannelData(0);
+  // Mix all channels down to mono
+  let pcmData: Float32Array;
+  if (audioBuffer.numberOfChannels === 1) {
+    pcmData = audioBuffer.getChannelData(0);
+  } else {
+    const length = audioBuffer.length;
+    pcmData = new Float32Array(length);
+    for (let ch = 0; ch < audioBuffer.numberOfChannels; ch++) {
+      const channelData = audioBuffer.getChannelData(ch);
+      for (let i = 0; i < length; i++) {
+        pcmData[i] += channelData[i] / audioBuffer.numberOfChannels;
+      }
+    }
+  }
+
   const wavBuffer = encodeWav(pcmData, sampleRate);
 
   await audioCtx.close();
