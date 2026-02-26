@@ -22,7 +22,7 @@ export async function handleSarvamHealth(req: Request, res: Response) {
         inputs: ["Hello"],
         target_language_code: "en-IN",
         speaker: "arya",
-        model: "bulbul:v1",
+        model: "bulbul:v2",
       }),
     });
     const testData = await testRes.json();
@@ -122,7 +122,7 @@ export async function handleSarvamTTS(req: Request, res: Response) {
         inputs: [text],
         target_language_code: language_code,
         speaker: "arya",
-        model: "bulbul:v1",
+        model: "bulbul:v2",
         enable_preprocessing: true,
       }),
     });

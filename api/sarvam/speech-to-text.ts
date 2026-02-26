@@ -12,7 +12,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   try {
-    const { audio, mimeType = "audio/webm", model = "saaras:v3", language_code = "unknown" } = req.body || {};
+    const { audio, mimeType = "audio/webm", model = "saarika:v2.5", language_code } = req.body || {};
 
     if (!audio) return res.status(400).json({ error: "audio (base64) is required" });
 
@@ -34,7 +34,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     parts.push(Buffer.from("\r\n"));
 
     addField("model", model);
-    addField("language_code", language_code);
+    if (language_code && language_code !== "unknown") addField("language_code", language_code);
 
     parts.push(Buffer.from(`--${boundary}--\r\n`));
 

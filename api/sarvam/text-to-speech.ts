@@ -26,7 +26,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         inputs: [text],
         target_language_code: language_code,
         speaker,
-        model: "bulbul:v1",
+        model: "bulbul:v2",
         enable_preprocessing: true,
       }),
     });
