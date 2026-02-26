@@ -12,35 +12,54 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   try {
-    // req body will be raw audio bytes, forwarded as multipart to Sarvam
-    const chunks: Buffer[] = [];
-    for await (const chunk of req) {
-      chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
-    }
-    const audioBuffer = Buffer.concat(chunks);
+    const { audio, mimeType = "audio/webm", model = "saaras:v3", language_code = "unknown" } = req.body || {};
 
-    // Get content-type from request to pass along
-    const contentType = (req.headers["content-type"] as string) || "multipart/form-data";
+    if (!audio) return res.status(400).json({ error: "audio (base64) is required" });
 
-    // Forward the entire multipart body directly to Sarvam
+    // Decode base64 to buffer
+    const audioBuffer = Buffer.from(audio, "base64");
+
+    // Build multipart form manually
+    const boundary = `----FormBoundary${Date.now()}`;
+    const ext = mimeType.includes("webm") ? "webm" : mimeType.includes("ogg") ? "ogg" : "wav";
+
+    const parts: Buffer[] = [];
+
+    const addField = (name: string, value: string) => {
+      parts.push(Buffer.from(`--${boundary}\r\nContent-Disposition: form-data; name="${name}"\r\n\r\n${value}\r\n`));
+    };
+
+    parts.push(Buffer.from(`--${boundary}\r\nContent-Disposition: form-data; name="file"; filename="recording.${ext}"\r\nContent-Type: ${mimeType}\r\n\r\n`));
+    parts.push(audioBuffer);
+    parts.push(Buffer.from("\r\n"));
+
+    addField("model", model);
+    addField("language_code", language_code);
+
+    parts.push(Buffer.from(`--${boundary}--\r\n`));
+
+    const body = Buffer.concat(parts);
+
     const sarvamRes = await fetch(SARVAM_STT_URL, {
       method: "POST",
       headers: {
         "api-subscription-key": SARVAM_API_KEY,
-        "content-type": contentType,
+        "Content-Type": `multipart/form-data; boundary=${boundary}`,
+        "Content-Length": String(body.length),
       },
-      body: audioBuffer,
+      body,
     });
 
     const data = await sarvamRes.json();
 
     if (!sarvamRes.ok) {
+      console.error("[Sarvam STT Vercel] Error:", data);
       return res.status(sarvamRes.status).json({ error: data?.message || "Sarvam STT error", detail: data });
     }
 
     return res.status(200).json(data);
   } catch (err: any) {
-    console.error("Sarvam STT proxy error:", err);
+    console.error("[Sarvam STT Vercel] Exception:", err);
     return res.status(500).json({ error: "Internal server error", detail: err?.message });
   }
 }

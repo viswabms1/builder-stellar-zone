@@ -18,6 +18,7 @@ import {
   getStaffs,
 } from "./routes/strapi";
 import { handleSmartChat } from "./routes/smart-chat";
+import { handleSarvamSTT, handleSarvamTTS } from "./routes/sarvam";
 
 export function createServer() {
   const app = express();
@@ -47,6 +48,12 @@ export function createServer() {
 
   // Smart Chat - unified AI intent detection + navigation + RAG
   app.post("/api/smart-chat", handleSmartChat);
+
+  // ============================================
+  // SARVAM AI VOICE ROUTES
+  // ============================================
+  app.post("/api/sarvam/speech-to-text", handleSarvamSTT);
+  app.post("/api/sarvam/text-to-speech", handleSarvamTTS);
 
   // ============================================
   // STRAPI CMS INTEGRATION ROUTES

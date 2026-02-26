@@ -105,15 +105,21 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         setStatusText("Transcribing...");
 
         try {
-          // Build multipart form
-          const formData = new FormData();
-          formData.append("file", audioBlob, "recording.webm");
-          formData.append("model", "saaras:v3");
-          formData.append("language_code", "unknown"); // auto-detect
+          // Convert blob to base64 and send as JSON (works in both dev and Vercel)
+          const arrayBuffer = await audioBlob.arrayBuffer();
+          const base64Audio = btoa(
+            String.fromCharCode(...new Uint8Array(arrayBuffer))
+          );
 
           const sttRes = await fetch("/api/sarvam/speech-to-text", {
             method: "POST",
-            body: formData,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              audio: base64Audio,
+              mimeType,
+              model: "saaras:v3",
+              language_code: "unknown",
+            }),
           });
 
           if (!sttRes.ok) {
