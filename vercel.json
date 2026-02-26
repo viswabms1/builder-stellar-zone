@@ -49,6 +49,14 @@
       "destination": "/api/strapi/download-pdf"
     },
     {
+      "source": "/api/sarvam/speech-to-text",
+      "destination": "/api/sarvam/speech-to-text"
+    },
+    {
+      "source": "/api/sarvam/text-to-speech",
+      "destination": "/api/sarvam/text-to-speech"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
