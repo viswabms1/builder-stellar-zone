@@ -18,7 +18,7 @@ import {
   getStaffs,
 } from "./routes/strapi";
 import { handleSmartChat } from "./routes/smart-chat";
-import { handleSarvamSTT, handleSarvamTTS } from "./routes/sarvam";
+import { handleSarvamSTT, handleSarvamTTS, handleSarvamHealth } from "./routes/sarvam";
 
 export function createServer() {
   const app = express();
@@ -52,6 +52,7 @@ export function createServer() {
   // ============================================
   // SARVAM AI VOICE ROUTES
   // ============================================
+  app.get("/api/sarvam/health", handleSarvamHealth);
   app.post("/api/sarvam/speech-to-text", handleSarvamSTT);
   app.post("/api/sarvam/text-to-speech", handleSarvamTTS);
 

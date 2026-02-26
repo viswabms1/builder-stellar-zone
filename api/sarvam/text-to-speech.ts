@@ -12,7 +12,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   try {
-    const { text, language_code = "en-IN", speaker = "meera" } = req.body || {};
+    const { text, language_code = "en-IN", speaker = "arya" } = req.body || {};
 
     if (!text) return res.status(400).json({ error: "text is required" });
 

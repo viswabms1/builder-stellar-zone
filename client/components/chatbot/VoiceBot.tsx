@@ -41,7 +41,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       const res = await fetch("/api/sarvam/text-to-speech", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text, language_code: "en-IN", speaker: "meera" }),
+        body: JSON.stringify({ text, language_code: "en-IN", speaker: "arya" }),
       });
 
       if (!res.ok) {
@@ -117,8 +117,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
             body: JSON.stringify({
               audio: base64Audio,
               mimeType,
-              model: "saaras:v3",
-              language_code: "unknown",
+              model: "saarika:v2.5",
             }),
           });
 
