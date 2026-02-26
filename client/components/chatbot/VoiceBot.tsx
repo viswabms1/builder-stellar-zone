@@ -22,6 +22,66 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
   return btoa(binary);
 }
 
+/** Convert any audio blob to WAV using Web Audio API (Sarvam only accepts WAV/MP3) */
+async function convertBlobToWav(blob: Blob): Promise<{ base64: string; mimeType: string }> {
+  const audioCtx = new AudioContext();
+  const arrayBuffer = await blob.arrayBuffer();
+  const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+
+  // Downmix to mono, 16kHz for speech (smaller payload, Sarvam-friendly)
+  const sampleRate = 16000;
+  const offlineCtx = new OfflineAudioContext(1, Math.ceil(audioBuffer.duration * sampleRate), sampleRate);
+  const source = offlineCtx.createBufferSource();
+  source.buffer = audioBuffer;
+  source.connect(offlineCtx.destination);
+  source.start();
+  const rendered = await offlineCtx.startRendering();
+
+  const pcmData = rendered.getChannelData(0);
+  const wavBuffer = encodeWav(pcmData, sampleRate);
+
+  await audioCtx.close();
+
+  return {
+    base64: arrayBufferToBase64(wavBuffer),
+    mimeType: "audio/wav",
+  };
+}
+
+/** Encode PCM float32 samples to 16-bit WAV */
+function encodeWav(samples: Float32Array, sampleRate: number): ArrayBuffer {
+  const numSamples = samples.length;
+  const buffer = new ArrayBuffer(44 + numSamples * 2);
+  const view = new DataView(buffer);
+
+  // WAV header
+  const writeStr = (offset: number, str: string) => {
+    for (let i = 0; i < str.length; i++) view.setUint8(offset + i, str.charCodeAt(i));
+  };
+
+  writeStr(0, "RIFF");
+  view.setUint32(4, 36 + numSamples * 2, true);
+  writeStr(8, "WAVE");
+  writeStr(12, "fmt ");
+  view.setUint32(16, 16, true);        // chunk size
+  view.setUint16(20, 1, true);         // PCM format
+  view.setUint16(22, 1, true);         // mono
+  view.setUint32(24, sampleRate, true); // sample rate
+  view.setUint32(28, sampleRate * 2, true); // byte rate
+  view.setUint16(32, 2, true);         // block align
+  view.setUint16(34, 16, true);        // bits per sample
+  writeStr(36, "data");
+  view.setUint32(40, numSamples * 2, true);
+
+  // PCM data - clamp float32 to int16
+  for (let i = 0; i < numSamples; i++) {
+    const s = Math.max(-1, Math.min(1, samples[i]));
+    view.setInt16(44 + i * 2, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+  }
+
+  return buffer;
+}
+
 export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   const [micReady, setMicReady] = useState(false);
   const [micDenied, setMicDenied] = useState(false);
@@ -47,7 +107,6 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       return;
     }
 
-    // Try to get mic permission immediately
     navigator.mediaDevices
       .getUserMedia({ audio: true })
       .then((stream) => {
@@ -96,7 +155,6 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       const { audio } = await res.json();
       if (!audio) throw new Error("No audio received");
 
-      // Decode base64 WAV in chunks
       const byteChars = atob(audio);
       const byteArr = new Uint8Array(byteChars.length);
       for (let i = 0; i < byteChars.length; i++) byteArr[i] = byteChars.charCodeAt(i);
@@ -159,16 +217,22 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         }
 
         setStatus("transcribing");
-        setStatusText("Transcribing...");
+        setStatusText("Converting audio...");
 
         try {
-          const arrayBuffer = await audioBlob.arrayBuffer();
-          const base64Audio = arrayBufferToBase64(arrayBuffer);
+          // Convert WebM/Opus to WAV (Sarvam only accepts WAV/MP3)
+          const { base64: wavBase64 } = await convertBlobToWav(audioBlob);
+
+          setStatusText("Transcribing...");
 
           const sttRes = await fetch("/api/sarvam/speech-to-text", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ audio: base64Audio, mimeType, model: "saarika:v2.5" }),
+            body: JSON.stringify({
+              audio: wavBase64,
+              mimeType: "audio/wav",
+              model: "saarika:v2.5",
+            }),
           });
 
           if (!sttRes.ok) {

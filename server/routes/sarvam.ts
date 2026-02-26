@@ -56,7 +56,7 @@ export async function handleSarvamSTT(req: Request, res: Response) {
 
     // Build multipart form manually
     const boundary = `----FormBoundary${Date.now()}`;
-    const ext = mimeType.includes("ogg") ? "ogg" : mimeType.includes("mp4") ? "mp4" : "webm";
+    const ext = mimeType.includes("wav") ? "wav" : mimeType.includes("ogg") ? "ogg" : mimeType.includes("mp4") ? "mp4" : "webm";
 
     const parts: Buffer[] = [];
 
