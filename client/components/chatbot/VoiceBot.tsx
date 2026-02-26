@@ -1,14 +1,9 @@
-import { useState, useRef, useCallback } from "react";
-import { Mic, MicOff, Volume2, Loader2, X } from "lucide-react";
+import { useState, useRef, useCallback, useEffect } from "react";
+import { Mic, MicOff, Volume2, Loader2, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type VoiceBotStatus =
-  | "idle"
-  | "recording"
-  | "transcribing"
-  | "thinking"
-  | "speaking"
-  | "error";
+type MicPermission = "unknown" | "requesting" | "granted" | "denied" | "unavailable";
+type VoiceBotStatus = "idle" | "recording" | "transcribing" | "thinking" | "speaking" | "error";
 
 interface VoiceBotProps {
   theme: string;
@@ -17,15 +12,61 @@ interface VoiceBotProps {
 }
 
 export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
+  const [micPermission, setMicPermission] = useState<MicPermission>("unknown");
   const [status, setStatus] = useState<VoiceBotStatus>("idle");
   const [statusText, setStatusText] = useState("Tap mic to speak");
-  const [error, setError] = useState<string | null>(null);
+  const [errorText, setErrorText] = useState<string | null>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const isDark = theme === "dark";
+
+  // Check mic permission on mount
+  useEffect(() => {
+    if (!navigator.mediaDevices?.getUserMedia) {
+      setMicPermission("unavailable");
+      return;
+    }
+
+    // Use Permissions API if available to check without triggering prompt
+    if (navigator.permissions) {
+      navigator.permissions
+        .query({ name: "microphone" as PermissionName })
+        .then((result) => {
+          if (result.state === "granted") {
+            setMicPermission("granted");
+          } else if (result.state === "denied") {
+            setMicPermission("denied");
+          } else {
+            setMicPermission("unknown"); // "prompt" state — will ask when clicked
+          }
+          result.onchange = () => {
+            setMicPermission(result.state === "granted" ? "granted" : result.state === "denied" ? "denied" : "unknown");
+          };
+        })
+        .catch(() => {
+          setMicPermission("unknown"); // Permissions API not supported, try directly
+        });
+    }
+  }, []);
+
+  const requestMicPermission = useCallback(async () => {
+    setMicPermission("requesting");
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      stream.getTracks().forEach((t) => t.stop()); // Release immediately
+      setMicPermission("granted");
+      setErrorText(null);
+    } catch (err: any) {
+      if (err?.name === "NotAllowedError" || err?.name === "PermissionDeniedError") {
+        setMicPermission("denied");
+      } else {
+        setMicPermission("unavailable");
+      }
+    }
+  }, []);
 
   const stopAudio = () => {
     if (audioRef.current) {
@@ -52,7 +93,6 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       const { audio } = await res.json();
       if (!audio) throw new Error("No audio received");
 
-      // Decode base64 WAV and play
       const byteChars = atob(audio);
       const byteArr = new Uint8Array(byteChars.length);
       for (let i = 0; i < byteChars.length; i++) byteArr[i] = byteChars.charCodeAt(i);
@@ -76,13 +116,13 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   }, []);
 
   const startRecording = useCallback(async () => {
-    setError(null);
+    setErrorText(null);
     stopAudio();
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      setMicPermission("granted");
 
-      // Prefer WebM (wide browser support); Sarvam accepts WebM/wav/mp3/etc.
       const mimeType = MediaRecorder.isTypeSupported("audio/webm;codecs=opus")
         ? "audio/webm;codecs=opus"
         : MediaRecorder.isTypeSupported("audio/webm")
@@ -105,20 +145,13 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         setStatusText("Transcribing...");
 
         try {
-          // Convert blob to base64 and send as JSON (works in both dev and Vercel)
           const arrayBuffer = await audioBlob.arrayBuffer();
-          const base64Audio = btoa(
-            String.fromCharCode(...new Uint8Array(arrayBuffer))
-          );
+          const base64Audio = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
 
           const sttRes = await fetch("/api/sarvam/speech-to-text", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              audio: base64Audio,
-              mimeType,
-              model: "saarika:v2.5",
-            }),
+            body: JSON.stringify({ audio: base64Audio, mimeType, model: "saarika:v2.5" }),
           });
 
           if (!sttRes.ok) {
@@ -147,8 +180,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
             setStatusText("Tap mic to speak");
           }
         } catch (err: any) {
-          console.error("STT error:", err);
-          setError(err.message || "Transcription failed");
+          setErrorText(err.message || "Transcription failed");
           setStatus("error");
           setStatusText("Error. Tap to retry.");
         }
@@ -158,18 +190,12 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       setStatus("recording");
       setStatusText("Listening... tap to stop");
     } catch (err: any) {
-      console.error("Mic error:", err);
-      const isDenied = err?.name === "NotAllowedError" || err?.name === "PermissionDeniedError";
-      const isNotFound = err?.name === "NotFoundError";
-      setError(
-        isDenied
-          ? "Browser blocked mic — open the preview in a new tab and allow microphone access"
-          : isNotFound
-          ? "No microphone found on this device"
-          : "Could not access microphone"
-      );
-      setStatus("error");
-      setStatusText("Mic unavailable");
+      if (err?.name === "NotAllowedError") {
+        setMicPermission("denied");
+      } else {
+        setErrorText("Could not access microphone");
+        setStatus("error");
+      }
     }
   }, [onTranscript, sendMessage, speakText]);
 
@@ -178,41 +204,97 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   }, []);
 
   const handleMicClick = () => {
-    if (status === "recording") {
-      stopRecording();
-    } else if (status === "speaking") {
-      stopAudio();
-      setStatus("idle");
-      setStatusText("Tap mic to speak");
-    } else if (status === "idle" || status === "error") {
-      startRecording();
-    }
+    if (status === "recording") stopRecording();
+    else if (status === "speaking") { stopAudio(); setStatus("idle"); setStatusText("Tap mic to speak"); }
+    else startRecording();
   };
-
-  const pulseColor =
-    status === "recording"
-      ? "bg-red-500"
-      : status === "speaking"
-      ? "bg-green-500"
-      : status === "transcribing" || status === "thinking"
-      ? "bg-yellow-500"
-      : "bg-blue-500";
 
   const isAnimating = status === "recording" || status === "speaking";
   const isProcessing = status === "transcribing" || status === "thinking";
 
+  // --- Permission screens ---
+  if (micPermission === "unavailable") {
+    return (
+      <div className="flex flex-col items-center gap-3 py-6 px-4 text-center">
+        <MicOff className={cn("w-10 h-10", isDark ? "text-slate-500" : "text-gray-400")} />
+        <p className={cn("text-sm font-medium", isDark ? "text-slate-300" : "text-gray-700")}>Microphone not available</p>
+        <p className={cn("text-xs", isDark ? "text-slate-500" : "text-gray-500")}>
+          Your browser or device doesn't support microphone access. Try opening this site in Chrome or Edge.
+        </p>
+      </div>
+    );
+  }
+
+  if (micPermission === "denied") {
+    return (
+      <div className="flex flex-col items-center gap-3 py-6 px-4 text-center">
+        <MicOff className="w-10 h-10 text-red-400" />
+        <p className={cn("text-sm font-medium", isDark ? "text-white" : "text-gray-800")}>Microphone blocked</p>
+        <p className={cn("text-xs leading-relaxed", isDark ? "text-slate-400" : "text-gray-500")}>
+          Click the <strong>lock/camera icon</strong> in your browser's address bar → set Microphone to <strong>Allow</strong> → refresh the page.
+        </p>
+        <button
+          onClick={requestMicPermission}
+          className="mt-1 px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+        >
+          Try Again
+        </button>
+      </div>
+    );
+  }
+
+  if (micPermission === "unknown" || micPermission === "requesting") {
+    return (
+      <div className="flex flex-col items-center gap-4 py-6 px-4 text-center">
+        <div className={cn(
+          "w-16 h-16 rounded-full flex items-center justify-center",
+          isDark ? "bg-purple-600/20" : "bg-blue-50"
+        )}>
+          {micPermission === "requesting"
+            ? <Loader2 className="w-8 h-8 text-blue-500 animate-spin" />
+            : <ShieldCheck className={cn("w-8 h-8", isDark ? "text-purple-400" : "text-blue-500")} />
+          }
+        </div>
+        <div>
+          <p className={cn("text-sm font-semibold mb-1", isDark ? "text-white" : "text-gray-800")}>
+            Microphone Permission Required
+          </p>
+          <p className={cn("text-xs leading-relaxed", isDark ? "text-slate-400" : "text-gray-500")}>
+            DSU Voice Bot needs access to your microphone to listen to your voice.
+          </p>
+        </div>
+        <button
+          onClick={requestMicPermission}
+          disabled={micPermission === "requesting"}
+          className={cn(
+            "flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all shadow-lg",
+            micPermission === "requesting"
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 hover:scale-105"
+          )}
+        >
+          <Mic className="w-4 h-4" />
+          {micPermission === "requesting" ? "Requesting..." : "Allow Microphone Access"}
+        </button>
+        <p className={cn("text-[10px]", isDark ? "text-slate-500" : "text-gray-400")}>
+          Your audio is processed securely and never stored.
+        </p>
+      </div>
+    );
+  }
+
+  // --- Main voice UI (permission granted) ---
+  const pulseColor = status === "recording" ? "bg-red-500" : status === "speaking" ? "bg-green-500" : "bg-yellow-500";
+
   return (
     <div className="flex flex-col items-center gap-3 py-4">
-      {/* Mic Button */}
       <div className="relative flex items-center justify-center">
-        {/* Pulse rings when recording or speaking */}
         {isAnimating && (
           <>
             <span className={cn("absolute w-20 h-20 rounded-full opacity-20 animate-ping", pulseColor)} />
             <span className={cn("absolute w-16 h-16 rounded-full opacity-30 animate-ping", pulseColor)} style={{ animationDelay: "0.2s" }} />
           </>
         )}
-
         <button
           onClick={handleMicClick}
           disabled={isProcessing}
@@ -228,64 +310,29 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
               ? "bg-orange-500 hover:bg-orange-600"
               : "bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 hover:scale-105"
           )}
-          aria-label={status === "recording" ? "Stop recording" : "Start recording"}
         >
-          {isProcessing ? (
-            <Loader2 className="w-6 h-6 text-white animate-spin" />
-          ) : status === "speaking" ? (
-            <Volume2 className="w-6 h-6 text-white" />
-          ) : status === "recording" ? (
-            <MicOff className="w-6 h-6 text-white" />
-          ) : (
-            <Mic className="w-6 h-6 text-white" />
-          )}
+          {isProcessing ? <Loader2 className="w-6 h-6 text-white animate-spin" />
+            : status === "speaking" ? <Volume2 className="w-6 h-6 text-white" />
+            : status === "recording" ? <MicOff className="w-6 h-6 text-white" />
+            : <Mic className="w-6 h-6 text-white" />}
         </button>
       </div>
 
-      {/* Status text */}
       <p className={cn("text-xs text-center font-medium", isDark ? "text-slate-400" : "text-gray-500")}>
         {statusText}
       </p>
 
-      {/* Error */}
-      {error && status === "error" && (
-        <div className={cn(
-          "flex flex-col gap-2 text-xs px-3 py-2 rounded-lg mx-3 text-center",
-          isDark ? "bg-red-900/30 text-red-300" : "bg-red-50 text-red-600"
-        )}>
-          <div className="flex items-center justify-center gap-1.5">
-            <X className="w-3 h-3 flex-shrink-0" />
-            <span>{error}</span>
-          </div>
-          {error.includes("blocked") && (
-            <button
-              onClick={() => window.open(window.location.href, "_blank")}
-              className={cn(
-                "w-full py-1.5 rounded-md text-xs font-semibold transition-colors",
-                isDark
-                  ? "bg-purple-600 hover:bg-purple-500 text-white"
-                  : "bg-blue-600 hover:bg-blue-700 text-white"
-              )}
-            >
-              Open in New Tab to Allow Mic
-            </button>
-          )}
-        </div>
+      {errorText && status === "error" && (
+        <p className={cn("text-xs text-center px-3", isDark ? "text-red-400" : "text-red-500")}>
+          {errorText}
+        </p>
       )}
 
-      {/* Waveform bars when recording */}
       {status === "recording" && (
         <div className="flex items-center gap-0.5 h-6">
           {[...Array(9)].map((_, i) => (
-            <div
-              key={i}
-              className="w-1 bg-red-400 rounded-full animate-pulse"
-              style={{
-                height: `${Math.random() * 16 + 4}px`,
-                animationDelay: `${i * 0.1}s`,
-                animationDuration: `${0.5 + Math.random() * 0.5}s`,
-              }}
-            />
+            <div key={i} className="w-1 bg-red-400 rounded-full animate-pulse"
+              style={{ height: `${8 + (i % 3) * 6}px`, animationDelay: `${i * 0.1}s` }} />
           ))}
         </div>
       )}
@@ -293,15 +340,8 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       {status === "speaking" && (
         <div className="flex items-center gap-0.5 h-6">
           {[...Array(9)].map((_, i) => (
-            <div
-              key={i}
-              className="w-1 bg-green-400 rounded-full animate-pulse"
-              style={{
-                height: `${Math.random() * 16 + 4}px`,
-                animationDelay: `${i * 0.12}s`,
-                animationDuration: `${0.6 + Math.random() * 0.4}s`,
-              }}
-            />
+            <div key={i} className="w-1 bg-green-400 rounded-full animate-pulse"
+              style={{ height: `${8 + (i % 3) * 6}px`, animationDelay: `${i * 0.12}s` }} />
           ))}
         </div>
       )}
