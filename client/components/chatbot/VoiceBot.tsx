@@ -105,7 +105,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   const isDark = theme === "dark";
   const isInIframe = window.self !== window.top;
 
-  // Auto-request mic permission on mount
+  // Check mic permission status on mount (without triggering a prompt)
   useEffect(() => {
     if (permissionRequested.current) return;
     permissionRequested.current = true;
@@ -115,16 +115,20 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       return;
     }
 
-    navigator.mediaDevices
-      .getUserMedia({ audio: true })
-      .then((stream) => {
-        stream.getTracks().forEach((t) => t.stop());
-        setMicReady(true);
-      })
-      .catch((err) => {
-        console.warn("Mic permission denied:", err.name);
-        setMicDenied(true);
-      });
+    // Use Permissions API to check without prompting
+    if (navigator.permissions) {
+      navigator.permissions
+        .query({ name: "microphone" as PermissionName })
+        .then((result) => {
+          if (result.state === "granted") {
+            setMicReady(true);
+          }
+          // If "prompt" or "denied", don't auto-request — wait for user click
+        })
+        .catch(() => {
+          // Permissions API not supported, that's fine — user will click to grant
+        });
+    }
   }, []);
 
   const retryPermission = useCallback(async () => {
@@ -344,13 +348,30 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
     );
   }
 
-  // Loading / waiting for permission
+  // Mic not yet granted — show a button the user can tap (user gesture required by browsers)
   if (!micReady) {
     return (
-      <div className="flex flex-col items-center gap-3 py-6 px-4 text-center">
-        <Loader2 className={cn("w-8 h-8 animate-spin", isDark ? "text-purple-400" : "text-blue-500")} />
-        <p className={cn("text-xs", isDark ? "text-slate-400" : "text-gray-500")}>
-          Requesting microphone access...
+      <div className="flex flex-col items-center gap-4 py-6 px-4 text-center">
+        <button
+          onClick={async () => {
+            try {
+              const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+              stream.getTracks().forEach((t) => t.stop());
+              setMicReady(true);
+              setMicDenied(false);
+            } catch {
+              setMicDenied(true);
+            }
+          }}
+          className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 hover:scale-105 flex items-center justify-center shadow-lg transition-all"
+        >
+          <Mic className="w-7 h-7 text-white" />
+        </button>
+        <p className={cn("text-xs font-medium", isDark ? "text-slate-300" : "text-gray-600")}>
+          Tap the mic to enable voice
+        </p>
+        <p className={cn("text-[10px]", isDark ? "text-slate-500" : "text-gray-400")}>
+          Your browser will ask for microphone permission
         </p>
       </div>
     );
