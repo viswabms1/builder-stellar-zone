@@ -159,8 +159,19 @@ export function UnifiedChatbot() {
     setMessages(prev => [...prev, userMsg]);
 
     try {
+      console.log("[VoiceBot] sendMessageForVoice: calling smart-chat with voiceMode=true");
       const data = await callSmartChat(messageText, true);
-      if (!data) return null;
+      console.log("[VoiceBot] sendMessageForVoice: response =", data);
+
+      if (!data) {
+        console.error("[VoiceBot] sendMessageForVoice: no data returned");
+        return null;
+      }
+
+      if (!data.message || !data.message.trim()) {
+        console.error("[VoiceBot] sendMessageForVoice: empty message from API");
+        return null;
+      }
 
       const assistantMsg: ChatMessageData = {
         id: `msg_${Date.now()}_resp`,
@@ -171,8 +182,10 @@ export function UnifiedChatbot() {
 
       // Voice mode: don't navigate — user is listening, not browsing
       setMessages(prev => [...prev, assistantMsg]);
+      console.log("[VoiceBot] sendMessageForVoice: returning message =", data.message.substring(0, 50));
       return data.message;
-    } catch (err) {
+    } catch (err: any) {
+      console.error("[VoiceBot] sendMessageForVoice: error =", err?.message || err);
       return null;
     }
   }, [callSmartChat, navigate]);

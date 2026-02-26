@@ -160,7 +160,9 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         URL.revokeObjectURL(url);
         audioRef.current = null;
         if (conversationActiveRef.current) {
-          setTimeout(() => startRecordingRef.current?.(), 400);
+          setErrorText("Failed to play audio. Tap mic to continue.");
+          setStatus("error");
+          setStatusText("Audio error. Tap mic to retry.");
         } else {
           setStatus("idle");
           setStatusText("Tap to start conversation");
@@ -187,9 +189,9 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
     } catch (err: any) {
       console.error("[VoiceBot TTS] Error:", err);
       if (conversationActiveRef.current) {
-        setStatus("idle");
-        setStatusText("Listening...");
-        setTimeout(() => startRecordingRef.current?.(), 400);
+        setErrorText(err.message || "Failed to play audio. Tap mic to continue.");
+        setStatus("error");
+        setStatusText("Audio error. Tap mic to retry.");
       } else {
         setStatus("idle");
         setStatusText("Tap to start conversation");
@@ -243,8 +245,10 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         if (!conversationActiveRef.current) return;
 
         const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
+        console.log("[VoiceBot] Recording stopped, audio blob size:", audioBlob.size);
 
         if (audioBlob.size < 100) {
+          console.log("[VoiceBot] Audio too small, skipping");
           if (conversationActiveRef.current) {
             setStatusText("Didn't catch that. Listening...");
             setTimeout(() => startRecordingRef.current?.(), 800);
@@ -256,7 +260,9 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         setStatusText("Processing...");
 
         try {
+          console.log("[VoiceBot] Converting audio to WAV...");
           const wavBase64 = await convertBlobToWav(audioBlob);
+          console.log("[VoiceBot] WAV converted, calling STT API...");
 
           const sttRes = await fetch("/api/sarvam/speech-to-text", {
             method: "POST",
@@ -266,13 +272,16 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
 
           if (!sttRes.ok) {
             const err = await sttRes.json().catch(() => ({}));
+            console.error("[VoiceBot] STT API error:", sttRes.status, err);
             throw new Error(err.error || `STT error ${sttRes.status}`);
           }
 
           const sttData = await sttRes.json();
           const transcript = sttData?.transcript || "";
+          console.log("[VoiceBot] STT transcript:", transcript);
 
           if (!transcript.trim()) {
+            console.log("[VoiceBot] Empty transcript, retrying...");
             if (conversationActiveRef.current) {
               setStatus("recording");
               setStatusText("Listening...");
@@ -284,15 +293,26 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
           onTranscript?.(transcript);
           setStatus("thinking");
           setStatusText("Thinking...");
+          console.log("[VoiceBot] Calling sendMessage with transcript:", transcript);
 
           const reply = await sendMessage(transcript);
-          if (reply && conversationActiveRef.current) {
+          console.log("[VoiceBot] sendMessage returned:", reply?.substring(0, 50));
+
+          if (reply && reply.trim() && conversationActiveRef.current) {
+            console.log("[VoiceBot] Speaking response...");
             await speakText(reply);
+          } else if (!reply || !reply.trim()) {
+            console.error("[VoiceBot] No reply from sendMessage!");
+            setErrorText("Bot didn't respond. Tap mic to retry.");
+            setStatus("error");
+            setStatusText("Error. Tap mic to continue.");
           } else if (conversationActiveRef.current) {
-            setTimeout(() => startRecordingRef.current?.(), 400);
+            console.log("[VoiceBot] Conversation not active, stopping");
+            setStatus("idle");
+            setStatusText("Tap to start conversation");
           }
         } catch (err: any) {
-          console.error("STT error:", err);
+          console.error("[VoiceBot] onstop error:", err);
           setErrorText(err.message || "Error occurred");
           setStatus("error");
           setStatusText("Error. Tap mic to continue.");
