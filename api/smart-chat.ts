@@ -2,7 +2,7 @@
  * Vercel Serverless Function: Smart Chat API
  *
  * AI-driven intent detection with navigation and answers.
- * This is the Vercel equivalent of server/routes/smart-chat.ts
+ * Supports voiceMode for detailed spoken answers.
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
@@ -88,9 +88,8 @@ function buildRouteList(): string {
   return SITE_MAP.map(r => `- "${r.label}" → ${r.path}`).join("\n");
 }
 
-function buildSystemPrompt(): string {
+function buildNavigationPrompt(): string {
   const routeList = buildRouteList();
-
   return `<system>
 <role>
 You are the DSU Smart Assistant. You help users navigate the Dayananda Sagar University website AND answer their questions.
@@ -101,81 +100,92 @@ IMPORTANT: Your PRIMARY job is to NAVIGATE the user to the right page. ALWAYS tr
 
 Rules:
 1. ALWAYS return type "navigate" if ANY page in the site map is even slightly relevant to the user's message.
-2. Even for questions like "What are the fees?" or "Tell me about placements" - NAVIGATE to the relevant page (/admissions for fees, /placements for placements) AND include a brief answer in the message.
-3. Only return type "answer" (without navigation) for pure greetings like "Hi", "Hello", "Thank you", or if the question has absolutely ZERO relation to any page in the site map.
+2. Even for questions like "What are the fees?" or "Tell me about placements" - NAVIGATE to the relevant page AND include a brief answer in the message.
+3. Only return type "answer" for pure greetings like "Hi", "Hello", "Thank you", or if the question has absolutely ZERO relation to any page.
 4. When in doubt, NAVIGATE. The user wants to SEE the page, not read a chat answer.
-5. IMPORTANT: When a user asks about a SPECIFIC program (e.g., "Civil Engineering", "Mechanical Engineering"):
-   - If that exact program EXISTS in the site map: Navigate directly to it.
-   - If it DOES NOT exist: In your message, state clearly that this program is not currently offered at DSU, then navigate to the closest alternative (like the School of Engineering page or a similar program). Example: "Civil Engineering is not currently offered at DSU. Here are our available engineering programs."
-
-Examples of when to NAVIGATE:
-- "What are the fees?" → Navigate to /admissions
-- "Tell me about CSE" → Navigate to /academics/engineering/computer-science
-- "Civil Engineering?" → "Civil Engineering is not currently offered at DSU. Here are our engineering programs:" → Navigate to /academics/engineering
-- "How are placements?" → Navigate to /placements
-- "Campus facilities" → Navigate to /campus-life
-- "MBA program" → Navigate to /academics/commerce-and-management/mba
-- "Contact details" → Navigate to /admissions
-- "Who are the leaders?" → Navigate to /about/leadership
-- "Library resources" → Navigate to /library
-- "Exam schedule" → Navigate to /examinations
+5. When a user asks about a SPECIFIC program not in site map: state clearly it's not offered, then navigate to the closest alternative.
 </behavior>
 
 <site_map>
-Available pages the user can navigate to:
 ${routeList}
 </site_map>
 
 <response_format>
-You MUST respond with valid JSON only. No markdown, no code fences, no extra text.
+You MUST respond with valid JSON only.
 {
   "type": "navigate" or "answer",
   "path": "/path/to/page" (REQUIRED for navigate),
   "label": "Page Name" (REQUIRED for navigate),
-  "message": "Brief message about the page you're navigating to"
+  "message": "Brief message about the page"
 }
-
-Examples:
-- "Take me to computer science" → {"type":"navigate","path":"/academics/engineering/computer-science","label":"Computer Science & Engineering","message":"Taking you to Computer Science & Engineering."}
-- "What are the fees?" → {"type":"navigate","path":"/admissions","label":"Admissions","message":"Taking you to the Admissions page where you can find all fee details."}
-- "Civil Engineering?" → {"type":"navigate","path":"/academics/engineering","label":"School of Engineering","message":"Civil Engineering is not currently offered at DSU. Here are our available engineering programs."}
-- "Hi" → {"type":"answer","message":"Hello! I'm DSU's Smart Assistant. Tell me what you want to see - programs, admissions, placements, campus life - and I'll take you right there!"}
 </response_format>
 
 <guidelines>
-- ALWAYS navigate. Find the best matching page for ANY topic the user mentions.
-- When a specific program is NOT offered at DSU, be clear about it in your message before suggesting alternatives.
-- Keep messages short (1-2 sentences) - the page itself will show the details.
-- Do NOT give long text answers. Navigate to the page and let the user read it there.
-- Do NOT use markdown formatting - plain text only.
+- ALWAYS navigate. Find the best matching page.
+- Keep messages short (1-2 sentences).
+- Do NOT use markdown. Plain text only.
 - Only use type "answer" for greetings or completely unrelated questions.
 </guidelines>
 </system>`;
 }
 
+function buildVoicePrompt(): string {
+  return `<system>
+<role>
+You are the DSU Voice Assistant. You help users by SPEAKING detailed answers about Dayananda Sagar University.
+</role>
+
+<behavior>
+IMPORTANT: The user is talking to you via VOICE. They cannot see a screen or click links.
+Your job is to EXPLAIN and ANSWER their questions thoroughly.
+
+Rules:
+1. ALWAYS return type "answer" — never "navigate". The user is listening, not browsing.
+2. Give detailed, conversational spoken answers (3-5 sentences). Cover the key facts.
+3. If the user asks about a program: explain what it covers, duration, eligibility, and career prospects.
+4. If the user asks about admissions: explain the process, requirements, and important dates.
+5. If information is not available, say so honestly and suggest what the user can ask about.
+6. Speak naturally — use simple, clear language as if having a friendly conversation.
+7. Do NOT use markdown, bullet points, or formatting — this will be read aloud.
+8. Do NOT say "click here" or "visit this page" — the user is using voice.
+</behavior>
+
+<response_format>
+You MUST respond with valid JSON only.
+{
+  "type": "answer",
+  "message": "Your detailed spoken answer here"
+}
+</response_format>
+
+<guidelines>
+- Always answer in detail.
+- Keep answers conversational and natural for speech.
+- If asked about fees, give specific numbers if known.
+- If asked about a program, explain what students will learn, duration, and career scope.
+- For greetings, respond warmly and tell them what you can help with.
+- Limit answers to about 3-5 sentences so they are not too long to listen to.
+</guidelines>
+</system>`;
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // CORS headers
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,POST");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
-
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+  if (req.method === "OPTIONS") return res.status(200).end();
+  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   try {
-    const { message, conversationHistory } = req.body;
+    const { message, conversationHistory, voiceMode } = req.body;
 
     if (!message || typeof message !== "string") {
       return res.status(400).json({ error: "Message is required" });
     }
 
-    const apiKey = "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";
+    const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       return res.status(500).json({
         success: false,
@@ -184,10 +194,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    // Build system prompt with site map
-    const systemPrompt = buildSystemPrompt();
+    const systemPrompt = voiceMode ? buildVoicePrompt() : buildNavigationPrompt();
 
-    // Build messages array
     const chatMessages: Array<{ role: "system" | "user" | "assistant"; content: string }> = [
       { role: "system", content: systemPrompt },
     ];
@@ -202,24 +210,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     chatMessages.push({ role: "user", content: message });
 
-    // Call OpenAI using the SDK (same pattern as rag-chat)
     const openai = new OpenAI({ apiKey });
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: chatMessages,
-      temperature: 0,
-      max_tokens: 512,
+      temperature: voiceMode ? 0.3 : 0,
+      max_tokens: voiceMode ? 1024 : 512,
       response_format: { type: "json_object" },
     });
 
     const content = completion.choices[0]?.message?.content;
+    if (!content) throw new Error("Empty response from OpenAI");
 
-    if (!content) {
-      throw new Error("Empty response from OpenAI");
-    }
-
-    // Parse the JSON response
     let parsed;
     try {
       parsed = JSON.parse(content);
@@ -227,12 +230,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       parsed = { type: "answer", message: content };
     }
 
-    // Normalize: if AI returned suggestedPath instead of path
-    if (!parsed.path && parsed.suggestedPath) {
-      parsed.path = parsed.suggestedPath;
+    // Voice mode: always return answer type
+    if (voiceMode) {
+      return res.status(200).json({
+        success: true,
+        type: "answer",
+        message: parsed.message || "I'm not sure how to help with that. Could you rephrase?",
+      });
     }
 
-    // If AI returned "answer" but included a path, upgrade to "navigate"
+    // Text mode: navigation logic
+    if (!parsed.path && parsed.suggestedPath) parsed.path = parsed.suggestedPath;
+
     if (parsed.type === "answer" && parsed.path) {
       parsed.type = "navigate";
       if (!parsed.label) {
@@ -241,11 +250,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
     }
 
-    // If AI returned "answer" with no path, try keyword matching
     if (parsed.type === "answer" && !parsed.path) {
       const queryLower = message.toLowerCase();
       let bestMatch: { path: string; label: string; score: number } | null = null;
-
       for (const route of SITE_MAP) {
         let score = 0;
         const routeKeywords = (route.keywords + " " + route.label).toLowerCase().split(/\s+/);
@@ -257,7 +264,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           bestMatch = { path: route.path, label: route.label, score };
         }
       }
-
       if (bestMatch && bestMatch.score >= 3) {
         parsed.type = "navigate";
         parsed.path = bestMatch.path;
@@ -265,7 +271,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
     }
 
-    // Validate the path exists in site map
     if (parsed.path) {
       const validRoute = SITE_MAP.find(r => r.path === parsed.path);
       if (!validRoute) {
@@ -290,11 +295,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
   } catch (error: any) {
     console.error("[SMART-CHAT] Error:", error?.message || error);
-    const errorMsg = error?.message || "Unknown error";
     return res.status(500).json({
       success: false,
       type: "answer",
-      message: `Error: ${errorMsg}`,
+      message: `Sorry, I encountered an error. Please try again.`,
     });
   }
 }

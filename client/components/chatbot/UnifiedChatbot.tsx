@@ -78,7 +78,7 @@ export function UnifiedChatbot() {
   }, [isOpen]);
 
   // Core API call — returns the assistant reply text (used by both text and voice modes)
-  const callSmartChat = useCallback(async (messageText: string): Promise<{ message: string; path?: string; label?: string; type: string } | null> => {
+  const callSmartChat = useCallback(async (messageText: string, voiceMode = false): Promise<{ message: string; path?: string; label?: string; type: string } | null> => {
     const conversationHistory = messages
       .filter(m => m.id !== "greeting")
       .slice(-6)
@@ -87,7 +87,7 @@ export function UnifiedChatbot() {
     const response = await fetch("/api/smart-chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: messageText, conversationHistory }),
+      body: JSON.stringify({ message: messageText, conversationHistory, voiceMode }),
     });
 
     if (!response.ok) {
@@ -159,7 +159,7 @@ export function UnifiedChatbot() {
     setMessages(prev => [...prev, userMsg]);
 
     try {
-      const data = await callSmartChat(messageText);
+      const data = await callSmartChat(messageText, true);
       if (!data) return null;
 
       const assistantMsg: ChatMessageData = {
@@ -169,13 +169,7 @@ export function UnifiedChatbot() {
         timestamp: new Date(),
       };
 
-      if (data.type === "navigate" && data.path) {
-        assistantMsg.navigateTo = { path: data.path, label: data.label || "Page" };
-        setTimeout(() => navigate(data.path!), 2000); // slight delay so TTS can start
-      } else if (data.path) {
-        assistantMsg.navigateTo = { path: data.path, label: data.label || "Related page" };
-      }
-
+      // Voice mode: don't navigate — user is listening, not browsing
       setMessages(prev => [...prev, assistantMsg]);
       return data.message;
     } catch (err) {
