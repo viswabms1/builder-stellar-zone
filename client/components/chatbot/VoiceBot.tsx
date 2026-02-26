@@ -10,7 +10,7 @@ interface VoiceBotProps {
   sendMessage: (text: string) => Promise<string | null>;
 }
 
-/** Convert ArrayBuffer to base64 in chunks */
+/** Convert ArrayBuffer to base64 in chunks to avoid stack overflow */
 function arrayBufferToBase64(buffer: ArrayBuffer): string {
   const bytes = new Uint8Array(buffer);
   const chunkSize = 8192;
@@ -22,57 +22,7 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
   return btoa(binary);
 }
 
-/** Convert any audio blob to WAV using Web Audio API */
-async function convertBlobToWav(blob: Blob): Promise<string> {
-  try {
-    console.log(`[VoiceBot WAV] Input blob: type=${blob.type}, size=${blob.size} bytes`);
-    const audioCtx = new AudioContext();
-    const arrayBuffer = await blob.arrayBuffer();
-    console.log(`[VoiceBot WAV] ArrayBuffer size: ${arrayBuffer.byteLength} bytes`);
-
-    let audioBuffer;
-    try {
-      audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
-    } catch (decodeErr: any) {
-      console.error(`[VoiceBot WAV] Failed to decode audio data:`, decodeErr.message || decodeErr);
-      // If decoding fails, try to create raw PCM data from the buffer
-      throw new Error(`Audio decode failed: ${decodeErr.message}`);
-    }
-
-    const sampleRate = audioBuffer.sampleRate;
-    console.log(`[VoiceBot WAV] Sample rate: ${sampleRate}, channels: ${audioBuffer.numberOfChannels}, duration: ${audioBuffer.duration}s, length: ${audioBuffer.length} samples`);
-
-    let pcmData: Float32Array;
-    if (audioBuffer.numberOfChannels === 1) {
-      pcmData = audioBuffer.getChannelData(0);
-      console.log(`[VoiceBot WAV] Mono channel, got ${pcmData.length} samples`);
-    } else {
-      const length = audioBuffer.length;
-      pcmData = new Float32Array(length);
-      for (let ch = 0; ch < audioBuffer.numberOfChannels; ch++) {
-        const channelData = audioBuffer.getChannelData(ch);
-        console.log(`[VoiceBot WAV] Channel ${ch}: ${channelData.length} samples, first 5: ${Array.from(channelData.slice(0, 5)).map(s => s.toFixed(3)).join(", ")}`);
-        for (let i = 0; i < length; i++) {
-          pcmData[i] += channelData[i] / audioBuffer.numberOfChannels;
-        }
-      }
-      console.log(`[VoiceBot WAV] Mixed ${audioBuffer.numberOfChannels} channels to mono, got ${pcmData.length} samples`);
-      console.log(`[VoiceBot WAV] Mixed audio first 5: ${Array.from(pcmData.slice(0, 5)).map(s => s.toFixed(3)).join(", ")}`);
-    }
-
-    const wavBuffer = encodeWav(pcmData, sampleRate);
-    console.log(`[VoiceBot WAV] Encoded to WAV: ${wavBuffer.byteLength} bytes`);
-    await audioCtx.close();
-    const b64 = arrayBufferToBase64(wavBuffer);
-    console.log(`[VoiceBot WAV] Base64 encoded: ${b64.length} chars`);
-    return b64;
-  } catch (err: any) {
-    console.error(`[VoiceBot WAV] Conversion error:`, err?.message || err);
-    throw err;
-  }
-}
-
-/** Encode PCM float32 samples to 16-bit WAV */
+/** Encode PCM float32 samples to 16-bit mono WAV */
 function encodeWav(samples: Float32Array, sampleRate: number): ArrayBuffer {
   const numSamples = samples.length;
   const buffer = new ArrayBuffer(44 + numSamples * 2);
@@ -84,20 +34,53 @@ function encodeWav(samples: Float32Array, sampleRate: number): ArrayBuffer {
   view.setUint32(4, 36 + numSamples * 2, true);
   writeStr(8, "WAVE");
   writeStr(12, "fmt ");
-  view.setUint32(16, 16, true);
-  view.setUint16(20, 1, true);
-  view.setUint16(22, 1, true);
+  view.setUint32(16, 16, true);      // chunk size
+  view.setUint16(20, 1, true);       // PCM
+  view.setUint16(22, 1, true);       // mono
   view.setUint32(24, sampleRate, true);
   view.setUint32(28, sampleRate * 2, true);
-  view.setUint16(32, 2, true);
-  view.setUint16(34, 16, true);
+  view.setUint16(32, 2, true);       // block align
+  view.setUint16(34, 16, true);      // bits per sample
   writeStr(36, "data");
   view.setUint32(40, numSamples * 2, true);
   for (let i = 0; i < numSamples; i++) {
     const s = Math.max(-1, Math.min(1, samples[i]));
-    view.setInt16(44 + i * 2, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+    view.setInt16(44 + i * 2, s < 0 ? s * 0x8000 : s * 0x7fff, true);
   }
   return buffer;
+}
+
+/**
+ * Convert any audio blob → 16kHz mono WAV (base64).
+ * Sarvam STT works best with 16kHz PCM WAV.
+ * Uses OfflineAudioContext to resample properly.
+ */
+async function convertBlobToWav(blob: Blob): Promise<string> {
+  const arrayBuffer = await blob.arrayBuffer();
+
+  // Decode original audio
+  const audioCtx = new AudioContext();
+  const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+  await audioCtx.close();
+
+  const TARGET_SAMPLE_RATE = 16000;
+
+  // Resample to 16kHz mono using OfflineAudioContext
+  const numOutputSamples = Math.ceil(audioBuffer.duration * TARGET_SAMPLE_RATE);
+  const offlineCtx = new OfflineAudioContext(1, numOutputSamples, TARGET_SAMPLE_RATE);
+
+  const source = offlineCtx.createBufferSource();
+  source.buffer = audioBuffer;
+  source.connect(offlineCtx.destination);
+  source.start(0);
+
+  const rendered = await offlineCtx.startRendering();
+  const pcmData = rendered.getChannelData(0);
+
+  console.log(`[VoiceBot] Audio: ${audioBuffer.duration.toFixed(1)}s, original ${audioBuffer.sampleRate}Hz → resampled ${TARGET_SAMPLE_RATE}Hz, ${pcmData.length} samples`);
+
+  const wavBuffer = encodeWav(pcmData, TARGET_SAMPLE_RATE);
+  return arrayBufferToBase64(wavBuffer);
 }
 
 export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
@@ -110,6 +93,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const conversationActiveRef = useRef(false);
+  const emptyTranscriptCountRef = useRef(0);
 
   const isDark = theme === "dark";
 
@@ -123,6 +107,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   const endConversation = useCallback(() => {
     conversationActiveRef.current = false;
     setConversationActive(false);
+    emptyTranscriptCountRef.current = 0;
     stopAudio();
     if (mediaRecorderRef.current?.state === "recording") {
       mediaRecorderRef.current.stop();
@@ -132,7 +117,6 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
     setErrorText(null);
   }, []);
 
-  // startRecording is defined with a ref-based approach so speakText can call it
   const startRecordingRef = useRef<() => Promise<void>>();
 
   const speakText = useCallback(async (text: string) => {
@@ -150,76 +134,47 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       }
       const data = await res.json();
       const audio = data?.audio;
-      console.log("[VoiceBot TTS] Response keys:", Object.keys(data), "audio length:", audio?.length || 0);
       if (!audio) throw new Error("No audio received from TTS");
 
       const byteChars = atob(audio);
       const byteArr = new Uint8Array(byteChars.length);
       for (let i = 0; i < byteChars.length; i++) byteArr[i] = byteChars.charCodeAt(i);
-      console.log("[VoiceBot TTS] Decoded audio bytes:", byteArr.length);
+
       const blob = new Blob([byteArr], { type: "audio/wav" });
       const url = URL.createObjectURL(blob);
       const audioEl = new Audio();
       audioEl.volume = 1.0;
       audioRef.current = audioEl;
 
-      // Set up all event handlers BEFORE setting src to avoid race conditions
       audioEl.onended = () => {
-        console.log("[VoiceBot TTS] Playback ended");
         URL.revokeObjectURL(url);
         audioRef.current = null;
+        emptyTranscriptCountRef.current = 0; // reset on successful cycle
         if (conversationActiveRef.current) {
           setTimeout(() => {
-            if (conversationActiveRef.current) {
-              startRecordingRef.current?.();
-            }
-          }, 400);
-        } else {
-          setStatus("idle");
-          setStatusText("Tap to start conversation");
-        }
-      };
-      audioEl.onerror = (e) => {
-        console.error("[VoiceBot TTS] Audio element error:", e, audioEl.error);
-        URL.revokeObjectURL(url);
-        audioRef.current = null;
-        if (conversationActiveRef.current) {
-          setErrorText("Failed to play audio. Tap mic to continue.");
-          setStatus("error");
-          setStatusText("Audio error. Tap mic to retry.");
+            if (conversationActiveRef.current) startRecordingRef.current?.();
+          }, 500);
         } else {
           setStatus("idle");
           setStatusText("Tap to start conversation");
         }
       };
 
-      // Set src and play
-      audioEl.src = url;
-      try {
-        await audioEl.play();
-        console.log("[VoiceBot TTS] Playback started successfully");
-      } catch (playErr) {
-        console.error("[VoiceBot TTS] Play blocked:", playErr);
+      audioEl.onerror = () => {
         URL.revokeObjectURL(url);
         audioRef.current = null;
-        if (conversationActiveRef.current) {
-          setStatusText("Couldn't play audio. Listening...");
-          setTimeout(() => startRecordingRef.current?.(), 400);
-        } else {
-          setStatus("idle");
-          setStatusText("Tap to start conversation");
-        }
-      }
-    } catch (err: any) {
-      console.error("[VoiceBot TTS] Error:", err);
-      if (conversationActiveRef.current) {
-        setErrorText(err.message || "Failed to play audio. Tap mic to continue.");
+        setErrorText("Failed to play audio. Tap mic to continue.");
         setStatus("error");
         setStatusText("Audio error. Tap mic to retry.");
-      } else {
-        setStatus("idle");
-        setStatusText("Tap to start conversation");
-      }
+      };
+
+      audioEl.src = url;
+      await audioEl.play();
+    } catch (err: any) {
+      console.error("[VoiceBot TTS] Error:", err);
+      setErrorText(err.message || "TTS failed. Tap mic to retry.");
+      setStatus("error");
+      setStatusText("Error. Tap mic to continue.");
     }
   }, []);
 
@@ -233,18 +188,15 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
     try {
       stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     } catch (err: any) {
-      console.error("getUserMedia failed:", err.name, err.message);
-      if (err?.name === "NotAllowedError" || err?.name === "PermissionDeniedError") {
-        setErrorText("Microphone access denied. Allow microphone in browser settings.");
-      } else if (err?.name === "NotFoundError") {
-        setErrorText("No microphone found.");
-      } else {
-        setErrorText(`Mic error: ${err.message || err.name || "Unknown"}`);
-      }
+      const msg =
+        err?.name === "NotAllowedError" ? "Microphone access denied. Allow microphone in browser settings." :
+        err?.name === "NotFoundError" ? "No microphone found." :
+        `Mic error: ${err.message || err.name}`;
+      setErrorText(msg);
       setStatus("error");
       setStatusText("Mic unavailable. Tap to retry.");
-      setConversationActive(false);
       conversationActiveRef.current = false;
+      setConversationActive(false);
       return;
     }
 
@@ -269,14 +221,10 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         if (!conversationActiveRef.current) return;
 
         const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
-        console.log("[VoiceBot] Recording stopped, audio blob size:", audioBlob.size);
 
-        if (audioBlob.size < 100) {
-          console.log("[VoiceBot] Audio too small, skipping");
-          if (conversationActiveRef.current) {
-            setStatusText("Didn't catch that. Listening...");
-            setTimeout(() => startRecordingRef.current?.(), 800);
-          }
+        if (audioBlob.size < 1000) {
+          setStatusText("Didn't catch that. Listening...");
+          setTimeout(() => startRecordingRef.current?.(), 800);
           return;
         }
 
@@ -284,66 +232,62 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         setStatusText("Processing...");
 
         try {
-          console.log("[VoiceBot] Converting audio to WAV...");
+          // Convert to 16kHz WAV — required for accurate Sarvam STT
           const wavBase64 = await convertBlobToWav(audioBlob);
-          console.log("[VoiceBot] WAV converted, base64 length:", wavBase64.length, "calling STT API...");
-
-          const payload = { audio: wavBase64, mimeType: "audio/wav", model: "saarika:v2.5", language_code: "en-IN" };
-          console.log("[VoiceBot] STT payload:", { ...payload, audio: `[${wavBase64.length} chars]` });
 
           const sttRes = await fetch("/api/sarvam/speech-to-text", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
+            body: JSON.stringify({
+              audio: wavBase64,
+              mimeType: "audio/wav",
+              model: "saarika:v2.5",
+              language_code: "en-IN",
+            }),
           });
-
-          console.log("[VoiceBot] STT response status:", sttRes.status);
 
           if (!sttRes.ok) {
             const err = await sttRes.json().catch(() => ({}));
-            console.error("[VoiceBot] STT API error:", sttRes.status, err);
             throw new Error(err.error || `STT error ${sttRes.status}`);
           }
 
           const sttData = await sttRes.json();
-          console.log("[VoiceBot] STT full response:", sttData);
-          const transcript = sttData?.transcript || "";
-          console.log("[VoiceBot] STT transcript:", transcript);
+          const transcript = (sttData?.transcript || "").trim();
+          console.log("[VoiceBot] Transcript:", transcript || "(empty)");
 
-          if (!transcript.trim()) {
-            console.log("[VoiceBot] Empty transcript, retrying...");
-            if (conversationActiveRef.current) {
+          if (!transcript) {
+            emptyTranscriptCountRef.current += 1;
+            // After 2 consecutive empty transcripts, show error — don't loop forever
+            if (emptyTranscriptCountRef.current >= 2) {
+              emptyTranscriptCountRef.current = 0;
+              setErrorText("Couldn't hear you clearly. Check mic volume and try again.");
+              setStatus("error");
+              setStatusText("Tap mic to retry.");
+            } else {
+              setStatusText("Didn't catch that. Listening...");
               setStatus("recording");
-              setStatusText("Listening...");
-              setTimeout(() => startRecordingRef.current?.(), 500);
+              setTimeout(() => startRecordingRef.current?.(), 600);
             }
             return;
           }
 
+          // Successful transcript — reset empty counter
+          emptyTranscriptCountRef.current = 0;
           onTranscript?.(transcript);
           setStatus("thinking");
           setStatusText("Thinking...");
-          console.log("[VoiceBot] Calling sendMessage with transcript:", transcript);
 
           const reply = await sendMessage(transcript);
-          console.log("[VoiceBot] sendMessage returned:", reply?.substring(0, 50));
-
           if (reply && reply.trim() && conversationActiveRef.current) {
-            console.log("[VoiceBot] Speaking response...");
             await speakText(reply);
           } else if (!reply || !reply.trim()) {
-            console.error("[VoiceBot] No reply from sendMessage!");
-            setErrorText("Bot didn't respond. Tap mic to retry.");
+            setErrorText("No response from bot. Tap mic to retry.");
             setStatus("error");
             setStatusText("Error. Tap mic to continue.");
-          } else if (conversationActiveRef.current) {
-            console.log("[VoiceBot] Conversation not active, stopping");
-            setStatus("idle");
-            setStatusText("Tap to start conversation");
           }
         } catch (err: any) {
-          console.error("[VoiceBot] onstop error:", err);
-          setErrorText(err.message || "Error occurred");
+          console.error("[VoiceBot] Processing error:", err);
+          setErrorText(err.message || "Something went wrong.");
           setStatus("error");
           setStatusText("Error. Tap mic to continue.");
         }
@@ -371,32 +315,29 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
     if (status === "recording") {
       stopRecording();
     } else if (status === "speaking") {
-      // Skip current response, listen again
       stopAudio();
       if (conversationActiveRef.current) {
         setTimeout(() => startRecordingRef.current?.(), 300);
       }
-    } else if (conversationActive && status === "error") {
-      // Retry after error
+    } else if (status === "error" && conversationActive) {
       setErrorText(null);
       startRecording();
-    } else {
-      // Start conversation
+    } else if (status !== "transcribing" && status !== "thinking") {
       conversationActiveRef.current = true;
       setConversationActive(true);
       setErrorText(null);
+      emptyTranscriptCountRef.current = 0;
       startRecording();
     }
   };
 
   const isAnimating = status === "recording" || status === "speaking";
   const isProcessing = status === "transcribing" || status === "thinking";
-
   const pulseColor = status === "recording" ? "bg-red-500" : status === "speaking" ? "bg-green-500" : "bg-yellow-500";
 
   return (
     <div className="flex flex-col items-center gap-3 py-4">
-      {/* Status label */}
+      {/* Conversation active badge */}
       {conversationActive && (
         <div className={cn(
           "flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold",
@@ -442,13 +383,13 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         {statusText}
       </p>
 
-      {errorText && status === "error" && (
+      {errorText && (
         <p className={cn("text-xs text-center px-3 max-w-[280px]", isDark ? "text-red-400" : "text-red-500")}>
           {errorText}
         </p>
       )}
 
-      {/* Audio visualizer */}
+      {/* Audio visualizer — recording */}
       {status === "recording" && (
         <div className="flex items-center gap-0.5 h-6">
           {[...Array(9)].map((_, i) => (
@@ -458,6 +399,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         </div>
       )}
 
+      {/* Audio visualizer — speaking */}
       {status === "speaking" && (
         <div className="flex items-center gap-0.5 h-6">
           {[...Array(9)].map((_, i) => (
@@ -467,7 +409,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         </div>
       )}
 
-      {/* End conversation button */}
+      {/* End conversation */}
       {conversationActive && (
         <button
           onClick={endConversation}
