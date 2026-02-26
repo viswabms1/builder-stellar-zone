@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-import { Mic, MicOff, Volume2, Loader2 } from "lucide-react";
+import { Mic, MicOff, Volume2, Loader2, PhoneOff } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type VoiceBotStatus = "idle" | "recording" | "transcribing" | "thinking" | "speaking" | "error";
@@ -78,12 +78,14 @@ function encodeWav(samples: Float32Array, sampleRate: number): ArrayBuffer {
 
 export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   const [status, setStatus] = useState<VoiceBotStatus>("idle");
-  const [statusText, setStatusText] = useState("Tap the mic and speak");
+  const [conversationActive, setConversationActive] = useState(false);
+  const [statusText, setStatusText] = useState("Tap to start conversation");
   const [errorText, setErrorText] = useState<string | null>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const conversationActiveRef = useRef(false);
 
   const isDark = theme === "dark";
 
@@ -93,6 +95,21 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       audioRef.current = null;
     }
   };
+
+  const endConversation = useCallback(() => {
+    conversationActiveRef.current = false;
+    setConversationActive(false);
+    stopAudio();
+    if (mediaRecorderRef.current?.state === "recording") {
+      mediaRecorderRef.current.stop();
+    }
+    setStatus("idle");
+    setStatusText("Tap to start conversation");
+    setErrorText(null);
+  }, []);
+
+  // startRecording is defined with a ref-based approach so speakText can call it
+  const startRecordingRef = useRef<() => Promise<void>>();
 
   const speakText = useCallback(async (text: string) => {
     setStatus("speaking");
@@ -118,36 +135,67 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       const audioEl = new Audio(url);
       audioRef.current = audioEl;
       audioEl.play();
-      audioEl.onended = () => { URL.revokeObjectURL(url); setStatus("idle"); setStatusText("Tap the mic and speak"); audioRef.current = null; };
-      audioEl.onerror = () => { URL.revokeObjectURL(url); setStatus("idle"); setStatusText("Tap the mic and speak"); audioRef.current = null; };
+
+      audioEl.onended = () => {
+        URL.revokeObjectURL(url);
+        audioRef.current = null;
+        // Auto-listen if conversation is still active
+        if (conversationActiveRef.current) {
+          setTimeout(() => {
+            if (conversationActiveRef.current) {
+              startRecordingRef.current?.();
+            }
+          }, 400);
+        } else {
+          setStatus("idle");
+          setStatusText("Tap to start conversation");
+        }
+      };
+      audioEl.onerror = () => {
+        URL.revokeObjectURL(url);
+        audioRef.current = null;
+        if (conversationActiveRef.current) {
+          setTimeout(() => startRecordingRef.current?.(), 400);
+        } else {
+          setStatus("idle");
+          setStatusText("Tap to start conversation");
+        }
+      };
     } catch (err: any) {
       console.error("TTS error:", err);
-      setStatus("idle");
-      setStatusText("Tap the mic and speak");
+      if (conversationActiveRef.current) {
+        setStatus("idle");
+        setStatusText("Listening...");
+        setTimeout(() => startRecordingRef.current?.(), 400);
+      } else {
+        setStatus("idle");
+        setStatusText("Tap to start conversation");
+      }
     }
   }, []);
 
   const startRecording = useCallback(async () => {
+    if (!conversationActiveRef.current) return;
+
     setErrorText(null);
     stopAudio();
 
-    // This getUserMedia call serves dual purpose:
-    // 1. Requests mic permission (browser shows prompt on first use)
-    // 2. Gets the audio stream for recording
     let stream: MediaStream;
     try {
       stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     } catch (err: any) {
       console.error("getUserMedia failed:", err.name, err.message);
       if (err?.name === "NotAllowedError" || err?.name === "PermissionDeniedError") {
-        setErrorText("Microphone access was denied. Please allow microphone in your browser settings and try again.");
+        setErrorText("Microphone access denied. Allow microphone in browser settings.");
       } else if (err?.name === "NotFoundError") {
-        setErrorText("No microphone found. Please connect a microphone.");
+        setErrorText("No microphone found.");
       } else {
-        setErrorText(`Microphone error: ${err.message || err.name || "Unknown"}`);
+        setErrorText(`Mic error: ${err.message || err.name || "Unknown"}`);
       }
       setStatus("error");
       setStatusText("Mic unavailable. Tap to retry.");
+      setConversationActive(false);
+      conversationActiveRef.current = false;
       return;
     }
 
@@ -168,20 +216,24 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
 
       recorder.onstop = async () => {
         stream.getTracks().forEach((t) => t.stop());
+
+        if (!conversationActiveRef.current) return;
+
         const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
 
         if (audioBlob.size < 100) {
-          setStatus("idle");
-          setStatusText("Recording too short. Try again.");
+          if (conversationActiveRef.current) {
+            setStatusText("Didn't catch that. Listening...");
+            setTimeout(() => startRecordingRef.current?.(), 800);
+          }
           return;
         }
 
         setStatus("transcribing");
-        setStatusText("Converting audio...");
+        setStatusText("Processing...");
 
         try {
           const wavBase64 = await convertBlobToWav(audioBlob);
-          setStatusText("Transcribing...");
 
           const sttRes = await fetch("/api/sarvam/speech-to-text", {
             method: "POST",
@@ -198,8 +250,11 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
           const transcript = sttData?.transcript || "";
 
           if (!transcript.trim()) {
-            setStatus("idle");
-            setStatusText("Didn't catch that. Try again.");
+            if (conversationActiveRef.current) {
+              setStatus("recording");
+              setStatusText("Listening...");
+              setTimeout(() => startRecordingRef.current?.(), 500);
+            }
             return;
           }
 
@@ -208,23 +263,22 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
           setStatusText("Thinking...");
 
           const reply = await sendMessage(transcript);
-          if (reply) {
+          if (reply && conversationActiveRef.current) {
             await speakText(reply);
-          } else {
-            setStatus("idle");
-            setStatusText("Tap the mic and speak");
+          } else if (conversationActiveRef.current) {
+            setTimeout(() => startRecordingRef.current?.(), 400);
           }
         } catch (err: any) {
           console.error("STT error:", err);
-          setErrorText(err.message || "Transcription failed");
+          setErrorText(err.message || "Error occurred");
           setStatus("error");
-          setStatusText("Error. Tap to retry.");
+          setStatusText("Error. Tap mic to continue.");
         }
       };
 
       recorder.start();
       setStatus("recording");
-      setStatusText("Listening... tap to stop");
+      setStatusText("Listening...");
     } catch (err: any) {
       stream.getTracks().forEach((t) => t.stop());
       setErrorText(`Recording error: ${err.message || "Unknown"}`);
@@ -233,14 +287,33 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
     }
   }, [onTranscript, sendMessage, speakText]);
 
+  // Keep ref in sync
+  startRecordingRef.current = startRecording;
+
   const stopRecording = useCallback(() => {
     mediaRecorderRef.current?.stop();
   }, []);
 
   const handleMicClick = () => {
-    if (status === "recording") stopRecording();
-    else if (status === "speaking") { stopAudio(); setStatus("idle"); setStatusText("Tap the mic and speak"); }
-    else startRecording();
+    if (status === "recording") {
+      stopRecording();
+    } else if (status === "speaking") {
+      // Skip current response, listen again
+      stopAudio();
+      if (conversationActiveRef.current) {
+        setTimeout(() => startRecordingRef.current?.(), 300);
+      }
+    } else if (conversationActive && status === "error") {
+      // Retry after error
+      setErrorText(null);
+      startRecording();
+    } else {
+      // Start conversation
+      conversationActiveRef.current = true;
+      setConversationActive(true);
+      setErrorText(null);
+      startRecording();
+    }
   };
 
   const isAnimating = status === "recording" || status === "speaking";
@@ -250,6 +323,18 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
 
   return (
     <div className="flex flex-col items-center gap-3 py-4">
+      {/* Status label */}
+      {conversationActive && (
+        <div className={cn(
+          "flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold",
+          isDark ? "bg-green-500/15 text-green-400" : "bg-green-50 text-green-600"
+        )}>
+          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+          Conversation active
+        </div>
+      )}
+
+      {/* Mic button */}
       <div className="relative flex items-center justify-center">
         {isAnimating && (
           <>
@@ -290,6 +375,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         </p>
       )}
 
+      {/* Audio visualizer */}
       {status === "recording" && (
         <div className="flex items-center gap-0.5 h-6">
           {[...Array(9)].map((_, i) => (
@@ -306,6 +392,22 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
               style={{ height: `${8 + (i % 3) * 6}px`, animationDelay: `${i * 0.12}s` }} />
           ))}
         </div>
+      )}
+
+      {/* End conversation button */}
+      {conversationActive && (
+        <button
+          onClick={endConversation}
+          className={cn(
+            "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium transition-colors mt-1",
+            isDark
+              ? "bg-red-500/15 text-red-400 hover:bg-red-500/25"
+              : "bg-red-50 text-red-500 hover:bg-red-100"
+          )}
+        >
+          <PhoneOff className="w-3 h-3" />
+          End Conversation
+        </button>
       )}
     </div>
   );
