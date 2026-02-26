@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { Mic, MicOff, Volume2, Loader2, PhoneOff } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -9,6 +9,8 @@ interface VoiceBotProps {
   onTranscript?: (text: string) => void;
   sendMessage: (text: string) => Promise<string | null>;
 }
+
+// ─── Audio helpers (unchanged — they work correctly) ──────────────────────────
 
 /** Convert ArrayBuffer to base64 in chunks to avoid stack overflow */
 function arrayBufferToBase64(buffer: ArrayBuffer): string {
@@ -34,13 +36,13 @@ function encodeWav(samples: Float32Array, sampleRate: number): ArrayBuffer {
   view.setUint32(4, 36 + numSamples * 2, true);
   writeStr(8, "WAVE");
   writeStr(12, "fmt ");
-  view.setUint32(16, 16, true);      // chunk size
-  view.setUint16(20, 1, true);       // PCM
-  view.setUint16(22, 1, true);       // mono
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
+  view.setUint16(22, 1, true);
   view.setUint32(24, sampleRate, true);
   view.setUint32(28, sampleRate * 2, true);
-  view.setUint16(32, 2, true);       // block align
-  view.setUint16(34, 16, true);      // bits per sample
+  view.setUint16(32, 2, true);
+  view.setUint16(34, 16, true);
   writeStr(36, "data");
   view.setUint32(40, numSamples * 2, true);
   for (let i = 0; i < numSamples; i++) {
@@ -50,22 +52,14 @@ function encodeWav(samples: Float32Array, sampleRate: number): ArrayBuffer {
   return buffer;
 }
 
-/**
- * Convert any audio blob → 16kHz mono WAV (base64).
- * Sarvam STT works best with 16kHz PCM WAV.
- * Uses OfflineAudioContext to resample properly.
- */
+/** Convert any audio blob → 16kHz mono WAV (base64) using OfflineAudioContext */
 async function convertBlobToWav(blob: Blob): Promise<string> {
   const arrayBuffer = await blob.arrayBuffer();
-
-  // Decode original audio
   const audioCtx = new AudioContext();
   const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
   await audioCtx.close();
 
   const TARGET_SAMPLE_RATE = 16000;
-
-  // Resample to 16kHz mono using OfflineAudioContext
   const numOutputSamples = Math.ceil(audioBuffer.duration * TARGET_SAMPLE_RATE);
   const offlineCtx = new OfflineAudioContext(1, numOutputSamples, TARGET_SAMPLE_RATE);
 
@@ -76,12 +70,10 @@ async function convertBlobToWav(blob: Blob): Promise<string> {
 
   const rendered = await offlineCtx.startRendering();
   const pcmData = rendered.getChannelData(0);
-
-  console.log(`[VoiceBot] Audio: ${audioBuffer.duration.toFixed(1)}s, original ${audioBuffer.sampleRate}Hz → resampled ${TARGET_SAMPLE_RATE}Hz, ${pcmData.length} samples`);
-
-  const wavBuffer = encodeWav(pcmData, TARGET_SAMPLE_RATE);
-  return arrayBufferToBase64(wavBuffer);
+  return arrayBufferToBase64(encodeWav(pcmData, TARGET_SAMPLE_RATE));
 }
+
+// ─── Component ────────────────────────────────────────────────────────────────
 
 export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   const [status, setStatus] = useState<VoiceBotStatus>("idle");
@@ -89,14 +81,53 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   const [statusText, setStatusText] = useState("Tap to start conversation");
   const [errorText, setErrorText] = useState<string | null>(null);
 
+  // ── Core refs ──────────────────────────────────────────────────────────────
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
-  const audioChunksRef = useRef<Blob[]>([]);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioChunksRef   = useRef<Blob[]>([]);
+  const audioRef         = useRef<HTMLAudioElement | null>(null);
+
+  // ── State-flag refs (fix for all 6 bugs) ──────────────────────────────────
   const conversationActiveRef = useRef(false);
-  const emptyTranscriptCountRef = useRef(0);
+  /** Bug 1 & 2 & 3: did the USER explicitly tap the stop button? */
+  const userStoppedRef        = useRef(false);
+  /** Bug 4: consecutive auto-listen failures after bot speech */
+  const autoRetryCountRef     = useRef(0);
+  /** Bug 6: keep one stream alive across recording cycles */
+  const streamRef             = useRef<MediaStream | null>(null);
+  /** Bug 5: did we detect any actual audio above silence threshold? */
+  const hasAudioRef           = useRef(false);
+  /** Analyser cleanup ref */
+  const analyserCtxRef        = useRef<AudioContext | null>(null);
+  const animFrameRef          = useRef<number>(0);
+
+  const startRecordingRef = useRef<() => Promise<void>>();
 
   const isDark = theme === "dark";
 
+  // ── Cleanup mic stream ─────────────────────────────────────────────────────
+  const releaseStream = useCallback(() => {
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach((t) => t.stop());
+      streamRef.current = null;
+    }
+    if (analyserCtxRef.current) {
+      analyserCtxRef.current.close().catch(() => {});
+      analyserCtxRef.current = null;
+    }
+    if (animFrameRef.current) {
+      cancelAnimationFrame(animFrameRef.current);
+      animFrameRef.current = 0;
+    }
+  }, []);
+
+  // ── Cleanup on unmount ─────────────────────────────────────────────────────
+  useEffect(() => {
+    return () => {
+      releaseStream();
+    };
+  }, [releaseStream]);
+
+  // ── Stop TTS audio ─────────────────────────────────────────────────────────
   const stopAudio = () => {
     if (audioRef.current) {
       audioRef.current.pause();
@@ -104,21 +135,23 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
     }
   };
 
+  // ── End conversation cleanly ───────────────────────────────────────────────
   const endConversation = useCallback(() => {
     conversationActiveRef.current = false;
+    userStoppedRef.current = false;
+    autoRetryCountRef.current = 0;
     setConversationActive(false);
-    emptyTranscriptCountRef.current = 0;
     stopAudio();
     if (mediaRecorderRef.current?.state === "recording") {
       mediaRecorderRef.current.stop();
     }
+    releaseStream();
     setStatus("idle");
     setStatusText("Tap to start conversation");
     setErrorText(null);
-  }, []);
+  }, [releaseStream]);
 
-  const startRecordingRef = useRef<() => Promise<void>>();
-
+  // ── TTS: speak a reply (logic unchanged — it works correctly) ─────────────
   const speakText = useCallback(async (text: string) => {
     setStatus("speaking");
     setStatusText("Speaking...");
@@ -149,8 +182,10 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       audioEl.onended = () => {
         URL.revokeObjectURL(url);
         audioRef.current = null;
-        emptyTranscriptCountRef.current = 0; // reset on successful cycle
+        // Successful speech → reset auto-retry counter
+        autoRetryCountRef.current = 0;
         if (conversationActiveRef.current) {
+          // Bug 4: auto-listen after bot speaks is desired, but gated by autoRetryCountRef
           setTimeout(() => {
             if (conversationActiveRef.current) startRecordingRef.current?.();
           }, 500);
@@ -171,33 +206,68 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       audioEl.src = url;
       await audioEl.play();
     } catch (err: any) {
-      console.error("[VoiceBot TTS] Error:", err);
+      console.error("[VoiceBot TTS]", err);
       setErrorText(err.message || "TTS failed. Tap mic to retry.");
       setStatus("error");
       setStatusText("Error. Tap mic to continue.");
     }
   }, []);
 
+  // ── Start recording (with stream reuse + audio level detection) ────────────
   const startRecording = useCallback(async () => {
     if (!conversationActiveRef.current) return;
 
     setErrorText(null);
     stopAudio();
+    hasAudioRef.current = false;
 
-    let stream: MediaStream;
+    // Bug 6: reuse existing stream if available and active
+    let stream = streamRef.current;
+    if (!stream || stream.getTracks().every((t) => t.readyState === "ended")) {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        streamRef.current = stream;
+      } catch (err: any) {
+        const msg =
+          err?.name === "NotAllowedError"
+            ? "Microphone access denied. Allow microphone in browser settings."
+            : err?.name === "NotFoundError"
+            ? "No microphone found."
+            : `Mic error: ${err.message || err.name}`;
+        setErrorText(msg);
+        setStatus("error");
+        setStatusText("Mic unavailable. Tap to retry.");
+        conversationActiveRef.current = false;
+        setConversationActive(false);
+        return;
+      }
+    }
+
+    // Bug 5: set up AnalyserNode to detect audio above silence threshold
     try {
-      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    } catch (err: any) {
-      const msg =
-        err?.name === "NotAllowedError" ? "Microphone access denied. Allow microphone in browser settings." :
-        err?.name === "NotFoundError" ? "No microphone found." :
-        `Mic error: ${err.message || err.name}`;
-      setErrorText(msg);
-      setStatus("error");
-      setStatusText("Mic unavailable. Tap to retry.");
-      conversationActiveRef.current = false;
-      setConversationActive(false);
-      return;
+      if (analyserCtxRef.current) {
+        analyserCtxRef.current.close().catch(() => {});
+        analyserCtxRef.current = null;
+      }
+      const analyserCtx = new AudioContext();
+      analyserCtxRef.current = analyserCtx;
+      const analyser = analyserCtx.createAnalyser();
+      analyser.fftSize = 256;
+      const source = analyserCtx.createMediaStreamSource(stream);
+      source.connect(analyser);
+      const dataArray = new Uint8Array(analyser.frequencyBinCount);
+      const SILENCE_THRESHOLD = 5; // 0–255, anything above 5 counts as audio
+
+      const checkAudioLevel = () => {
+        if (!analyserCtxRef.current) return;
+        analyser.getByteFrequencyData(dataArray);
+        const avg = dataArray.reduce((s, v) => s + v, 0) / dataArray.length;
+        if (avg > SILENCE_THRESHOLD) hasAudioRef.current = true;
+        animFrameRef.current = requestAnimationFrame(checkAudioLevel);
+      };
+      animFrameRef.current = requestAnimationFrame(checkAudioLevel);
+    } catch {
+      // Analyser setup failed — not critical, continue without it
     }
 
     try {
@@ -216,15 +286,52 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       };
 
       recorder.onstop = async () => {
-        stream.getTracks().forEach((t) => t.stop());
+        // Stop analyser
+        if (animFrameRef.current) {
+          cancelAnimationFrame(animFrameRef.current);
+          animFrameRef.current = 0;
+        }
+        if (analyserCtxRef.current) {
+          analyserCtxRef.current.close().catch(() => {});
+          analyserCtxRef.current = null;
+        }
+
+        // Bug 6: do NOT stop the stream tracks here — keep stream alive for reuse
 
         if (!conversationActiveRef.current) return;
 
-        const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
+        // Capture and reset the userStopped flag
+        const userStopped = userStoppedRef.current;
+        userStoppedRef.current = false;
 
-        if (audioBlob.size < 1000) {
-          setStatusText("Didn't catch that. Listening...");
-          setTimeout(() => startRecordingRef.current?.(), 800);
+        const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
+        const tooSmall = audioBlob.size < 1000;
+
+        // Bug 5: mic silence check
+        if (!hasAudioRef.current || tooSmall) {
+          if (userStopped) {
+            // Bug 2: user intentionally stopped — don't auto-restart
+            setStatus("idle");
+            setStatusText("Tap mic to speak");
+            setErrorText(
+              !hasAudioRef.current
+                ? "Your microphone seems quiet. Check that it's not muted."
+                : null
+            );
+          } else {
+            // Bug 4: auto-listen cycle — check retry limit
+            autoRetryCountRef.current += 1;
+            if (autoRetryCountRef.current >= 2) {
+              autoRetryCountRef.current = 0;
+              setStatus("idle");
+              setStatusText("Tap mic when ready to speak");
+              setErrorText(null);
+            } else {
+              setStatusText("Listening...");
+              setStatus("recording");
+              setTimeout(() => startRecordingRef.current?.(), 600);
+            }
+          }
           return;
         }
 
@@ -232,7 +339,6 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         setStatusText("Processing...");
 
         try {
-          // Convert to 16kHz WAV — required for accurate Sarvam STT
           const wavBase64 = await convertBlobToWav(audioBlob);
 
           const sttRes = await fetch("/api/sarvam/speech-to-text", {
@@ -253,26 +359,32 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
 
           const sttData = await sttRes.json();
           const transcript = (sttData?.transcript || "").trim();
-          console.log("[VoiceBot] Transcript:", transcript || "(empty)");
 
           if (!transcript) {
-            emptyTranscriptCountRef.current += 1;
-            // After 2 consecutive empty transcripts, show error — don't loop forever
-            if (emptyTranscriptCountRef.current >= 2) {
-              emptyTranscriptCountRef.current = 0;
-              setErrorText("Couldn't hear you clearly. Check mic volume and try again.");
-              setStatus("error");
-              setStatusText("Tap mic to retry.");
+            if (userStopped) {
+              // Bug 3: user stopped intentionally — don't auto-restart
+              setStatus("idle");
+              setStatusText("Didn't catch anything. Tap mic to try again.");
+              setErrorText(null);
             } else {
-              setStatusText("Didn't catch that. Listening...");
-              setStatus("recording");
-              setTimeout(() => startRecordingRef.current?.(), 600);
+              // Bug 3: auto-loop — allow 1 retry then stop
+              autoRetryCountRef.current += 1;
+              if (autoRetryCountRef.current >= 2) {
+                autoRetryCountRef.current = 0;
+                setStatus("idle");
+                setStatusText("Tap mic when ready to speak");
+                setErrorText(null);
+              } else {
+                setStatusText("Listening...");
+                setStatus("recording");
+                setTimeout(() => startRecordingRef.current?.(), 600);
+              }
             }
             return;
           }
 
-          // Successful transcript — reset empty counter
-          emptyTranscriptCountRef.current = 0;
+          // Success — reset counters
+          autoRetryCountRef.current = 0;
           onTranscript?.(transcript);
           setStatus("thinking");
           setStatusText("Thinking...");
@@ -297,24 +409,27 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       setStatus("recording");
       setStatusText("Listening...");
     } catch (err: any) {
-      stream.getTracks().forEach((t) => t.stop());
       setErrorText(`Recording error: ${err.message || "Unknown"}`);
       setStatus("error");
       setStatusText("Error. Tap to retry.");
     }
   }, [onTranscript, sendMessage, speakText]);
 
-  // Keep ref in sync
+  // Keep startRecordingRef in sync with latest closure
   startRecordingRef.current = startRecording;
 
   const stopRecording = useCallback(() => {
     mediaRecorderRef.current?.stop();
   }, []);
 
+  // ── Mic button handler ─────────────────────────────────────────────────────
   const handleMicClick = () => {
     if (status === "recording") {
+      // Bug 1: mark as user-initiated stop BEFORE calling stopRecording
+      userStoppedRef.current = true;
       stopRecording();
     } else if (status === "speaking") {
+      // User wants to skip bot speech and start talking
       stopAudio();
       if (conversationActiveRef.current) {
         setTimeout(() => startRecordingRef.current?.(), 300);
@@ -323,18 +438,21 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       setErrorText(null);
       startRecording();
     } else if (status !== "transcribing" && status !== "thinking") {
+      // Start new conversation
       conversationActiveRef.current = true;
       setConversationActive(true);
       setErrorText(null);
-      emptyTranscriptCountRef.current = 0;
+      userStoppedRef.current = false;
+      autoRetryCountRef.current = 0;
       startRecording();
     }
   };
 
-  const isAnimating = status === "recording" || status === "speaking";
+  const isAnimating  = status === "recording" || status === "speaking";
   const isProcessing = status === "transcribing" || status === "thinking";
-  const pulseColor = status === "recording" ? "bg-red-500" : status === "speaking" ? "bg-green-500" : "bg-yellow-500";
+  const pulseColor   = status === "recording" ? "bg-red-500" : status === "speaking" ? "bg-green-500" : "bg-yellow-500";
 
+  // ── UI ─────────────────────────────────────────────────────────────────────
   return (
     <div className="flex flex-col items-center gap-3 py-4">
       {/* Conversation active badge */}
@@ -372,9 +490,12 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
               : "bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 hover:scale-105"
           )}
         >
-          {isProcessing ? <Loader2 className="w-6 h-6 text-white animate-spin" />
-            : status === "speaking" ? <Volume2 className="w-6 h-6 text-white" />
-            : status === "recording" ? <MicOff className="w-6 h-6 text-white" />
+          {isProcessing
+            ? <Loader2 className="w-6 h-6 text-white animate-spin" />
+            : status === "speaking"
+            ? <Volume2 className="w-6 h-6 text-white" />
+            : status === "recording"
+            ? <MicOff className="w-6 h-6 text-white" />
             : <Mic className="w-6 h-6 text-white" />}
         </button>
       </div>
