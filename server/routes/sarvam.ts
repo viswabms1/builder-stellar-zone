@@ -167,6 +167,7 @@ export async function handleSarvamTTS(req: Request, res: Response) {
       }
 
       const b64 = data?.audios?.[0];
+      console.log(`[Sarvam TTS] Chunk response OK=${sarvamRes.ok}, audio length=${b64?.length || 0}, keys=${Object.keys(data).join(",")}`);
       if (!b64) return res.status(500).json({ error: "No audio returned from Sarvam" });
 
       audioBuffers.push(Buffer.from(b64, "base64"));

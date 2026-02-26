@@ -124,22 +124,26 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.error || "TTS failed");
       }
-      const { audio } = await res.json();
-      if (!audio) throw new Error("No audio received");
+      const data = await res.json();
+      const audio = data?.audio;
+      console.log("[VoiceBot TTS] Response keys:", Object.keys(data), "audio length:", audio?.length || 0);
+      if (!audio) throw new Error("No audio received from TTS");
 
       const byteChars = atob(audio);
       const byteArr = new Uint8Array(byteChars.length);
       for (let i = 0; i < byteChars.length; i++) byteArr[i] = byteChars.charCodeAt(i);
+      console.log("[VoiceBot TTS] Decoded audio bytes:", byteArr.length);
       const blob = new Blob([byteArr], { type: "audio/wav" });
       const url = URL.createObjectURL(blob);
-      const audioEl = new Audio(url);
+      const audioEl = new Audio();
+      audioEl.volume = 1.0;
       audioRef.current = audioEl;
-      audioEl.play();
 
+      // Set up all event handlers BEFORE setting src to avoid race conditions
       audioEl.onended = () => {
+        console.log("[VoiceBot TTS] Playback ended");
         URL.revokeObjectURL(url);
         audioRef.current = null;
-        // Auto-listen if conversation is still active
         if (conversationActiveRef.current) {
           setTimeout(() => {
             if (conversationActiveRef.current) {
@@ -151,7 +155,8 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
           setStatusText("Tap to start conversation");
         }
       };
-      audioEl.onerror = () => {
+      audioEl.onerror = (e) => {
+        console.error("[VoiceBot TTS] Audio element error:", e, audioEl.error);
         URL.revokeObjectURL(url);
         audioRef.current = null;
         if (conversationActiveRef.current) {
@@ -161,8 +166,26 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
           setStatusText("Tap to start conversation");
         }
       };
+
+      // Set src and play
+      audioEl.src = url;
+      try {
+        await audioEl.play();
+        console.log("[VoiceBot TTS] Playback started successfully");
+      } catch (playErr) {
+        console.error("[VoiceBot TTS] Play blocked:", playErr);
+        URL.revokeObjectURL(url);
+        audioRef.current = null;
+        if (conversationActiveRef.current) {
+          setStatusText("Couldn't play audio. Listening...");
+          setTimeout(() => startRecordingRef.current?.(), 400);
+        } else {
+          setStatus("idle");
+          setStatusText("Tap to start conversation");
+        }
+      }
     } catch (err: any) {
-      console.error("TTS error:", err);
+      console.error("[VoiceBot TTS] Error:", err);
       if (conversationActiveRef.current) {
         setStatus("idle");
         setStatusText("Listening...");
