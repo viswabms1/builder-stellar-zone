@@ -24,28 +24,52 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
 
 /** Convert any audio blob to WAV using Web Audio API */
 async function convertBlobToWav(blob: Blob): Promise<string> {
-  const audioCtx = new AudioContext();
-  const arrayBuffer = await blob.arrayBuffer();
-  const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
-  const sampleRate = audioBuffer.sampleRate;
+  try {
+    console.log(`[VoiceBot WAV] Input blob: type=${blob.type}, size=${blob.size} bytes`);
+    const audioCtx = new AudioContext();
+    const arrayBuffer = await blob.arrayBuffer();
+    console.log(`[VoiceBot WAV] ArrayBuffer size: ${arrayBuffer.byteLength} bytes`);
 
-  let pcmData: Float32Array;
-  if (audioBuffer.numberOfChannels === 1) {
-    pcmData = audioBuffer.getChannelData(0);
-  } else {
-    const length = audioBuffer.length;
-    pcmData = new Float32Array(length);
-    for (let ch = 0; ch < audioBuffer.numberOfChannels; ch++) {
-      const channelData = audioBuffer.getChannelData(ch);
-      for (let i = 0; i < length; i++) {
-        pcmData[i] += channelData[i] / audioBuffer.numberOfChannels;
-      }
+    let audioBuffer;
+    try {
+      audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+    } catch (decodeErr: any) {
+      console.error(`[VoiceBot WAV] Failed to decode audio data:`, decodeErr.message || decodeErr);
+      // If decoding fails, try to create raw PCM data from the buffer
+      throw new Error(`Audio decode failed: ${decodeErr.message}`);
     }
-  }
 
-  const wavBuffer = encodeWav(pcmData, sampleRate);
-  await audioCtx.close();
-  return arrayBufferToBase64(wavBuffer);
+    const sampleRate = audioBuffer.sampleRate;
+    console.log(`[VoiceBot WAV] Sample rate: ${sampleRate}, channels: ${audioBuffer.numberOfChannels}, duration: ${audioBuffer.duration}s, length: ${audioBuffer.length} samples`);
+
+    let pcmData: Float32Array;
+    if (audioBuffer.numberOfChannels === 1) {
+      pcmData = audioBuffer.getChannelData(0);
+      console.log(`[VoiceBot WAV] Mono channel, got ${pcmData.length} samples`);
+    } else {
+      const length = audioBuffer.length;
+      pcmData = new Float32Array(length);
+      for (let ch = 0; ch < audioBuffer.numberOfChannels; ch++) {
+        const channelData = audioBuffer.getChannelData(ch);
+        console.log(`[VoiceBot WAV] Channel ${ch}: ${channelData.length} samples, first 5: ${Array.from(channelData.slice(0, 5)).map(s => s.toFixed(3)).join(", ")}`);
+        for (let i = 0; i < length; i++) {
+          pcmData[i] += channelData[i] / audioBuffer.numberOfChannels;
+        }
+      }
+      console.log(`[VoiceBot WAV] Mixed ${audioBuffer.numberOfChannels} channels to mono, got ${pcmData.length} samples`);
+      console.log(`[VoiceBot WAV] Mixed audio first 5: ${Array.from(pcmData.slice(0, 5)).map(s => s.toFixed(3)).join(", ")}`);
+    }
+
+    const wavBuffer = encodeWav(pcmData, sampleRate);
+    console.log(`[VoiceBot WAV] Encoded to WAV: ${wavBuffer.byteLength} bytes`);
+    await audioCtx.close();
+    const b64 = arrayBufferToBase64(wavBuffer);
+    console.log(`[VoiceBot WAV] Base64 encoded: ${b64.length} chars`);
+    return b64;
+  } catch (err: any) {
+    console.error(`[VoiceBot WAV] Conversion error:`, err?.message || err);
+    throw err;
+  }
 }
 
 /** Encode PCM float32 samples to 16-bit WAV */
@@ -262,13 +286,18 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         try {
           console.log("[VoiceBot] Converting audio to WAV...");
           const wavBase64 = await convertBlobToWav(audioBlob);
-          console.log("[VoiceBot] WAV converted, calling STT API...");
+          console.log("[VoiceBot] WAV converted, base64 length:", wavBase64.length, "calling STT API...");
+
+          const payload = { audio: wavBase64, mimeType: "audio/wav", model: "saarika:v2.5", language_code: "en-IN" };
+          console.log("[VoiceBot] STT payload:", { ...payload, audio: `[${wavBase64.length} chars]` });
 
           const sttRes = await fetch("/api/sarvam/speech-to-text", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ audio: wavBase64, mimeType: "audio/wav", model: "saarika:v2.5" }),
+            body: JSON.stringify(payload),
           });
+
+          console.log("[VoiceBot] STT response status:", sttRes.status);
 
           if (!sttRes.ok) {
             const err = await sttRes.json().catch(() => ({}));
@@ -277,6 +306,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
           }
 
           const sttData = await sttRes.json();
+          console.log("[VoiceBot] STT full response:", sttData);
           const transcript = sttData?.transcript || "";
           console.log("[VoiceBot] STT transcript:", transcript);
 

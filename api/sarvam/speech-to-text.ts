@@ -26,7 +26,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { audio, mimeType = "audio/wav", model = "saarika:v2.5", language_code } = req.body || {};
+    const { audio, mimeType = "audio/wav", model = "saarika:v2.5", language_code = "en-IN" } = req.body || {};
+
+    console.log(`[Sarvam STT Vercel] Request: model=${model}, language_code=${language_code}, audio length=${audio?.length || 0} chars`);
 
     if (!audio) return res.status(400).json({ error: "audio (base64) is required" });
 
@@ -48,11 +50,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     parts.push(Buffer.from("\r\n"));
 
     addField("model", model);
-    if (language_code && language_code !== "unknown") addField("language_code", language_code);
+    addField("language_code", language_code);
 
     parts.push(Buffer.from(`--${boundary}--\r\n`));
 
     const body = Buffer.concat(parts);
+    console.log(`[Sarvam STT Vercel] Sending ${body.length} bytes to Sarvam API`);
 
     const sarvamRes = await fetch(SARVAM_STT_URL, {
       method: "POST",
@@ -65,6 +68,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     const data = await sarvamRes.json();
+    console.log(`[Sarvam STT Vercel] Response ${sarvamRes.status}:`, JSON.stringify(data).slice(0, 300));
 
     if (!sarvamRes.ok) {
       console.error("[Sarvam STT Vercel] Error:", data);

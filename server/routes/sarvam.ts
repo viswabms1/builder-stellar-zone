@@ -43,6 +43,8 @@ export async function handleSarvamSTT(req: Request, res: Response) {
   try {
     const { audio, mimeType = "audio/webm", model = "saarika:v2.5", language_code } = req.body;
 
+    console.log(`[Sarvam STT] Request: mimeType=${mimeType}, model=${model}, language_code=${language_code}, audio length=${audio?.length || 0} chars`);
+
     if (!audio) {
       return res.status(400).json({ error: "audio (base64) is required" });
     }
