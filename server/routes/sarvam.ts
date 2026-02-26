@@ -98,6 +98,33 @@ export async function handleSarvamSTT(req: Request, res: Response) {
   }
 }
 
+/** Split text into chunks of ≤maxLen characters, breaking at sentence boundaries */
+function splitTextForTTS(text: string, maxLen = 480): string[] {
+  if (text.length <= maxLen) return [text];
+
+  const chunks: string[] = [];
+  let remaining = text;
+
+  while (remaining.length > 0) {
+    if (remaining.length <= maxLen) {
+      chunks.push(remaining);
+      break;
+    }
+    // Find last sentence boundary within maxLen
+    let splitAt = -1;
+    for (const sep of [". ", "! ", "? ", ", "]) {
+      const idx = remaining.lastIndexOf(sep, maxLen);
+      if (idx > 0 && idx > splitAt) splitAt = idx + sep.length;
+    }
+    if (splitAt <= 0) splitAt = maxLen; // hard cut if no boundary found
+
+    chunks.push(remaining.slice(0, splitAt).trim());
+    remaining = remaining.slice(splitAt).trim();
+  }
+
+  return chunks.filter(c => c.length > 0);
+}
+
 export async function handleSarvamTTS(req: Request, res: Response) {
   const SARVAM_API_KEY = getKey();
 
@@ -110,34 +137,62 @@ export async function handleSarvamTTS(req: Request, res: Response) {
       return res.status(500).json({ error: "SARVAM_API_KEY not configured on server" });
     }
 
-    console.log(`[Sarvam TTS] text="${text.slice(0, 50)}", key starts with ${SARVAM_API_KEY.slice(0, 8)}`);
+    // Split into ≤480 char chunks (Sarvam limit is 500)
+    const chunks = splitTextForTTS(text, 480);
+    console.log(`[Sarvam TTS] ${chunks.length} chunk(s), total ${text.length} chars, key starts with ${SARVAM_API_KEY.slice(0, 8)}`);
 
-    const sarvamRes = await fetch(SARVAM_TTS_URL, {
-      method: "POST",
-      headers: {
-        "api-subscription-key": SARVAM_API_KEY,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        inputs: [text],
-        target_language_code: language_code,
-        speaker: "arya",
-        model: "bulbul:v2",
-        enable_preprocessing: true,
-      }),
-    });
+    const audioBuffers: Buffer[] = [];
 
-    const data = await sarvamRes.json();
-    console.log(`[Sarvam TTS] Response ${sarvamRes.status}:`, JSON.stringify(data).slice(0, 200));
+    for (const chunk of chunks) {
+      const sarvamRes = await fetch(SARVAM_TTS_URL, {
+        method: "POST",
+        headers: {
+          "api-subscription-key": SARVAM_API_KEY,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          inputs: [chunk],
+          target_language_code: language_code,
+          speaker: "arya",
+          model: "bulbul:v2",
+          enable_preprocessing: true,
+        }),
+      });
 
-    if (!sarvamRes.ok) {
-      return res.status(sarvamRes.status).json({ error: data?.message || "Sarvam TTS error", detail: data });
+      const data = await sarvamRes.json();
+
+      if (!sarvamRes.ok) {
+        console.error(`[Sarvam TTS] Chunk error ${sarvamRes.status}:`, JSON.stringify(data).slice(0, 200));
+        return res.status(sarvamRes.status).json({ error: data?.error?.message || data?.message || "Sarvam TTS error", detail: data });
+      }
+
+      const b64 = data?.audios?.[0];
+      if (!b64) return res.status(500).json({ error: "No audio returned from Sarvam" });
+
+      audioBuffers.push(Buffer.from(b64, "base64"));
     }
 
-    const base64Audio = data?.audios?.[0];
-    if (!base64Audio) return res.status(500).json({ error: "No audio returned from Sarvam" });
+    // If single chunk, return directly
+    if (audioBuffers.length === 1) {
+      return res.status(200).json({ audio: audioBuffers[0].toString("base64") });
+    }
 
-    return res.status(200).json({ audio: base64Audio });
+    // Concatenate WAV files: use header from first, append raw PCM from rest
+    const WAV_HEADER_SIZE = 44;
+    const pcmParts: Buffer[] = [];
+    for (let i = 0; i < audioBuffers.length; i++) {
+      pcmParts.push(audioBuffers[i].subarray(i === 0 ? 0 : WAV_HEADER_SIZE));
+    }
+    const combined = Buffer.concat(pcmParts);
+
+    // Fix the WAV header sizes
+    const totalSize = combined.length;
+    combined.writeUInt32LE(totalSize - 8, 4);       // RIFF chunk size
+    combined.writeUInt32LE(totalSize - WAV_HEADER_SIZE, 40); // data chunk size
+
+    console.log(`[Sarvam TTS] Combined ${audioBuffers.length} chunks → ${totalSize} bytes`);
+
+    return res.status(200).json({ audio: combined.toString("base64") });
   } catch (err: any) {
     console.error("[Sarvam TTS] Exception:", err);
     return res.status(500).json({ error: "Internal server error", detail: err?.message });

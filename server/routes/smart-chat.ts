@@ -362,6 +362,16 @@ export const handleSmartChat = async (req: Request, res: Response) => {
       parsed = { type: "answer", message: content };
     }
 
+    // Voice mode: always return answer, skip navigation logic
+    if (voiceMode) {
+      console.log(`[SMART-CHAT] Voice mode — returning answer`);
+      return res.json({
+        success: true,
+        type: "answer",
+        message: parsed.message || "I'm not sure how to help with that. Could you rephrase?",
+      });
+    }
+
     // Normalize: if AI returned suggestedPath instead of path, use it
     if (!parsed.path && parsed.suggestedPath) {
       parsed.path = parsed.suggestedPath;
