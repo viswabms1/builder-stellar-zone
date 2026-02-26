@@ -154,9 +154,17 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       setStatusText("Listening... tap to stop");
     } catch (err: any) {
       console.error("Mic error:", err);
-      setError("Microphone access denied");
+      const isDenied = err?.name === "NotAllowedError" || err?.name === "PermissionDeniedError";
+      const isNotFound = err?.name === "NotFoundError";
+      setError(
+        isDenied
+          ? "Browser blocked mic — open the preview in a new tab and allow microphone access"
+          : isNotFound
+          ? "No microphone found on this device"
+          : "Could not access microphone"
+      );
       setStatus("error");
-      setStatusText("Mic access denied");
+      setStatusText("Mic unavailable");
     }
   }, [onTranscript, sendMessage, speakText]);
 
@@ -237,11 +245,26 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       {/* Error */}
       {error && status === "error" && (
         <div className={cn(
-          "flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg",
-          isDark ? "bg-red-900/30 text-red-400" : "bg-red-50 text-red-600"
+          "flex flex-col gap-2 text-xs px-3 py-2 rounded-lg mx-3 text-center",
+          isDark ? "bg-red-900/30 text-red-300" : "bg-red-50 text-red-600"
         )}>
-          <X className="w-3 h-3" />
-          {error}
+          <div className="flex items-center justify-center gap-1.5">
+            <X className="w-3 h-3 flex-shrink-0" />
+            <span>{error}</span>
+          </div>
+          {error.includes("blocked") && (
+            <button
+              onClick={() => window.open(window.location.href, "_blank")}
+              className={cn(
+                "w-full py-1.5 rounded-md text-xs font-semibold transition-colors",
+                isDark
+                  ? "bg-purple-600 hover:bg-purple-500 text-white"
+                  : "bg-blue-600 hover:bg-blue-700 text-white"
+              )}
+            >
+              Open in New Tab to Allow Mic
+            </button>
+          )}
         </div>
       )}
 
