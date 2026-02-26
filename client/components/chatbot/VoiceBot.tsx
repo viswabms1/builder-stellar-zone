@@ -1,5 +1,5 @@
-import { useState, useRef, useCallback, useEffect } from "react";
-import { Mic, MicOff, Volume2, Loader2, ExternalLink } from "lucide-react";
+import { useState, useRef, useCallback } from "react";
+import { Mic, MicOff, Volume2, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type VoiceBotStatus = "idle" | "recording" | "transcribing" | "thinking" | "speaking" | "error";
@@ -10,7 +10,7 @@ interface VoiceBotProps {
   sendMessage: (text: string) => Promise<string | null>;
 }
 
-/** Convert ArrayBuffer to base64 in chunks (avoids call stack overflow on large buffers) */
+/** Convert ArrayBuffer to base64 in chunks */
 function arrayBufferToBase64(buffer: ArrayBuffer): string {
   const bytes = new Uint8Array(buffer);
   const chunkSize = 8192;
@@ -22,16 +22,13 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
   return btoa(binary);
 }
 
-/** Convert any audio blob to WAV using Web Audio API (Sarvam only accepts WAV/MP3) */
-async function convertBlobToWav(blob: Blob): Promise<{ base64: string; mimeType: string }> {
+/** Convert any audio blob to WAV using Web Audio API */
+async function convertBlobToWav(blob: Blob): Promise<string> {
   const audioCtx = new AudioContext();
   const arrayBuffer = await blob.arrayBuffer();
   const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
-
-  // Use original sample rate to preserve audio quality
   const sampleRate = audioBuffer.sampleRate;
 
-  // Mix all channels down to mono
   let pcmData: Float32Array;
   if (audioBuffer.numberOfChannels === 1) {
     pcmData = audioBuffer.getChannelData(0);
@@ -47,13 +44,8 @@ async function convertBlobToWav(blob: Blob): Promise<{ base64: string; mimeType:
   }
 
   const wavBuffer = encodeWav(pcmData, sampleRate);
-
   await audioCtx.close();
-
-  return {
-    base64: arrayBufferToBase64(wavBuffer),
-    mimeType: "audio/wav",
-  };
+  return arrayBufferToBase64(wavBuffer);
 }
 
 /** Encode PCM float32 samples to 16-bit WAV */
@@ -61,86 +53,39 @@ function encodeWav(samples: Float32Array, sampleRate: number): ArrayBuffer {
   const numSamples = samples.length;
   const buffer = new ArrayBuffer(44 + numSamples * 2);
   const view = new DataView(buffer);
-
-  // WAV header
   const writeStr = (offset: number, str: string) => {
     for (let i = 0; i < str.length; i++) view.setUint8(offset + i, str.charCodeAt(i));
   };
-
   writeStr(0, "RIFF");
   view.setUint32(4, 36 + numSamples * 2, true);
   writeStr(8, "WAVE");
   writeStr(12, "fmt ");
-  view.setUint32(16, 16, true);        // chunk size
-  view.setUint16(20, 1, true);         // PCM format
-  view.setUint16(22, 1, true);         // mono
-  view.setUint32(24, sampleRate, true); // sample rate
-  view.setUint32(28, sampleRate * 2, true); // byte rate
-  view.setUint16(32, 2, true);         // block align
-  view.setUint16(34, 16, true);        // bits per sample
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
+  view.setUint16(22, 1, true);
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * 2, true);
+  view.setUint16(32, 2, true);
+  view.setUint16(34, 16, true);
   writeStr(36, "data");
   view.setUint32(40, numSamples * 2, true);
-
-  // PCM data - clamp float32 to int16
   for (let i = 0; i < numSamples; i++) {
     const s = Math.max(-1, Math.min(1, samples[i]));
     view.setInt16(44 + i * 2, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
   }
-
   return buffer;
 }
 
 export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
-  const [micReady, setMicReady] = useState(false);
-  const [micDenied, setMicDenied] = useState(false);
   const [status, setStatus] = useState<VoiceBotStatus>("idle");
-  const [statusText, setStatusText] = useState("Tap mic to speak");
+  const [statusText, setStatusText] = useState("Tap the mic and speak");
   const [errorText, setErrorText] = useState<string | null>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const permissionRequested = useRef(false);
 
   const isDark = theme === "dark";
-  const isInIframe = window.self !== window.top;
-
-  // Check mic permission status on mount (without triggering a prompt)
-  useEffect(() => {
-    if (permissionRequested.current) return;
-    permissionRequested.current = true;
-
-    if (!navigator.mediaDevices?.getUserMedia) {
-      setMicDenied(true);
-      return;
-    }
-
-    // Use Permissions API to check without prompting
-    if (navigator.permissions) {
-      navigator.permissions
-        .query({ name: "microphone" as PermissionName })
-        .then((result) => {
-          if (result.state === "granted") {
-            setMicReady(true);
-          }
-          // If "prompt" or "denied", don't auto-request — wait for user click
-        })
-        .catch(() => {
-          // Permissions API not supported, that's fine — user will click to grant
-        });
-    }
-  }, []);
-
-  const retryPermission = useCallback(async () => {
-    setMicDenied(false);
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      stream.getTracks().forEach((t) => t.stop());
-      setMicReady(true);
-    } catch {
-      setMicDenied(true);
-    }
-  }, []);
 
   const stopAudio = () => {
     if (audioRef.current) {
@@ -158,12 +103,10 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, language_code: "en-IN", speaker: "arya" }),
       });
-
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.error || "TTS failed");
       }
-
       const { audio } = await res.json();
       if (!audio) throw new Error("No audio received");
 
@@ -172,26 +115,15 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       for (let i = 0; i < byteChars.length; i++) byteArr[i] = byteChars.charCodeAt(i);
       const blob = new Blob([byteArr], { type: "audio/wav" });
       const url = URL.createObjectURL(blob);
-
       const audioEl = new Audio(url);
       audioRef.current = audioEl;
       audioEl.play();
-      audioEl.onended = () => {
-        URL.revokeObjectURL(url);
-        setStatus("idle");
-        setStatusText("Tap mic to speak");
-        audioRef.current = null;
-      };
-      audioEl.onerror = () => {
-        URL.revokeObjectURL(url);
-        setStatus("idle");
-        setStatusText("Tap mic to speak");
-        audioRef.current = null;
-      };
+      audioEl.onended = () => { URL.revokeObjectURL(url); setStatus("idle"); setStatusText("Tap the mic and speak"); audioRef.current = null; };
+      audioEl.onerror = () => { URL.revokeObjectURL(url); setStatus("idle"); setStatusText("Tap the mic and speak"); audioRef.current = null; };
     } catch (err: any) {
       console.error("TTS error:", err);
       setStatus("idle");
-      setStatusText("Tap mic to speak");
+      setStatusText("Tap the mic and speak");
     }
   }, []);
 
@@ -199,11 +131,27 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
     setErrorText(null);
     stopAudio();
 
+    // This getUserMedia call serves dual purpose:
+    // 1. Requests mic permission (browser shows prompt on first use)
+    // 2. Gets the audio stream for recording
+    let stream: MediaStream;
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      setMicReady(true);
-      setMicDenied(false);
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch (err: any) {
+      console.error("getUserMedia failed:", err.name, err.message);
+      if (err?.name === "NotAllowedError" || err?.name === "PermissionDeniedError") {
+        setErrorText("Microphone access was denied. Please allow microphone in your browser settings and try again.");
+      } else if (err?.name === "NotFoundError") {
+        setErrorText("No microphone found. Please connect a microphone.");
+      } else {
+        setErrorText(`Microphone error: ${err.message || err.name || "Unknown"}`);
+      }
+      setStatus("error");
+      setStatusText("Mic unavailable. Tap to retry.");
+      return;
+    }
 
+    try {
       const mimeType = MediaRecorder.isTypeSupported("audio/webm;codecs=opus")
         ? "audio/webm;codecs=opus"
         : MediaRecorder.isTypeSupported("audio/webm")
@@ -232,19 +180,13 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         setStatusText("Converting audio...");
 
         try {
-          // Convert WebM/Opus to WAV (Sarvam only accepts WAV/MP3)
-          const { base64: wavBase64 } = await convertBlobToWav(audioBlob);
-
+          const wavBase64 = await convertBlobToWav(audioBlob);
           setStatusText("Transcribing...");
 
           const sttRes = await fetch("/api/sarvam/speech-to-text", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              audio: wavBase64,
-              mimeType: "audio/wav",
-              model: "saarika:v2.5",
-            }),
+            body: JSON.stringify({ audio: wavBase64, mimeType: "audio/wav", model: "saarika:v2.5" }),
           });
 
           if (!sttRes.ok) {
@@ -270,7 +212,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
             await speakText(reply);
           } else {
             setStatus("idle");
-            setStatusText("Tap mic to speak");
+            setStatusText("Tap the mic and speak");
           }
         } catch (err: any) {
           console.error("STT error:", err);
@@ -284,13 +226,10 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       setStatus("recording");
       setStatusText("Listening... tap to stop");
     } catch (err: any) {
-      if (err?.name === "NotAllowedError" || err?.name === "PermissionDeniedError") {
-        setMicDenied(true);
-      } else {
-        setErrorText("Could not access microphone");
-        setStatus("error");
-        setStatusText("Error. Tap to retry.");
-      }
+      stream.getTracks().forEach((t) => t.stop());
+      setErrorText(`Recording error: ${err.message || "Unknown"}`);
+      setStatus("error");
+      setStatusText("Error. Tap to retry.");
     }
   }, [onTranscript, sendMessage, speakText]);
 
@@ -300,84 +239,13 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
 
   const handleMicClick = () => {
     if (status === "recording") stopRecording();
-    else if (status === "speaking") {
-      stopAudio();
-      setStatus("idle");
-      setStatusText("Tap mic to speak");
-    } else startRecording();
+    else if (status === "speaking") { stopAudio(); setStatus("idle"); setStatusText("Tap the mic and speak"); }
+    else startRecording();
   };
 
   const isAnimating = status === "recording" || status === "speaking";
   const isProcessing = status === "transcribing" || status === "thinking";
 
-  // Denied screen
-  if (micDenied) {
-    return (
-      <div className="flex flex-col items-center gap-3 py-6 px-4 text-center">
-        <MicOff className="w-10 h-10 text-red-400" />
-        <p className={cn("text-sm font-medium", isDark ? "text-white" : "text-gray-800")}>
-          Microphone blocked
-        </p>
-        {isInIframe ? (
-          <>
-            <p className={cn("text-xs leading-relaxed", isDark ? "text-slate-400" : "text-gray-500")}>
-              Microphone cannot be used inside the preview frame. Please open the site in a new tab to use the Voice Bot.
-            </p>
-            <button
-              onClick={() => window.open(window.location.origin, "_blank")}
-              className="mt-1 flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              Open in New Tab
-            </button>
-          </>
-        ) : (
-          <>
-            <p className={cn("text-xs leading-relaxed", isDark ? "text-slate-400" : "text-gray-500")}>
-              Click the <strong>lock/site-settings icon</strong> in your browser's address bar, set Microphone to <strong>Allow</strong>, then tap the button below.
-            </p>
-            <button
-              onClick={retryPermission}
-              className="mt-1 px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors"
-            >
-              Try Again
-            </button>
-          </>
-        )}
-      </div>
-    );
-  }
-
-  // Mic not yet granted — show a button the user can tap (user gesture required by browsers)
-  if (!micReady) {
-    return (
-      <div className="flex flex-col items-center gap-4 py-6 px-4 text-center">
-        <button
-          onClick={async () => {
-            try {
-              const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-              stream.getTracks().forEach((t) => t.stop());
-              setMicReady(true);
-              setMicDenied(false);
-            } catch {
-              setMicDenied(true);
-            }
-          }}
-          className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 hover:scale-105 flex items-center justify-center shadow-lg transition-all"
-        >
-          <Mic className="w-7 h-7 text-white" />
-        </button>
-        <p className={cn("text-xs font-medium", isDark ? "text-slate-300" : "text-gray-600")}>
-          Tap the mic to enable voice
-        </p>
-        <p className={cn("text-[10px]", isDark ? "text-slate-500" : "text-gray-400")}>
-          Your browser will ask for microphone permission
-        </p>
-      </div>
-    );
-  }
-
-  // Main voice UI
   const pulseColor = status === "recording" ? "bg-red-500" : status === "speaking" ? "bg-green-500" : "bg-yellow-500";
 
   return (
@@ -417,7 +285,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
       </p>
 
       {errorText && status === "error" && (
-        <p className={cn("text-xs text-center px-3", isDark ? "text-red-400" : "text-red-500")}>
+        <p className={cn("text-xs text-center px-3 max-w-[280px]", isDark ? "text-red-400" : "text-red-500")}>
           {errorText}
         </p>
       )}
