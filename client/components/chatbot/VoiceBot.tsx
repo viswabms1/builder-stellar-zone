@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from "react";
-import { Mic, MicOff, Volume2, Loader2 } from "lucide-react";
+import { Mic, MicOff, Volume2, Loader2, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type VoiceBotStatus = "idle" | "recording" | "transcribing" | "thinking" | "speaking" | "error";
@@ -35,6 +35,7 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
   const permissionRequested = useRef(false);
 
   const isDark = theme === "dark";
+  const isInIframe = window.self !== window.top;
 
   // Auto-request mic permission on mount
   useEffect(() => {
@@ -241,15 +242,32 @@ export function VoiceBot({ theme, onTranscript, sendMessage }: VoiceBotProps) {
         <p className={cn("text-sm font-medium", isDark ? "text-white" : "text-gray-800")}>
           Microphone blocked
         </p>
-        <p className={cn("text-xs leading-relaxed", isDark ? "text-slate-400" : "text-gray-500")}>
-          Click the <strong>lock/site-settings icon</strong> in your browser's address bar, set Microphone to <strong>Allow</strong>, then tap the button below.
-        </p>
-        <button
-          onClick={retryPermission}
-          className="mt-1 px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors"
-        >
-          Try Again
-        </button>
+        {isInIframe ? (
+          <>
+            <p className={cn("text-xs leading-relaxed", isDark ? "text-slate-400" : "text-gray-500")}>
+              Microphone cannot be used inside the preview frame. Please open the site in a new tab to use the Voice Bot.
+            </p>
+            <button
+              onClick={() => window.open(window.location.origin, "_blank")}
+              className="mt-1 flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              Open in New Tab
+            </button>
+          </>
+        ) : (
+          <>
+            <p className={cn("text-xs leading-relaxed", isDark ? "text-slate-400" : "text-gray-500")}>
+              Click the <strong>lock/site-settings icon</strong> in your browser's address bar, set Microphone to <strong>Allow</strong>, then tap the button below.
+            </p>
+            <button
+              onClick={retryPermission}
+              className="mt-1 px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+            >
+              Try Again
+            </button>
+          </>
+        )}
       </div>
     );
   }
