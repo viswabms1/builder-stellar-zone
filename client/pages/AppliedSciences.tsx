@@ -30,8 +30,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { NewsSection } from "@/components/NewsSection";
-import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
@@ -838,8 +836,6 @@ export default function AppliedSciences() {
       <DepartmentNoticeBoard school="Engineering" department="School of Basic & Applied Sciences" />
 
       <AnnouncementBanner priority="high" variant="banner" />
-      <NewsSection variant="carousel" title="Department News" />
-      <EventsSection variant="carousel" title="Upcoming Events" />
     </div>
   );
 }
