@@ -30,6 +30,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { NewsSection } from "@/components/NewsSection";
+import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { ProgramFinder } from "@/components/ProgramFinder";
@@ -832,6 +834,8 @@ export default function AppliedSciences() {
       />
 
       <AnnouncementBanner priority="high" variant="banner" />
+      <NewsSection variant="carousel" title="Department News" />
+      <EventsSection variant="carousel" title="Upcoming Events" />
     </div>
   );
 }
