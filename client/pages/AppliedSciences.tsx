@@ -590,7 +590,7 @@ export default function AppliedSciences() {
             </a>
 
             <RouterLink
-              to="/research"
+              to="/academics/basic-applied-sciences/research"
               className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
             >
               <Card className="h-full border-0 bg-transparent">

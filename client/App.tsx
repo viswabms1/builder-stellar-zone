@@ -37,6 +37,7 @@ import LLMLawTechnology from "./pages/law/LLMLawTechnology";
 import LLMCorporateCommercial from "./pages/law/LLMCorporateCommercial";
 import AppliedSciences from "./pages/AppliedSciences";
 import SBASFaculty from "./pages/basic-applied-sciences/SBASFaculty";
+import SBASResearch from "./pages/basic-applied-sciences/SBASResearch";
 import BSc from "./pages/BSc";
 import MSc from "./pages/MSc";
 import ManagementStudies from "./pages/ManagementStudies";
@@ -908,6 +909,10 @@ function App() {
                 <Route
                   path="/academics/basic-applied-sciences/faculty"
                   element={<SBASFaculty />}
+                />
+                <Route
+                  path="/academics/basic-applied-sciences/research"
+                  element={<SBASResearch />}
                 />
                 <Route
                   path="/academics/engineering/computer-science"
