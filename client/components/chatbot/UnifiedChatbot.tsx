@@ -129,6 +129,10 @@ export function UnifiedChatbot() {
 
       if (data.path) {
         assistantMsg.navigateTo = { path: data.path, label: data.label || "Page" };
+        // Auto-navigate after 2.5s — gives user time to read the message first
+        if (data.type === "navigate") {
+          setTimeout(() => navigate(data.path!), 2500);
+        }
       }
 
       setMessages(prev => [...prev, assistantMsg]);

@@ -74,14 +74,14 @@ export function ChatMessage({ message, onNavigate, theme }: ChatMessageProps) {
       {/* Content */}
       <div className="space-y-1.5">
         <div className={cn(
-          "rounded-2xl px-3 py-2 text-sm leading-relaxed whitespace-pre-wrap",
+          "rounded-2xl px-3 py-2 text-sm leading-relaxed",
           isUser
             ? "bg-blue-500 text-white"
             : theme === "light"
               ? "bg-white border border-gray-200 text-gray-900"
               : "bg-slate-700 border border-slate-600 text-white"
         )}>
-          {isUser ? message.content : parseLinks(message.content)}
+          {isUser ? message.content : parseLinks(message.content.replace(/[\t]+/g, " ").replace(/\n{3,}/g, "\n\n").trim())}
         </div>
 
         {/* Navigation button if AI suggests a page */}
