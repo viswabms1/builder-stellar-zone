@@ -33,7 +33,6 @@ import {
 import { NewsSection } from "@/components/NewsSection";
 import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
-import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { ProgramFinder } from "@/components/ProgramFinder";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
@@ -833,9 +832,6 @@ export default function AppliedSciences() {
         schoolName="School of Basic & Applied Sciences"
         themeColor="orange"
       />
-
-      {/* Dynamic Notice Board — fetches from Strapi */}
-      <DepartmentNoticeBoard school="Engineering" department="School of Basic & Applied Sciences" />
 
       <AnnouncementBanner priority="high" variant="banner" />
       <NewsSection variant="carousel" title="Department News" />
