@@ -127,11 +127,8 @@ export function UnifiedChatbot() {
         timestamp: new Date(),
       };
 
-      if (data.type === "navigate" && data.path) {
+      if (data.path) {
         assistantMsg.navigateTo = { path: data.path, label: data.label || "Page" };
-        setTimeout(() => navigate(data.path!), 800);
-      } else if (data.path) {
-        assistantMsg.navigateTo = { path: data.path, label: data.label || "Related page" };
       }
 
       setMessages(prev => [...prev, assistantMsg]);
