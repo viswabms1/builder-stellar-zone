@@ -74,7 +74,7 @@ const SITE_MAP = [
   { path: "/research", label: "Research Center", keywords: "research innovation publications papers" },
   { path: "/centre-of-excellence", label: "Centre of Excellence", keywords: "centre excellence coe" },
   { path: "/ai-first", label: "AI-First Initiative", keywords: "ai first artificial intelligence initiative" },
-  { path: "/nvidia-architecture", label: "NVIDIA Architecture", keywords: "nvidia gpu ai infrastructure" },
+  { path: "/nvidia-ai-architecture", label: "NVIDIA AI Architecture", keywords: "nvidia gpu ai infrastructure" },
   { path: "/library", label: "Library", keywords: "library books resources reading" },
   { path: "/library/e-resources", label: "E-Resources (Digital Library)", keywords: "e-resources digital library online journals" },
   { path: "/examinations", label: "Examinations", keywords: "examinations exams results timetable schedule" },
