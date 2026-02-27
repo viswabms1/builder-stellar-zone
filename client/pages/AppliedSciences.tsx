@@ -1,16 +1,12 @@
 import { Link as RouterLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import type { LucideIcon } from "lucide-react";
 import {
-  Atom,
   Award,
   Beaker,
   BookOpen,
   Brain,
-  CalendarDays,
   ChevronRight,
   Cpu,
-  Download,
   FileText,
   FlaskConical,
   GraduationCap,
@@ -37,15 +33,10 @@ import {
 import { NewsSection } from "@/components/NewsSection";
 import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { ProgramFinder } from "@/components/ProgramFinder";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
-import {
-  getAppliedSciencesEvents,
-  getAppliedSciencesNews,
-  getAppliedSciencesAnnouncements,
-  type NoticeItem as ImportedNoticeItem,
-} from "@/data/applied-sciences-events";
 
 type ProgramCard = {
   name: string;
@@ -67,266 +58,6 @@ type CalendarEntry = {
   documentUrl: string;
   tag: string;
 };
-
-type NewsItem = {
-  image: string;
-  category: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  color: "brand-magenta" | "brand-blue" | "brand-orange";
-};
-
-type NoticeItem = ImportedNoticeItem;
-
-const getAllAppliedSciencesEvents = () => getAppliedSciencesEvents();
-const getAppliedSciencesNewsData = () => getAppliedSciencesNews();
-const getAppliedSciencesAnnouncementsData = () =>
-  getAppliedSciencesAnnouncements();
-
-function NoticeBoardCarousel() {
-  const [currentEventIndex, setCurrentEventIndex] = useState(0);
-  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
-  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
-
-  const events = getAllAppliedSciencesEvents();
-  const news = getAppliedSciencesNewsData();
-  const announcements = getAppliedSciencesAnnouncementsData();
-
-  useEffect(() => {
-    if (events.length === 0) return;
-    const interval = setInterval(() => {
-      setCurrentEventIndex((prev) => (prev + 1) % events.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [events.length]);
-
-  useEffect(() => {
-    if (news.length === 0) return;
-    const interval = setInterval(() => {
-      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [news.length]);
-
-  useEffect(() => {
-    if (announcements.length === 0) return;
-    const interval = setInterval(() => {
-      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcements.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [announcements.length]);
-
-  const getCategoryStyles = (category: "Event" | "News" | "Announcement") => {
-    switch (category) {
-      case "Event":
-        return {
-          borderColor: "border-brand-magenta",
-          bgColor: "bg-brand-magenta/10",
-          textColor: "text-brand-magenta",
-          dotColor: "bg-brand-magenta",
-        };
-      case "News":
-        return {
-          borderColor: "border-brand-orange",
-          bgColor: "bg-brand-orange/10",
-          textColor: "text-brand-orange",
-          dotColor: "bg-brand-orange",
-        };
-      default:
-        return {
-          borderColor: "border-brand-blue",
-          bgColor: "bg-brand-blue/10",
-          textColor: "text-brand-blue",
-          dotColor: "bg-brand-blue",
-        };
-    }
-  };
-
-  const renderCarousel = (
-    title: string,
-    items: NoticeItem[],
-    currentIndex: number,
-    setCurrentIndex: (idx: number) => void,
-    category: "Event" | "News" | "Announcement",
-  ) => {
-    const styles = getCategoryStyles(category);
-
-    if (items.length === 0) {
-      return (
-        <div className="space-y-4">
-          <div
-            className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
-          >
-            <h3 className={`headline-4 font-display ${styles.textColor}`}>
-              {title}
-            </h3>
-          </div>
-          <p className="text-xs text-foreground/60 italic p-4 text-center">
-            No items to display
-          </p>
-        </div>
-      );
-    }
-
-    const currentItem = items[currentIndex];
-
-    return (
-      <div className="space-y-4">
-        <div
-          className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
-        >
-          <h3 className={`headline-4 font-display ${styles.textColor}`}>
-            {title}
-          </h3>
-          <Badge className="ml-auto text-xs">
-            {currentIndex + 1} / {items.length}
-          </Badge>
-        </div>
-
-        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
-          {currentItem.image && (
-            <div className="relative h-48 overflow-hidden">
-              <img
-                src={currentItem.image}
-                alt={currentItem.title}
-                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-              />
-            </div>
-          )}
-          <CardContent className="p-4 space-y-3">
-            <div className="flex items-start justify-between gap-2">
-              <div className="flex-1">
-                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">
-                  {currentItem.title}
-                </h4>
-                <p className="text-xs text-foreground/70 line-clamp-2">
-                  {currentItem.description}
-                </p>
-                {currentItem.department && (
-                  <p className="text-xs text-foreground/50 mt-2">
-                    Department: {currentItem.department}
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className="flex items-center justify-between pt-2 border-t border-border/20">
-              <span className="text-xs font-semibold text-foreground/60">
-                {currentItem.date}
-              </span>
-              {currentItem.link && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
-                  asChild
-                >
-                  <a href={currentItem.link} target="_blank" rel="noreferrer">
-                    <Download className="h-3 w-3 mr-1" />
-                    PDF
-                  </a>
-                </Button>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex gap-1">
-            {items.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`h-1.5 rounded-full transition-all ${
-                  idx === currentIndex
-                    ? `${styles.dotColor} w-6`
-                    : "bg-border/40 w-1.5 hover:bg-border/60"
-                }`}
-              />
-            ))}
-          </div>
-          <div className="flex gap-1">
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-7 px-2 text-xs"
-              onClick={() =>
-                setCurrentIndex(
-                  (prev) => (prev - 1 + items.length) % items.length,
-                )
-              }
-            >
-              ←
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-7 px-2 text-xs"
-              onClick={() =>
-                setCurrentIndex((prev) => (prev + 1) % items.length)
-              }
-            >
-              →
-            </Button>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  return (
-    <section className="px-3 py-8">
-      <div className="mx-auto max-w-7xl space-y-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="headline-2 mb-3 font-display">
-              <span className="text-foreground">
-                School of Basic & Applied Sciences
-              </span>
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
-                Notice Board
-              </span>
-            </h2>
-            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important
-              announcements from the school.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            {renderCarousel(
-              "Events",
-              events,
-              currentEventIndex,
-              setCurrentEventIndex,
-              "Event",
-            )}
-          </div>
-          <div>
-            {renderCarousel(
-              "News",
-              news,
-              currentNewsIndex,
-              setCurrentNewsIndex,
-              "News",
-            )}
-          </div>
-          <div>
-            {renderCarousel(
-              "Announcements",
-              announcements,
-              currentAnnouncementIndex,
-              setCurrentAnnouncementIndex,
-              "Announcement",
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=2000&auto=format&fit=crop";
@@ -390,38 +121,6 @@ const CALENDAR_ENTRIES: CalendarEntry[] = [
   },
 ];
 
-const FEATURED_NEWS: NewsItem[] = [
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
-    category: "Excellence",
-    title: "SBAS Students Win National Science Research Competition",
-    excerpt:
-      "DSU science students awarded first prize at National Research Summit for innovative biotechnology project.",
-    date: "Nov 12, 2025",
-    color: "brand-magenta",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
-    category: "Research",
-    title: "Faculty Research on Biotechnology Published in Nature Science",
-    excerpt:
-      "DSU SBAS faculty publish groundbreaking research on sustainable biotechnology solutions.",
-    date: "Nov 8, 2025",
-    color: "brand-blue",
-  },
-  {
-    image:
-      "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
-    category: "Placement",
-    title: "92% Placement Rate for 2024-25 Science Graduates",
-    excerpt:
-      "Science graduates placed at leading research institutions, biotech companies and analytics firms.",
-    date: "Oct 28, 2025",
-    color: "brand-orange",
-  },
-];
 
 const DEAN_INFO: DeanInfo = {
   name: "Dr. Sunil S. More",
@@ -1134,6 +833,9 @@ export default function AppliedSciences() {
         schoolName="School of Basic & Applied Sciences"
         themeColor="orange"
       />
+
+      {/* Dynamic Notice Board — fetches from Strapi */}
+      <DepartmentNoticeBoard school="Engineering" department="School of Basic & Applied Sciences" />
 
       <AnnouncementBanner priority="high" variant="banner" />
       <NewsSection variant="carousel" title="Department News" />

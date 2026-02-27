@@ -100,7 +100,11 @@ const DEPARTMENT_CODE_MAP: Record<string, string> = {
   "Chemistry Engineering": "chem-eng",
   "Mathematics Engineering": "math-eng",
   "HSS Engineering": "hss-eng",
-  // Basic & Applied Sciences
+  // Basic & Applied Sciences — School level
+  "School of Basic & Applied Sciences": "sbas",
+  "SBAS": "sbas",
+  "Basic & Applied Sciences": "sbas",
+  // Basic & Applied Sciences — Individual departments
   "Physics": "phys",
   "Chemistry": "chem",
   "Mathematics": "math",
