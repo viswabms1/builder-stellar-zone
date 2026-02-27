@@ -588,6 +588,27 @@ export default function AppliedSciences() {
                 </CardContent>
               </Card>
             </a>
+
+            <RouterLink
+              to="/research"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Beaker className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Research Initiatives
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Explore our groundbreaking research projects and innovation labs
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
           </div>
         </div>
       </section>
