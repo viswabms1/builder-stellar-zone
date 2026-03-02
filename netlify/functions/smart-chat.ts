@@ -12,13 +12,13 @@ const SITE_MAP = [
   { path: "/academics/computer-applications", label: "School of Computer Applications", keywords: "bca mca computer applications" },
   { path: "/academics/design/bdesign", label: "School of Design & Digital Trans-Media", keywords: "design bdesign digital media" },
   { path: "/academics/journalism-mass-communication", label: "School of Arts, Design & Humanities", keywords: "journalism mass communication arts humanities ba" },
-  { path: "/academics/engineering/computer-science", label: "Computer Science & Engineering (CSE)", keywords: "computer science cse coding programming software" },
+  { path: "/academics/engineering/computer-science", label: "Computer Science & Engineering (CSE)", keywords: "computer science engineering cse btech coding programming software" },
   { path: "/academics/engineering/artificial-intelligence", label: "Artificial Intelligence & ML", keywords: "artificial intelligence ai machine learning ml" },
   { path: "/academics/engineering/ai-data-science", label: "AI & Data Science", keywords: "ai data science analytics" },
   { path: "/academics/engineering/ai-robotics", label: "AI & Robotics", keywords: "ai robotics automation" },
   { path: "/academics/engineering/data-science", label: "Data Science", keywords: "data science big data analytics" },
   { path: "/academics/engineering/cybersecurity", label: "Cybersecurity", keywords: "cyber security hacking network security" },
-  { path: "/academics/engineering/computer-technology", label: "Computer Technology", keywords: "computer technology ct" },
+  { path: "/academics/engineering/computer-technology", label: "Computer Technology (CST)", keywords: "computer technology cst bsc computer science technology" },
   { path: "/academics/engineering/cs-medical-engineering", label: "Medical Engineering", keywords: "medical engineering biomedical health tech" },
   { path: "/academics/engineering/mechanical-engineering", label: "Mechanical Engineering", keywords: "mechanical mech manufacturing" },
   { path: "/academics/engineering/aerospace-engineering", label: "Aerospace Engineering", keywords: "aerospace aero aviation flight" },
@@ -99,7 +99,10 @@ Rules:
 2. ALWAYS try to return type "navigate" along with the MOST SPECIFIC relevant page from the site map — so users can explore further.
 3. Only return type "answer" (no navigation) for pure greetings ("Hi", "Hello", "Thanks") or completely off-topic questions.
 4. CRITICAL NAVIGATION RULE: When the user asks about a PROGRAM (e.g., "cse", "b.tech cse", "aiml", "computer science"), ALWAYS navigate to the DEPARTMENT page, NOT the faculty page. Faculty pages are only for explicit requests like "cse faculty", "show me professors", "who teaches".
-5. "computer science" or "cse" → /academics/engineering/computer-science (NOT faculty)
+5. DISTINGUISH BETWEEN CST AND CSE:
+   - "cst" or "computer science technology" or "bsc computer science" → /academics/engineering/computer-technology (B.Sc program)
+   - "cse" or "computer science engineering" or "b.tech computer science" → /academics/engineering/computer-science (B.Tech program)
+   - If user just says "computer science", ask for clarification OR default to CSE (B.Tech) as it's more common
 6. "computer applications" or "bca" or "mca" → /academics/computer-applications (NOT engineering/cse)
 7. "ai" or "aiml" or "artificial intelligence" → /academics/engineering/artificial-intelligence
 8. When a user asks for MORE INFO or says "tell me more", elaborate further on the same topic — don't repeat the same navigation.
