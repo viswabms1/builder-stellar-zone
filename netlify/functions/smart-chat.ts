@@ -19,7 +19,7 @@ const SITE_MAP = [
   { path: "/academics/engineering/data-science", label: "Data Science", keywords: "data science big data analytics" },
   { path: "/academics/engineering/cybersecurity", label: "Cybersecurity", keywords: "cyber security hacking network security" },
   { path: "/academics/engineering/computer-technology", label: "Computer Technology (CST)", keywords: "computer technology cst bsc computer science technology" },
-  { path: "/academics/engineering/cs-medical-engineering", label: "B.Tech Computer Science & Medical Engineering", keywords: "medical engineering btech computer science medical biomedical health tech" },
+  { path: "/academics/engineering/cs-medical-engineering", label: "B.Tech Computer Science & Medical Engineering", keywords: "medical engineering btech computer science medical biomedical health tech csme" },
   { path: "/academics/engineering/mechanical-engineering", label: "Mechanical Engineering", keywords: "mechanical mech manufacturing" },
   { path: "/academics/engineering/aerospace-engineering", label: "Aerospace Engineering", keywords: "aerospace aero aviation flight" },
   { path: "/academics/engineering/electronics-communication", label: "Electronics & Communication (ECE)", keywords: "electronics communication ece vlsi embedded" },
