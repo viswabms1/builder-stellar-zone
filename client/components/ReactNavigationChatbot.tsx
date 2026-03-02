@@ -103,7 +103,7 @@ export function ReactNavigationChatbot() {
           ],
         },
         {
-          title: "Medical Engineering",
+          title: "Computer Science & Medical Engineering",
           programs: [
             { title: "Overview", path: "/academics/engineering/cs-medical-engineering" },
             { title: "Faculty", path: "/academics/engineering/cs-medical-engineering/faculty" },

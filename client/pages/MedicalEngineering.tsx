@@ -68,9 +68,9 @@ export default function MedicalEngineering() {
           <div className="max-w-7xl mx-auto px-3">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">Medical Engineering</span>
+              <span className="text-sm font-medium text-brand-magenta font-display">Computer Science & Medical Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight">Transform Healthcare with Engineering</h1>
+            <h1 className="headline-1 text-white leading-tight">Transform Healthcare with Computer Science & Engineering</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3">
               Design and develop innovative solutions that improve human health and healthcare delivery.
             </p>
@@ -99,7 +99,7 @@ export default function MedicalEngineering() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway to medical engineering excellence</p>
+            <p className="text-foreground/80 font-body">Choose your pathway to Computer Science & Medical Engineering excellence</p>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             {/* B.Tech Program */}
@@ -109,7 +109,7 @@ export default function MedicalEngineering() {
                   <GraduationCap className="w-5 h-5 text-brand-magenta" />
                   <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
                 </div>
-                <CardTitle className="font-display">B.Tech Medical Engineering</CardTitle>
+                <CardTitle className="font-display">B.Tech Computer Science & Medical Engineering</CardTitle>
                 <CardDescription className="font-body">4-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -125,7 +125,7 @@ export default function MedicalEngineering() {
             {/* Quick Info */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-display">Why Choose Medical Engineering?</CardTitle>
+                <CardTitle className="text-lg font-display">Why Choose CS & Medical Engineering?</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export default function MedicalEngineering() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              Medical Engineering is a specialized discipline that applies engineering principles and techniques to solve healthcare challenges. The B.Tech Medical Engineering program at DSU combines biomedical sciences with engineering innovation to develop cutting-edge medical devices, diagnostic systems, and therapeutic solutions that improve patient care and outcomes.
+              Computer Science & Medical Engineering is a specialized discipline that applies computer science, software engineering, and biomedical principles to solve healthcare challenges. The B.Tech Computer Science & Medical Engineering program at DSU combines computer science with biomedical sciences and engineering innovation to develop cutting-edge medical devices, diagnostic systems, healthcare software, and therapeutic solutions that improve patient care and outcomes.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
@@ -176,7 +176,7 @@ export default function MedicalEngineering() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What makes Medical Engineering at DSU special</CardDescription>
+                <CardDescription className="font-body">What makes CS & Medical Engineering at DSU special</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Program Type</span><span className="font-medium">B.Tech</span></div>
@@ -354,7 +354,7 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Explore comprehensive curriculum for the B.Tech Medical Engineering program. Access detailed course structures, learning outcomes, and downloadable syllabi.
+              Explore comprehensive curriculum for the B.Tech Computer Science & Medical Engineering program. Access detailed course structures, learning outcomes, and downloadable syllabi.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
@@ -704,7 +704,7 @@ function NoticeBoard() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important announcements from the Medical Engineering department.
+              Stay updated with upcoming events, news, and important announcements from the Computer Science & Medical Engineering department.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
@@ -795,7 +795,7 @@ function LabsFacilitiesCarousel() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
-            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for medical engineering learning</p>
+            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for Computer Science & Medical Engineering learning</p>
           </div>
           <div className="text-xs text-foreground/60 font-body">
             {currentLabIndex + 1} of {labs.length}
