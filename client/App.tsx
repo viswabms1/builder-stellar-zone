@@ -73,6 +73,10 @@ import BAJournalism from "./pages/BAJournalism";
 import JournalismFaculty from "./pages/journalism/Faculty";
 import BDesignOverview from "./pages/BDesignOverview";
 import BDesignProgram from "./pages/BDesignProgram";
+import DesignUXPage from "./pages/DesignUXPage";
+import DesignGamePage from "./pages/DesignGamePage";
+import DesignAnimationPage from "./pages/DesignAnimationPage";
+import DesignProductPage from "./pages/DesignProductPage";
 import FacultyDirectory from "./pages/FacultyDirectory";
 import CDSIMER from "./pages/CDSIMER";
 import CDSIMERHospital from "./pages/CDSIMERHospital";
@@ -893,6 +897,22 @@ function App() {
                 <Route
                   path="/academics/design/bdesign/program"
                   element={<BDesignProgram />}
+                />
+                <Route
+                  path="/academics/design/bdesign/ux"
+                  element={<DesignUXPage />}
+                />
+                <Route
+                  path="/academics/design/bdesign/game"
+                  element={<DesignGamePage />}
+                />
+                <Route
+                  path="/academics/design/bdesign/animation"
+                  element={<DesignAnimationPage />}
+                />
+                <Route
+                  path="/academics/design/bdesign/product"
+                  element={<DesignProductPage />}
                 />
                 <Route
                   path="/academics/basic-applied-sciences"

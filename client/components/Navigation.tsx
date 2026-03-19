@@ -580,6 +580,12 @@ export default function Navigation() {
 
   const isActive = (href: string) => location.pathname === href;
 
+  // Hide main nav bar on design school page (it uses its own custom nav)
+  const isDesignSchoolPage = location.pathname === "/academics/design/bdesign" || location.pathname.startsWith("/academics/design/bdesign/ux") || location.pathname.startsWith("/academics/design/bdesign/game") || location.pathname.startsWith("/academics/design/bdesign/animation") || location.pathname.startsWith("/academics/design/bdesign/product");
+
+  // Design school page uses its own nav bar — render nothing from Navigation
+  if (isDesignSchoolPage) return null;
+
   return (
     <>
       {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
@@ -797,13 +803,9 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Spacer when nav is fixed to prevent layout shift */}
-      {isNavFixed && (
-        <div style={{ height: navBarHeight }} aria-hidden="true" />
-      )}
 
-      {/* Main Navigation Bar */}
-      <nav
+      {/* Main Navigation Bar - Hidden on design school page (uses custom nav) */}
+      {!isDesignSchoolPage && <nav
         ref={navBarRef}
         className={`${isNavFixed ? "fixed top-0 left-0 right-0" : ""} z-[10002] overflow-visible shadow-md ${
           theme === "light"
@@ -1851,7 +1853,7 @@ export default function Navigation() {
         )}
 
         <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
-      </nav>
+      </nav>}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation as __useLocation } from "react-router-dom";
 import { useLanguage } from "@/providers/language-provider";
 import { useTheme } from "@/providers/theme-provider";
 import { footerTranslations } from "@/lib/i18n-extended";
@@ -135,9 +135,13 @@ const SOCIAL_LINKS = [
 export default function Footer() {
   const { language } = useLanguage();
   const { theme } = useTheme();
+  const location = __useLocation();
   const footerTrans =
     footerTranslations[language as keyof typeof footerTranslations] ||
     footerTranslations.en;
+
+  // Hide global footer on design school page (uses its own custom footer)
+  if (location.pathname === "/academics/design/bdesign" || location.pathname.startsWith("/academics/design/bdesign/ux") || location.pathname.startsWith("/academics/design/bdesign/game") || location.pathname.startsWith("/academics/design/bdesign/animation") || location.pathname.startsWith("/academics/design/bdesign/product")) return null;
 
   return (
     <footer
