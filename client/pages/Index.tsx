@@ -610,8 +610,25 @@ export default function Index() {
   ];
 
   // Auto-rotate featured news every 4 seconds
+  // Listen for YouTube iframe postMessage play/pause events
   useEffect(() => {
-    // Pause only when native video is actively playing
+    const handleYTMessage = (event: MessageEvent) => {
+      if (!event.origin.includes("youtube.com")) return;
+      try {
+        const data = JSON.parse(event.data as string);
+        if (data.event === "onStateChange") {
+          // 1 = playing, 2 = paused, 0 = ended
+          if (data.info === 1) setIsVideoPlaying(true);
+          if (data.info === 2 || data.info === 0) setIsVideoPlaying(false);
+        }
+      } catch {}
+    };
+    window.addEventListener("message", handleYTMessage);
+    return () => window.removeEventListener("message", handleYTMessage);
+  }, []);
+
+  useEffect(() => {
+    // Pause only when a video is actively playing
     if (isVideoPlaying) return;
 
     const interval = setInterval(() => {
@@ -1260,9 +1277,9 @@ export default function Index() {
                   }}
                 >
                   {currentFeatured.youtubeId ? (
-                    <div className="w-full aspect-video">
+                    <div className="w-full aspect-video" onClick={(e) => e.stopPropagation()}>
                       <iframe
-                        src={`https://www.youtube.com/embed/${currentFeatured.youtubeId}`}
+                        src={`https://www.youtube.com/embed/${currentFeatured.youtubeId}?enablejsapi=1`}
                         title={currentFeatured.title}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
@@ -1271,13 +1288,15 @@ export default function Index() {
                       />
                     </div>
                   ) : currentFeatured.isVideo ? (
-                    <VideoWithFrameCapture
-                      src={currentFeatured.image}
-                      poster={currentFeatured.poster}
-                      onPlay={() => setIsVideoPlaying(true)}
-                      onPause={() => setIsVideoPlaying(false)}
-                      onEnded={() => setIsVideoPlaying(false)}
-                    />
+                    <div onClick={(e) => e.stopPropagation()}>
+                      <VideoWithFrameCapture
+                        src={currentFeatured.image}
+                        poster={currentFeatured.poster}
+                        onPlay={() => setIsVideoPlaying(true)}
+                        onPause={() => setIsVideoPlaying(false)}
+                        onEnded={() => setIsVideoPlaying(false)}
+                      />
+                    </div>
                   ) : (
                     <img
                       src={currentFeatured.image}
