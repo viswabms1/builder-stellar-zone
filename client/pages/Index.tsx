@@ -49,6 +49,8 @@ import {
 
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useAutoMuteOnScroll(videoRef);
 
@@ -63,25 +65,53 @@ function HeroVideo() {
     }
   };
 
+  const togglePlayPause = () => {
+    const video = videoRef.current;
+    if (video) {
+      if (video.paused) {
+        video.play().catch(() => {});
+        setIsPlaying(true);
+      } else {
+        video.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Play video at normal speed
-    video.playbackRate = 1;
+    // Video loaded, start playing after 2 seconds
+    const loadTimer = setTimeout(() => {
+      setIsLoading(false);
 
-    // Attempt to play video - handle promise rejection for autoplay restrictions
-    video.play().catch((error) => {
-      console.warn("Video autoplay failed:", error);
-      // Try again when user interacts with page
-      const playOnInteraction = () => {
-        video.play().catch(() => {});
-        document.removeEventListener("click", playOnInteraction);
-        document.removeEventListener("scroll", playOnInteraction);
-      };
-      document.addEventListener("click", playOnInteraction);
-      document.addEventListener("scroll", playOnInteraction);
-    });
+      // Play video at normal speed after delay
+      video.playbackRate = 1;
+      video.play().catch((error) => {
+        console.warn("Video autoplay failed:", error);
+        // Try again when user interacts with page
+        const playOnInteraction = () => {
+          video.play().catch(() => {});
+          document.removeEventListener("click", playOnInteraction);
+          document.removeEventListener("scroll", playOnInteraction);
+        };
+        document.addEventListener("click", playOnInteraction);
+        document.addEventListener("scroll", playOnInteraction);
+      });
+    }, 2000);
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
+    video.addEventListener("play", handlePlay);
+    video.addEventListener("pause", handlePause);
+
+    return () => {
+      clearTimeout(loadTimer);
+      video.removeEventListener("play", handlePlay);
+      video.removeEventListener("pause", handlePause);
+    };
   }, []);
 
   useEffect(() => {
@@ -94,16 +124,25 @@ function HeroVideo() {
 
   return (
     <div className="w-full h-full relative overflow-hidden">
+      {/* Loading State / Placeholder */}
+      {isLoading && (
+        <div className="absolute inset-0 bg-black/80 flex items-center justify-center z-10">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-white/60 text-sm">Loading video...</p>
+          </div>
+        </div>
+      )}
+
       <div ref={containerRef} className="w-full h-full relative">
         {/* Video */}
         <video
           ref={videoRef}
           src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878"
-          autoPlay
           muted={isMuted}
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           crossOrigin="anonymous"
           controls={false}
           className="w-full h-full object-cover"
@@ -119,33 +158,86 @@ function HeroVideo() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
       </div>
 
-      {/* Mute/Unmute Button */}
-      <button
-        onClick={toggleMute}
+      {/* Controls: Pause/Play and Mute/Unmute Buttons */}
+      <div
         style={{
           position: "absolute",
           top: "16px",
           right: "16px",
           zIndex: 99999,
-          width: "48px",
-          height: "48px",
-          borderRadius: "50%",
-          backgroundColor: "rgba(0, 0, 0, 0.6)",
-          color: "white",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-          padding: 0,
-          margin: 0,
+          gap: "8px",
           pointerEvents: "auto",
         }}
-        aria-label={isMuted ? "Unmute" : "Mute"}
-        type="button"
       >
-        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-      </button>
+        {/* Play/Pause Button */}
+        <button
+          onClick={togglePlayPause}
+          style={{
+            width: "48px",
+            height: "48px",
+            borderRadius: "50%",
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            color: "white",
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            padding: 0,
+            margin: 0,
+            transition: "all 0.2s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+          }}
+          aria-label={isPlaying ? "Pause" : "Play"}
+          type="button"
+        >
+          {isPlaying ? (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+            </svg>
+          ) : (
+            <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          )}
+        </button>
+
+        {/* Mute/Unmute Button */}
+        <button
+          onClick={toggleMute}
+          style={{
+            width: "48px",
+            height: "48px",
+            borderRadius: "50%",
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            color: "white",
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            padding: 0,
+            margin: 0,
+            transition: "all 0.2s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+          }}
+          aria-label={isMuted ? "Unmute" : "Mute"}
+          type="button"
+        >
+          {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+        </button>
+      </div>
     </div>
   );
 }
