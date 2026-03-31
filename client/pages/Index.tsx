@@ -548,15 +548,16 @@ export default function Index() {
     },
     {
       image:
-        "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
-      isVideo: true,
+        "https://img.youtube.com/vi/OnFyTkmXRZQ/maxresdefault.jpg",
+      isVideo: false,
+      youtubeId: "OnFyTkmXRZQ",
       poster:
-        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85cbfdbb2c9047f0b769200939941be9?format=webp&width=800",
-      category: "Event",
-      title: "TEDxDSU Returns for Second Edition 2025",
+        "https://img.youtube.com/vi/OnFyTkmXRZQ/maxresdefault.jpg",
+      category: "Inspiring Stories",
+      title: "Transforming Lives Through Innovation",
       excerpt:
-        "Join us on November 7th for inspiring talks and transformative ideas at TEDxDSU 2025.",
-      date: "Nov 7, 2025",
+        "Watch inspiring stories of how innovation and perseverance are transforming communities and creating positive impact.",
+      date: "Jan 2025",
       color: "brand-blue",
     },
   ];
@@ -1212,7 +1213,28 @@ export default function Index() {
                     ][featuredNewsIndex % 6],
                   }}
                 >
-                  {currentFeatured.isVideo ? (
+                  {currentFeatured.youtubeId ? (
+                    <a
+                      href={`https://youtu.be/${currentFeatured.youtubeId}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="relative group block w-full h-full"
+                    >
+                      <img
+                        src={currentFeatured.image}
+                        alt={currentFeatured.title}
+                        loading="lazy"
+                        className="w-full max-h-96 object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </a>
+                  ) : currentFeatured.isVideo ? (
                     <VideoWithFrameCapture
                       src={currentFeatured.image}
                       poster={currentFeatured.poster}
@@ -1299,7 +1321,28 @@ export default function Index() {
                   }}
                 >
                   <div className="relative">
-                    {item.isVideo ? (
+                    {item.youtubeId ? (
+                      <a
+                        href={`https://youtu.be/${item.youtubeId}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="relative group block w-full"
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          loading="lazy"
+                          className="h-48 w-full object-cover news-card-image"
+                        />
+                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                          <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </a>
+                    ) : item.isVideo ? (
                       <VideoWithFrameCapture
                         src={item.image}
                         rotate={item.rotate}
