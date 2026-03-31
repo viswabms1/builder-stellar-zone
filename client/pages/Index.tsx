@@ -82,7 +82,7 @@ function HeroVideo() {
     video.addEventListener("play", handlePlay);
     video.addEventListener("pause", handlePause);
 
-    // Autoplay after 2 seconds so poster image shows first
+    // Autoplay after 10 seconds so poster image shows first
     const timer = setTimeout(() => {
       video.playbackRate = 1;
       video.play().catch(() => {
@@ -94,7 +94,7 @@ function HeroVideo() {
         document.addEventListener("click", resume);
         document.addEventListener("scroll", resume);
       });
-    }, 2000);
+    }, 10000);
 
     return () => {
       clearTimeout(timer);
