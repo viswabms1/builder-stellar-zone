@@ -593,7 +593,7 @@ export default function Index() {
       title: "AI in Hospitality Must Enhance, Not Replace Human Intelligence",
       excerpt:
         "DSU featured in Economic Times — insights on how AI should empower humans rather than replace them in the hospitality and service sectors.",
-      date: "2025",
+      date: "March 2026",
       color: "brand-orange",
     },
     {
