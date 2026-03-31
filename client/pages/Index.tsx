@@ -562,33 +562,13 @@ export default function Index() {
     },
   ];
 
-  // Auto-rotate featured news every 4 seconds (pauses when video is playing)
+  // Featured news carousel - NO AUTO-ROTATION
+  // Only advances when user manually clicks on items
+  // Videos will play on click and won't be interrupted by timer
   useEffect(() => {
-    if (isVideoPlaying) {
-      return;
-    }
-
-    const interval = setInterval(() => {
-      setNewsTransitioning(true);
-      setTimeout(() => {
-        setFeaturedNewsIndex((prev) => (prev + 1) % allFeaturedNews.length);
-        setNewsTransitioning(false);
-      }, 300);
-      setRotationProgress(0);
-    }, 4000);
-
-    const progressInterval = setInterval(() => {
-      setRotationProgress((prev) => {
-        if (prev >= 100) return 100;
-        return prev + 100 / 40;
-      });
-    }, 100);
-
-    return () => {
-      clearInterval(interval);
-      clearInterval(progressInterval);
-    };
-  }, [allFeaturedNews.length, isVideoPlaying]);
+    // Reset rotation progress when featured news index changes
+    setRotationProgress(0);
+  }, [featuredNewsIndex]);
 
   // Auto-rotate publications every 4 seconds (pauses when user interacts)
   useEffect(() => {
@@ -1279,18 +1259,19 @@ export default function Index() {
                     </p>
                     <div className="flex items-center justify-between pt-2">
                       <div className="text-xs text-foreground/60 font-body">
-                        Auto-rotating • {featuredNewsIndex + 1} of{" "}
-                        {allFeaturedNews.length}
+                        {featuredNewsIndex + 1} of {allFeaturedNews.length}
                       </div>
                       <div className="flex gap-1">
                         {allFeaturedNews.map((_, idx) => (
-                          <div
+                          <button
                             key={idx}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                            onClick={() => setFeaturedNewsIndex(idx)}
+                            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                               idx === featuredNewsIndex
                                 ? "w-4 bg-brand-blue"
                                 : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
                             }`}
+                            aria-label={`Go to featured news ${idx + 1}`}
                           />
                         ))}
                       </div>
@@ -1302,10 +1283,14 @@ export default function Index() {
 
             {/* Right side - Remaining stories (50%) - 1 column, 2 tiles (medium size) */}
             <div className="lg:col-span-1 grid grid-cols-1 gap-0 auto-rows-max">
-              {remainingNews.slice(0, 2).map((item, idx) => (
+              {remainingNews.slice(0, 2).map((item, idx) => {
+                const itemIndex = allFeaturedNews.findIndex(
+                  (news) => news.title === item.title
+                );
+                return (
                 <button
                   key={idx}
-                  onClick={() => setSelectedNews(item)}
+                  onClick={() => setFeaturedNewsIndex(itemIndex)}
                   className="group rounded-none overflow-hidden border border-brand-magenta/20 bg-brand-magenta/5 hover:border-brand-magenta/40 text-left cursor-pointer news-grid-item transition-all duration-300"
                   style={{
                     animation: `publicationCardEnter 0.6s ease-out ${idx * 0.1}s both`,
@@ -1360,7 +1345,8 @@ export default function Index() {
                     </div>
                   </div>
                 </button>
-              ))}
+              );
+              })}
             </div>
           </div>
         </div>
