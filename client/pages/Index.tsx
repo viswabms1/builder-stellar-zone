@@ -619,7 +619,7 @@ export default function Index() {
       {/* Hero Section with Full-Screen Video Background */}
       <section
         className="hero-section relative flex flex-col justify-between overflow-hidden"
-        style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
+        style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)", minHeight: "100vh" }}
       >
         {/* Full-screen Background Video */}
         <div className="absolute inset-0 w-full h-full">
@@ -1214,26 +1214,17 @@ export default function Index() {
                   }}
                 >
                   {currentFeatured.youtubeId ? (
-                    <a
-                      href={`https://youtu.be/${currentFeatured.youtubeId}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="relative group block w-full h-full"
-                    >
-                      <img
-                        src={currentFeatured.image}
-                        alt={currentFeatured.title}
-                        loading="lazy"
-                        className="w-full max-h-96 object-cover"
+                    <div className="w-full aspect-video">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={`https://www.youtube.com/embed/${currentFeatured.youtubeId}?autoplay=1&mute=1`}
+                        title={currentFeatured.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
                       />
-                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </a>
+                    </div>
                   ) : currentFeatured.isVideo ? (
                     <VideoWithFrameCapture
                       src={currentFeatured.image}
@@ -1322,26 +1313,16 @@ export default function Index() {
                 >
                   <div className="relative">
                     {item.youtubeId ? (
-                      <a
-                        href={`https://youtu.be/${item.youtubeId}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="relative group block w-full"
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          loading="lazy"
-                          className="h-48 w-full object-cover news-card-image"
+                      <div className="w-full h-48">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src={`https://www.youtube.com/embed/${item.youtubeId}?mute=1`}
+                          title={item.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          className="w-full h-full"
                         />
-                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                          <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </div>
-                        </div>
-                      </a>
+                      </div>
                     ) : item.isVideo ? (
                       <VideoWithFrameCapture
                         src={item.image}
