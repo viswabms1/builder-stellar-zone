@@ -581,7 +581,7 @@ export default function Index() {
       title: "Transforming Lives Through Innovation",
       excerpt:
         "Watch inspiring stories of how innovation and perseverance are transforming communities and creating positive impact.",
-      date: "Jan 2025",
+      date: "March 2026",
       color: "brand-blue",
     },
     {
