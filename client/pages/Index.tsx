@@ -572,18 +572,6 @@ export default function Index() {
   const allFeaturedNews = [
     {
       image:
-        "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8ee07440d90c4bd685e8ec8da486df8d?alt=media&token=38c290b6-91a4-4825-a4c8-068661623f55&apiKey=4aa279a8430d441dba9c55f659831878",
-      isVideo: true,
-      category: "Milestone",
-      title:
-        "9th Convocation at DSU: A Day of Reflection, Gratitude, and Pride",
-      excerpt:
-        "Celebrating the achievements and milestones of our graduating students and faculty.",
-      date: "Oct 15, 2025",
-      color: "brand-blue",
-    },
-    {
-      image:
         "https://img.youtube.com/vi/OnFyTkmXRZQ/maxresdefault.jpg",
       isVideo: false,
       youtubeId: "OnFyTkmXRZQ",
@@ -607,6 +595,18 @@ export default function Index() {
         "DSU featured in Economic Times — insights on how AI should empower humans rather than replace them in the hospitality and service sectors.",
       date: "2025",
       color: "brand-orange",
+    },
+    {
+      image:
+        "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8ee07440d90c4bd685e8ec8da486df8d?alt=media&token=38c290b6-91a4-4825-a4c8-068661623f55&apiKey=4aa279a8430d441dba9c55f659831878",
+      isVideo: true,
+      category: "Milestone",
+      title:
+        "9th Convocation at DSU: A Day of Reflection, Gratitude, and Pride",
+      excerpt:
+        "Celebrating the achievements and milestones of our graduating students and faculty.",
+      date: "Oct 15, 2025",
+      color: "brand-blue",
     },
   ];
 
