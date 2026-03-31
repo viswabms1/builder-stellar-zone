@@ -1193,186 +1193,80 @@ export default function Index() {
             </p>
           </div>
 
-          <div
-            className="grid lg:grid-cols-3 gap-0 items-start"
-            style={{ contain: "layout style paint" }}
-          >
-            {/* Left side - Featured story */}
-            <div className="lg:col-span-2" style={{ contain: "content" }}>
-              <div className="relative">
-                <button
-                  onClick={() => setSelectedNews(currentFeatured)}
-                  className={`w-full flex flex-col rounded-none border border-brand-blue/20 bg-gradient-to-br from-brand-blue/10 to-brand-magenta/5 cursor-pointer text-left overflow-hidden featured-news-card transition-all duration-300 ${
-                    newsTransitioning
-                      ? "featured-news-exit"
-                      : "featured-news-enter"
-                  }`}
-                  style={{
-                    animation: [
-                      "featuredPublicationSlideLeft 0.7s ease-out",
-                      "featuredPublicationSlideRight 0.7s ease-out",
-                      "featuredPublicationSlideUpRotate 0.8s ease-out",
-                      "featuredPublicationBounceDown 0.8s ease-out",
-                      "featuredPublicationSpiralIn 0.9s ease-out",
-                      "featuredPublicationSlideLeft 0.7s ease-out",
-                    ][featuredNewsIndex % 6],
-                  }}
-                >
-                  {currentFeatured.youtubeId ? (
-                    <div className="w-full aspect-video" onClick={(e) => e.stopPropagation()}>
-                      <iframe
-                        src={`https://www.youtube.com/embed/${currentFeatured.youtubeId}?enablejsapi=1`}
-                        title={currentFeatured.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        className="w-full h-full"
-                        style={{ border: "none" }}
-                      />
-                    </div>
-                  ) : currentFeatured.isVideo ? (
-                    <div onClick={(e) => e.stopPropagation()}>
-                      <VideoWithFrameCapture
-                        src={currentFeatured.image}
-                        poster={currentFeatured.poster}
-                        onPlay={() => setIsVideoPlaying(true)}
-                        onPause={() => setIsVideoPlaying(false)}
-                        onEnded={() => setIsVideoPlaying(false)}
-                      />
-                    </div>
-                  ) : (
-                    <img
-                      src={currentFeatured.image}
-                      alt={currentFeatured.title}
-                      loading="lazy"
-                      className="w-full max-h-96 object-contain"
-                    />
-                  )}
-                  <div
-                    key={`news-content-${featuredNewsIndex}`}
-                    className="p-4 flex-1 flex flex-col space-y-2"
-                    style={{
-                      animation: [
-                        "featuredPublicationContentFadeIn0 0.7s ease-out 0.1s both",
-                        "featuredPublicationContentFadeIn1 0.7s ease-out 0.1s both",
-                        "featuredPublicationContentFadeIn2 0.8s ease-out 0.1s both",
-                        "featuredPublicationContentFadeIn3 0.8s ease-out 0.1s both",
-                        "featuredPublicationContentFadeIn4 0.9s ease-out 0.1s both",
-                        "featuredPublicationContentFadeIn0 0.7s ease-out 0.1s both",
-                      ][featuredNewsIndex % 6],
-                    }}
-                  >
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <div className="relative">
-                        <Badge
-                          className={`text-xs bg-brand-blue/20 text-brand-blue`}
-                        >
-                          {currentFeatured.category}
-                        </Badge>
-                        {!newsTransitioning && (
-                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-blue rounded-full featured-news-pulse" />
-                        )}
-                      </div>
-                      <div className="flex items-center text-foreground/60 text-xs font-body">
-                        <CalendarDays className="w-3 h-3 mr-1" />{" "}
-                        {currentFeatured.date}
-                      </div>
-                    </div>
-                    <h3 className="text-base font-semibold text-foreground font-display line-clamp-2">
-                      {currentFeatured.title}
-                    </h3>
-                    <p className="text-xs text-foreground/80 font-body line-clamp-2">
-                      {currentFeatured.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between pt-2">
-                      <div className="text-xs text-foreground/60 font-body">
-                        {featuredNewsIndex + 1} of {allFeaturedNews.length}
-                      </div>
-                      <div className="flex gap-1">
-                        {allFeaturedNews.map((_, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => setFeaturedNewsIndex(idx)}
-                            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                              idx === featuredNewsIndex
-                                ? "w-4 bg-brand-blue"
-                                : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
-                            }`}
-                            aria-label={`Go to featured news ${idx + 1}`}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </button>
+          {/* Carousel — full width, one item at a time, left/right buttons */}
+          <div className="relative">
+            {/* Media */}
+            <div className="w-full rounded-xl overflow-hidden border border-border/30 bg-card">
+              {currentFeatured.youtubeId ? (
+                <div className="w-full aspect-video">
+                  <iframe
+                    key={currentFeatured.youtubeId}
+                    src={`https://www.youtube.com/embed/${currentFeatured.youtubeId}?enablejsapi=1`}
+                    title={currentFeatured.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                    style={{ border: "none" }}
+                  />
+                </div>
+              ) : currentFeatured.isVideo ? (
+                <VideoWithFrameCapture
+                  key={currentFeatured.image}
+                  src={currentFeatured.image}
+                  poster={currentFeatured.poster}
+                  onPlay={() => setIsVideoPlaying(true)}
+                  onPause={() => setIsVideoPlaying(false)}
+                  onEnded={() => setIsVideoPlaying(false)}
+                />
+              ) : (
+                <img
+                  key={currentFeatured.image}
+                  src={currentFeatured.image}
+                  alt={currentFeatured.title}
+                  loading="lazy"
+                  className="w-full max-h-[480px] object-cover"
+                />
+              )}
+
+              {/* Info bar */}
+              <div className="p-5 space-y-2">
+                <div className="flex items-center gap-2">
+                  <Badge className="bg-brand-blue/20 text-brand-blue text-xs">{currentFeatured.category}</Badge>
+                  <span className="text-xs text-foreground/60 font-body flex items-center gap-1">
+                    <CalendarDays className="w-3 h-3" />{currentFeatured.date}
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold text-foreground font-display">{currentFeatured.title}</h3>
+                <p className="text-sm text-foreground/70 font-body">{currentFeatured.excerpt}</p>
               </div>
             </div>
 
-            {/* Right side - Remaining stories (50%) - 1 column, 2 tiles (medium size) */}
-            <div className="lg:col-span-1 grid grid-cols-1 gap-0 auto-rows-max">
-              {remainingNews.slice(0, 2).map((item, idx) => {
-                const itemIndex = allFeaturedNews.findIndex(
-                  (news) => news.title === item.title
-                );
-                return (
+            {/* Left / Right Buttons */}
+            <button
+              onClick={() => setFeaturedNewsIndex((featuredNewsIndex - 1 + allFeaturedNews.length) % allFeaturedNews.length)}
+              className="absolute left-3 top-1/3 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-all hover:scale-110 z-10"
+              aria-label="Previous"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button
+              onClick={() => setFeaturedNewsIndex((featuredNewsIndex + 1) % allFeaturedNews.length)}
+              className="absolute right-3 top-1/3 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-all hover:scale-110 z-10"
+              aria-label="Next"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </button>
+
+            {/* Dot indicators */}
+            <div className="flex justify-center gap-2 mt-4">
+              {allFeaturedNews.map((_, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setFeaturedNewsIndex(itemIndex)}
-                  className="group rounded-none overflow-hidden border border-brand-magenta/20 bg-brand-magenta/5 hover:border-brand-magenta/40 text-left cursor-pointer news-grid-item transition-all duration-300"
-                  style={{
-                    animation: `publicationCardEnter 0.6s ease-out ${idx * 0.1}s both`,
-                  }}
-                >
-                  <div className="relative">
-                    {item.youtubeId ? (
-                      <div className="w-full h-48">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${item.youtubeId}`}
-                          title={item.title}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                          className="w-full h-full"
-                          style={{ border: "none" }}
-                        />
-                      </div>
-                    ) : item.isVideo ? (
-                      <VideoWithFrameCapture
-                        src={item.image}
-                        rotate={item.rotate}
-                        poster={item.poster}
-                      />
-                    ) : (
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        loading="lazy"
-                        className="h-48 w-full object-cover news-card-image"
-                      />
-                    )}
-                    <div className="absolute top-2 left-2 transition-all duration-300 group-hover:scale-105">
-                      <Badge
-                        className={`text-xs transition-all duration-300 ${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange group-hover:bg-brand-orange/40" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta group-hover:bg-brand-magenta/40" : "bg-brand-blue/20 text-brand-blue group-hover:bg-brand-blue/40"}`}
-                      >
-                        {item.category}
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="p-4 space-y-1">
-                    <h4 className="text-sm font-semibold font-display group-hover:text-brand-magenta transition-colors line-clamp-2">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-foreground/80 font-body line-clamp-2">
-                      {item.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between pt-1">
-                      <span className="text-xs text-foreground font-body flex items-center">
-                        <CalendarDays className="w-4 h-4 mr-1" /> {item.date}
-                      </span>
-                      <ChevronRight className="w-4 h-4 text-foreground group-hover:text-brand-magenta" />
-                    </div>
-                  </div>
-                </button>
-              );
-              })}
+                  onClick={() => setFeaturedNewsIndex(idx)}
+                  className={`rounded-full transition-all duration-300 ${idx === featuredNewsIndex ? "w-6 h-2.5 bg-brand-blue" : "w-2.5 h-2.5 bg-foreground/30 hover:bg-foreground/50"}`}
+                  aria-label={`Go to item ${idx + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
