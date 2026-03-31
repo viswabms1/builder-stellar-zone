@@ -572,16 +572,6 @@ export default function Index() {
   const allFeaturedNews = [
     {
       image:
-        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
-      category: "Achievement",
-      title: "DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale",
-      excerpt:
-        "Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.",
-      date: "Oct 29, 2025",
-      color: "brand-blue",
-    },
-    {
-      image:
         "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8ee07440d90c4bd685e8ec8da486df8d?alt=media&token=38c290b6-91a4-4825-a4c8-068661623f55&apiKey=4aa279a8430d441dba9c55f659831878",
       isVideo: true,
       category: "Milestone",
@@ -605,6 +595,18 @@ export default function Index() {
         "Watch inspiring stories of how innovation and perseverance are transforming communities and creating positive impact.",
       date: "Jan 2025",
       color: "brand-blue",
+    },
+    {
+      image:
+        "https://img.etimg.com/thumb/width-1200,height-900,imgsize-42502,resizemode-75/ai-in-hospitality-must-enhance-not-replace-human-intelligence.jpg",
+      isVideo: false,
+      externalLink: "https://economictimes.indiatimes.com/ai-in-hospitality-must-enhance-not-replace-human-intelligence/videoshow/128684606.cms",
+      category: "In the News",
+      title: "AI in Hospitality Must Enhance, Not Replace Human Intelligence",
+      excerpt:
+        "DSU featured in Economic Times — insights on how AI should empower humans rather than replace them in the hospitality and service sectors.",
+      date: "2025",
+      color: "brand-orange",
     },
   ];
 
@@ -1218,6 +1220,21 @@ export default function Index() {
                   onPause={() => setIsVideoPlaying(false)}
                   onEnded={() => setIsVideoPlaying(false)}
                 />
+              ) : currentFeatured.externalLink ? (
+                <a href={currentFeatured.externalLink} target="_blank" rel="noreferrer" className="block relative group">
+                  <img
+                    key={currentFeatured.image}
+                    src={currentFeatured.image}
+                    alt={currentFeatured.title}
+                    loading="lazy"
+                    className="w-full max-h-[480px] object-cover group-hover:brightness-90 transition-all"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="bg-black/70 text-white text-sm font-semibold px-4 py-2 rounded-full flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4" /> Read on Economic Times
+                    </span>
+                  </div>
+                </a>
               ) : (
                 <img
                   key={currentFeatured.image}
