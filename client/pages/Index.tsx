@@ -49,27 +49,16 @@ import {
 
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     const video = videoRef.current;
     if (video) {
-      const newMuted = !video.muted;
-      video.muted = newMuted;
-      video.volume = newMuted ? 0 : 1;
-      setIsMuted(newMuted);
-    }
-  };
-
-  const togglePlayPause = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
+      const newMutedState = !video.muted;
+      video.muted = newMutedState;
+      video.volume = newMutedState ? 0 : 1;
+      setIsMuted(newMutedState);
     }
   };
 
@@ -77,30 +66,17 @@ function HeroVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
-    video.addEventListener("play", handlePlay);
-    video.addEventListener("pause", handlePause);
-
-    // Autoplay after 10 seconds so poster image shows first
-    const timer = setTimeout(() => {
-      video.playbackRate = 1;
-      video.play().catch(() => {
-        const resume = () => {
-          video.play().catch(() => {});
-          document.removeEventListener("click", resume);
-          document.removeEventListener("scroll", resume);
-        };
-        document.addEventListener("click", resume);
-        document.addEventListener("scroll", resume);
-      });
-    }, 10000);
-
-    return () => {
-      clearTimeout(timer);
-      video.removeEventListener("play", handlePlay);
-      video.removeEventListener("pause", handlePause);
-    };
+    video.playbackRate = 1;
+    video.play().catch((error) => {
+      console.warn("Video autoplay failed:", error);
+      const playOnInteraction = () => {
+        video.play().catch(() => {});
+        document.removeEventListener("click", playOnInteraction);
+        document.removeEventListener("scroll", playOnInteraction);
+      };
+      document.addEventListener("click", playOnInteraction);
+      document.addEventListener("scroll", playOnInteraction);
+    });
   }, []);
 
   useEffect(() => {
@@ -113,15 +89,15 @@ function HeroVideo() {
   return (
     <div className="w-full h-full relative overflow-hidden">
       <div ref={containerRef} className="w-full h-full relative">
-        {/* Video — poster shows until video plays */}
+        {/* Video */}
         <video
           ref={videoRef}
           src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878"
-          poster="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=1600"
+          autoPlay
           muted={isMuted}
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           crossOrigin="anonymous"
           controls={false}
           className="w-full h-full object-cover"
@@ -137,38 +113,33 @@ function HeroVideo() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
       </div>
 
-      {/* Video Controls — bottom-right, always visible */}
-      <div className="absolute bottom-6 right-6 flex gap-2" style={{ zIndex: 99999 }}>
-        {/* Play/Pause */}
-        <button
-          onClick={togglePlayPause}
-          type="button"
-          aria-label={isPlaying ? "Pause video" : "Play video"}
-          className="w-11 h-11 rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
-          style={{ backgroundColor: "rgba(0,0,0,0.65)", border: "1px solid rgba(255,255,255,0.35)" }}
-        >
-          {isPlaying ? (
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-            </svg>
-          ) : (
-            <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          )}
-        </button>
-
-        {/* Mute/Unmute */}
-        <button
-          onClick={toggleMute}
-          type="button"
-          aria-label={isMuted ? "Unmute" : "Mute"}
-          className="w-11 h-11 rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
-          style={{ backgroundColor: "rgba(0,0,0,0.65)", border: "1px solid rgba(255,255,255,0.35)" }}
-        >
-          {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-        </button>
-      </div>
+      {/* Mute/Unmute Button */}
+      <button
+        onClick={toggleMute}
+        style={{
+          position: "absolute",
+          top: "16px",
+          right: "16px",
+          zIndex: 99999,
+          width: "48px",
+          height: "48px",
+          borderRadius: "50%",
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
+          color: "white",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
+          padding: 0,
+          margin: 0,
+          pointerEvents: "auto",
+        }}
+        aria-label={isMuted ? "Unmute" : "Mute"}
+        type="button"
+      >
+        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+      </button>
     </div>
   );
 }
@@ -691,7 +662,7 @@ export default function Index() {
       {/* Hero Section with Full-Screen Video Background */}
       <section
         className="hero-section relative flex flex-col justify-between overflow-hidden"
-        style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)", height: "100vh", minHeight: "600px" }}
+        style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
       >
         {/* Full-screen Background Video */}
         <div className="absolute inset-0 w-full h-full">
