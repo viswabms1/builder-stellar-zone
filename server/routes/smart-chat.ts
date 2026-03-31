@@ -102,6 +102,7 @@ const SITE_MAP = [
   { path: "/library/e-resources", label: "E-Resources (Digital Library)", keywords: "e-resources digital library online journals" },
   { path: "/examinations", label: "Examinations", keywords: "examinations exams results timetable schedule" },
   { path: "/alumni", label: "Alumni", keywords: "alumni graduates network former students" },
+  { path: "/eligibility", label: "Fees & Eligibility", keywords: "fees fee cost eligibility criteria qualification admission requirements scholarship tuition charges" },
   { path: "/admissions", label: "Admissions - Contact & Inquiries", keywords: "contact phone email address inquiry reach out get in touch" },
   { path: "/events", label: "Events", keywords: "events activities happenings" },
   { path: "/careers", label: "Careers", keywords: "careers jobs openings vacancies recruitment" },
@@ -240,12 +241,13 @@ Rules:
    - If user just says "computer science", ask for clarification OR default to CSE (B.Tech) as it's more common
 6. CSME (Computer Science & Medical Engineering):
    - "csme" or "computer science medical engineering" or "cs medical engineering" → /academics/engineering/cs-medical-engineering (MUST prioritize CSME over CSE when user says "csme")
-7. "computer applications" or "bca" or "mca" → /academics/computer-applications (NOT engineering/cse)
-8. "ai" or "aiml" or "artificial intelligence" → /academics/engineering/artificial-intelligence
-9. When a user asks for MORE INFO or says "tell me more", elaborate further on the same topic — don't repeat the same navigation.
-10. If a user asks about a program NOT offered at DSU (e.g., Civil Engineering), say so clearly and redirect to a close alternative.
-11. Be warm and conversational — use phrases like "Great choice!", "DSU's...", "It's a 4-year program..."
-12. ONLY use what you know. Do NOT make up fee amounts, seat counts, or specific details that aren't in the knowledge base.
+7. FEES & ELIGIBILITY: When the user asks about "fees", "fee structure", "cost", "tuition", "charges", "how much does it cost", "eligibility", "criteria", "qualification" → ALWAYS navigate to /eligibility
+8. "computer applications" or "bca" or "mca" → /academics/computer-applications (NOT engineering/cse)
+9. "ai" or "aiml" or "artificial intelligence" → /academics/engineering/artificial-intelligence
+10. When a user asks for MORE INFO or says "tell me more", elaborate further on the same topic — don't repeat the same navigation.
+11. If a user asks about a program NOT offered at DSU (e.g., Civil Engineering), say so clearly and redirect to a close alternative.
+12. Be warm and conversational — use phrases like "Great choice!", "DSU's...", "It's a 4-year program..."
+13. ONLY use what you know. Do NOT make up fee amounts, seat counts, or specific details that aren't in the knowledge base.
 </behavior>
 
 <tone_examples>
