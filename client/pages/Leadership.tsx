@@ -46,7 +46,7 @@ export default function Leadership() {
         "Success belongs to the hardworking and creative, but it requires institutional leadership, supportive ambience, responsive culture, and access to intellectual, infrastructural, and other critical needs.",
       bio: "Dr. D. Premachandra Sagar leads the university's entrepreneurial mission, providing a unique ecosystem and platform for young minds to become innovators, scholars, and entrepreneurs. The university focuses on academics, incubation, and entrepreneurship—enabling students to emerge market-ready.",
       contact: "prochancellor.office@dsu.edu.in",
-      image: "https://www.dsu.edu.in/images/demo/prochancellor1.jpg",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0847b2255548497eaab26ede1becdf18?format=webp&width=800&height=1200",
       icon: Building,
     },
   ];
