@@ -1257,24 +1257,16 @@ export default function Index() {
                   }}
                 >
                   {currentFeatured.youtubeId ? (
-                    <button
-                      onClick={() => setSelectedVideo(currentFeatured)}
-                      className="relative w-full aspect-video group overflow-hidden"
-                    >
-                      <img
-                        src={currentFeatured.image}
-                        alt={currentFeatured.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    <div className="w-full aspect-video">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${currentFeatured.youtubeId}`}
+                        title={currentFeatured.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="w-full h-full"
+                        style={{ border: "none" }}
                       />
-                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
+                    </div>
                   ) : currentFeatured.isVideo ? (
                     <VideoWithFrameCapture
                       src={currentFeatured.image}
@@ -1368,27 +1360,16 @@ export default function Index() {
                 >
                   <div className="relative">
                     {item.youtubeId ? (
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedVideo(item);
-                        }}
-                        className="relative w-full h-48 group overflow-hidden block"
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          loading="lazy"
-                          className="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      <div className="w-full h-48">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${item.youtubeId}`}
+                          title={item.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          className="w-full h-full"
+                          style={{ border: "none" }}
                         />
-                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                          <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
+                      </div>
                     ) : item.isVideo ? (
                       <VideoWithFrameCapture
                         src={item.image}
