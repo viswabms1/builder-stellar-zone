@@ -267,88 +267,10 @@ export function UnifiedChatbot() {
         </div>
       </div>
 
-      {/* Mode Tabs */}
-      <div className={cn(
-        "flex border-b",
-        theme === "light" ? "border-gray-200 bg-white" : "border-slate-700 bg-slate-900"
-      )}>
-        <button
-          onClick={() => setMode("text")}
-          className={cn(
-            "flex-1 flex items-center justify-center gap-1.5 py-2 text-xs font-medium transition-colors",
-            mode === "text"
-              ? "border-b-2 border-blue-500 text-blue-600"
-              : theme === "light"
-              ? "text-gray-500 hover:text-gray-700"
-              : "text-slate-500 hover:text-slate-300"
-          )}
-        >
-          <MessageCircle className="w-3.5 h-3.5" />
-          Text Chat
-        </button>
-        <button
-          onClick={() => setMode("voice")}
-          className={cn(
-            "flex-1 flex items-center justify-center gap-1.5 py-2 text-xs font-medium transition-colors",
-            mode === "voice"
-              ? "border-b-2 border-purple-500 text-purple-600"
-              : theme === "light"
-              ? "text-gray-500 hover:text-gray-700"
-              : "text-slate-500 hover:text-slate-300"
-          )}
-        >
-          <Mic className="w-3.5 h-3.5" />
-          Voice Bot
-        </button>
-      </div>
 
-      {/* Voice Mode */}
-      {mode === "voice" && (
-        <div className={cn(
-          "flex flex-col",
-          theme === "light" ? "bg-gray-50" : "bg-slate-800/50"
-        )}>
-          {/* Recent conversation */}
-          {messages.length > 1 && (
-            <div className={cn(
-              "px-3 pt-3 pb-0 max-h-40 overflow-y-auto space-y-2",
-            )}>
-              {messages.slice(-4).map(msg => (
-                <div
-                  key={msg.id}
-                  className={cn(
-                    "text-xs px-3 py-1.5 rounded-xl max-w-[85%]",
-                    msg.role === "user"
-                      ? cn("ml-auto", theme === "light" ? "bg-blue-500 text-white" : "bg-purple-600 text-white")
-                      : theme === "light" ? "bg-white border border-gray-200 text-gray-700" : "bg-slate-700 text-slate-200"
-                  )}
-                >
-                  {msg.content}
-                </div>
-              ))}
-            </div>
-          )}
-
-          <VoiceBot
-            theme={theme}
-            onTranscript={(text) => {
-              // Transcript shown in messages already
-            }}
-            sendMessage={sendMessageForVoice}
-          />
-
-          <p className={cn(
-            "text-[10px] text-center pb-3 opacity-40",
-            theme === "light" ? "text-gray-500" : "text-slate-400"
-          )}>
-            Powered by Sarvam AI · Supports Indian languages
-          </p>
-        </div>
-      )}
 
       {/* Text Mode */}
-      {mode === "text" && (
-        <>
+      <>
           {/* Messages */}
           <div className={cn(
             "flex-1 overflow-y-auto p-3 space-y-3",
@@ -450,8 +372,7 @@ export function UnifiedChatbot() {
               AI-powered navigation and answers
             </p>
           </form>
-        </>
-      )}
+      </>
     </motion.div>,
     document.body
   );
