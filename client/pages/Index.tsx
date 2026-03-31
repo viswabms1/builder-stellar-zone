@@ -281,6 +281,58 @@ function NewsModal({
   );
 }
 
+function VideoModal({
+  videoItem,
+  onClose,
+}: {
+  videoItem: any;
+  onClose: () => void;
+}) {
+  if (!videoItem) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur p-4">
+      <div className="relative w-full max-w-5xl max-h-[90vh]">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors"
+        >
+          <X className="w-6 h-6" />
+        </button>
+
+        <div className="w-full aspect-video bg-black rounded-lg overflow-hidden">
+          <iframe
+            width="100%"
+            height="100%"
+            src={`https://www.youtube.com/embed/${videoItem.youtubeId}?autoplay=1`}
+            title={videoItem.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          />
+        </div>
+
+        <div className="p-6 bg-card rounded-b-lg mt-4">
+          <div className="flex items-center gap-3 mb-4">
+            <Badge className="bg-brand-blue/20 text-brand-blue">
+              {videoItem.category}
+            </Badge>
+            <div className="flex items-center text-foreground/60 text-xs font-body">
+              <CalendarDays className="w-4 h-4 mr-1" /> {videoItem.date}
+            </div>
+          </div>
+          <h2 className="text-3xl font-semibold text-foreground mb-4 font-display">
+            {videoItem.title}
+          </h2>
+          <p className="text-foreground/80 text-lg font-body">
+            {videoItem.excerpt}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SchoolCardWrapper({
   children,
   index,
@@ -305,6 +357,7 @@ function SchoolCardWrapper({
 
 export default function Index() {
   const [selectedNews, setSelectedNews] = useState<any>(null);
+  const [selectedVideo, setSelectedVideo] = useState<any>(null);
   const [featuredNewsIndex, setFeaturedNewsIndex] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [newsTransitioning, setNewsTransitioning] = useState(false);
@@ -562,13 +615,29 @@ export default function Index() {
     },
   ];
 
-  // Featured news carousel - NO AUTO-ROTATION
-  // Only advances when user manually clicks on items
-  // Videos will play on click and won't be interrupted by timer
+  // Auto-rotate featured news every 4 seconds
   useEffect(() => {
-    // Reset rotation progress when featured news index changes
-    setRotationProgress(0);
-  }, [featuredNewsIndex]);
+    const interval = setInterval(() => {
+      setNewsTransitioning(true);
+      setTimeout(() => {
+        setFeaturedNewsIndex((prev) => (prev + 1) % allFeaturedNews.length);
+        setNewsTransitioning(false);
+      }, 300);
+      setRotationProgress(0);
+    }, 4000);
+
+    const progressInterval = setInterval(() => {
+      setRotationProgress((prev) => {
+        if (prev >= 100) return 100;
+        return prev + 100 / 40;
+      });
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(progressInterval);
+    };
+  }, [allFeaturedNews.length]);
 
   // Auto-rotate publications every 4 seconds (pauses when user interacts)
   useEffect(() => {
@@ -1194,17 +1263,24 @@ export default function Index() {
                   }}
                 >
                   {currentFeatured.youtubeId ? (
-                    <div className="w-full aspect-video">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src={`https://www.youtube.com/embed/${currentFeatured.youtubeId}?autoplay=1&mute=1`}
-                        title={currentFeatured.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full"
+                    <button
+                      onClick={() => setSelectedVideo(currentFeatured)}
+                      className="relative w-full aspect-video group overflow-hidden"
+                    >
+                      <img
+                        src={currentFeatured.image}
+                        alt={currentFeatured.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                    </div>
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </button>
                   ) : currentFeatured.isVideo ? (
                     <VideoWithFrameCapture
                       src={currentFeatured.image}
@@ -1298,16 +1374,27 @@ export default function Index() {
                 >
                   <div className="relative">
                     {item.youtubeId ? (
-                      <div className="w-full h-48">
-                        <iframe
-                          width="100%"
-                          height="100%"
-                          src={`https://www.youtube.com/embed/${item.youtubeId}?mute=1`}
-                          title={item.title}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          className="w-full h-full"
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedVideo(item);
+                        }}
+                        className="relative w-full h-48 group overflow-hidden block"
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          loading="lazy"
+                          className="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                      </div>
+                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                          <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </button>
                     ) : item.isVideo ? (
                       <VideoWithFrameCapture
                         src={item.image}
@@ -1367,6 +1454,11 @@ export default function Index() {
       <NewsModal
         newsItem={selectedNews}
         onClose={() => setSelectedNews(null)}
+      />
+
+      <VideoModal
+        videoItem={selectedVideo}
+        onClose={() => setSelectedVideo(null)}
       />
 
     </div>
