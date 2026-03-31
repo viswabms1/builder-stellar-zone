@@ -355,7 +355,6 @@ export default function Index() {
   const [featuredNewsIndex, setFeaturedNewsIndex] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [newsTransitioning, setNewsTransitioning] = useState(false);
-  const [rotationProgress, setRotationProgress] = useState(100);
   const [selectedPublicationIndex, setSelectedPublicationIndex] = useState(0);
   const [isPublicationInteracting, setIsPublicationInteracting] =
     useState(false);
@@ -610,48 +609,7 @@ export default function Index() {
   ];
 
   // Auto-rotate featured news every 4 seconds
-  // Listen for YouTube iframe postMessage play/pause events
-  useEffect(() => {
-    const handleYTMessage = (event: MessageEvent) => {
-      if (!event.origin.includes("youtube.com")) return;
-      try {
-        const data = JSON.parse(event.data as string);
-        if (data.event === "onStateChange") {
-          // 1 = playing, 2 = paused, 0 = ended
-          if (data.info === 1) setIsVideoPlaying(true);
-          if (data.info === 2 || data.info === 0) setIsVideoPlaying(false);
-        }
-      } catch {}
-    };
-    window.addEventListener("message", handleYTMessage);
-    return () => window.removeEventListener("message", handleYTMessage);
-  }, []);
-
-  useEffect(() => {
-    // Pause only when a video is actively playing
-    if (isVideoPlaying) return;
-
-    const interval = setInterval(() => {
-      setNewsTransitioning(true);
-      setTimeout(() => {
-        setFeaturedNewsIndex((prev) => (prev + 1) % allFeaturedNews.length);
-        setNewsTransitioning(false);
-      }, 300);
-      setRotationProgress(0);
-    }, 4000);
-
-    const progressInterval = setInterval(() => {
-      setRotationProgress((prev) => {
-        if (prev >= 100) return 100;
-        return prev + 100 / 40;
-      });
-    }, 100);
-
-    return () => {
-      clearInterval(interval);
-      clearInterval(progressInterval);
-    };
-  }, [allFeaturedNews.length, isVideoPlaying]);
+  // No auto-rotation — user clicks side items or dots to change featured content
 
   // Auto-rotate publications every 4 seconds (pauses when user interacts)
   useEffect(() => {
@@ -1239,25 +1197,9 @@ export default function Index() {
             className="grid lg:grid-cols-3 gap-0 items-start"
             style={{ contain: "layout style paint" }}
           >
-            {/* Left side - Featured story (50%) - Auto-rotating */}
+            {/* Left side - Featured story */}
             <div className="lg:col-span-2" style={{ contain: "content" }}>
-              {/* Full Rectangle Progress Bar */}
-              <div className="h-2 bg-white/10 overflow-hidden">
-                <div
-                  key={`news-progress-${featuredNewsIndex}`}
-                  className="h-full bg-gradient-to-r from-brand-blue via-brand-yellow to-brand-orange"
-                  style={{
-                    animation: "progressFill 4s linear forwards",
-                  }}
-                />
-              </div>
-
               <div className="relative">
-                {featuredNewsIndex === 0 && (
-                  <div className="absolute top-2 right-3 z-10 text-xs font-semibold text-white/70 pointer-events-none animate-pulse">
-                    Swipe →
-                  </div>
-                )}
                 <button
                   onClick={() => setSelectedNews(currentFeatured)}
                   className={`w-full flex flex-col rounded-none border border-brand-blue/20 bg-gradient-to-br from-brand-blue/10 to-brand-magenta/5 cursor-pointer text-left overflow-hidden featured-news-card transition-all duration-300 ${
