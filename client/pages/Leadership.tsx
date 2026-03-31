@@ -393,7 +393,7 @@ export default function Leadership() {
                       <img
                         src={leader.image}
                         alt={leader.name}
-                        className="h-full w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500" style={{ clipPath: 'inset(0 0 12px 0)' }}
                         onError={(e) => {
                           e.currentTarget.style.display = "none";
                         }}
@@ -496,7 +496,7 @@ export default function Leadership() {
                       <img
                         src={leader.image}
                         alt={leader.name}
-                        className="h-full w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500" style={{ clipPath: 'inset(0 0 12px 0)' }}
                         onError={(e) => {
                           e.currentTarget.style.display = "none";
                         }}
@@ -602,7 +602,7 @@ export default function Leadership() {
                       <img
                         src={pvc.image}
                         alt={pvc.name}
-                        className="h-full w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500" style={{ clipPath: 'inset(0 0 12px 0)' }}
                         onError={(e) => {
                           e.currentTarget.style.display = "none";
                         }}
