@@ -610,15 +610,9 @@ export default function Index() {
   ];
 
   // Auto-rotate featured news every 4 seconds
-  // Pause carousel when the current featured item is a video (native or YouTube)
-  const currentItemIsVideo = !!(
-    allFeaturedNews[featuredNewsIndex]?.isVideo ||
-    allFeaturedNews[featuredNewsIndex]?.youtubeId
-  );
-
   useEffect(() => {
-    // Don't auto-rotate if current item is a video
-    if (isVideoPlaying || currentItemIsVideo) return;
+    // Pause only when native video is actively playing
+    if (isVideoPlaying) return;
 
     const interval = setInterval(() => {
       setNewsTransitioning(true);
@@ -640,7 +634,7 @@ export default function Index() {
       clearInterval(interval);
       clearInterval(progressInterval);
     };
-  }, [allFeaturedNews.length, isVideoPlaying, currentItemIsVideo]);
+  }, [allFeaturedNews.length, isVideoPlaying]);
 
   // Auto-rotate publications every 4 seconds (pauses when user interacts)
   useEffect(() => {
