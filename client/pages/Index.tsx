@@ -598,7 +598,7 @@ export default function Index() {
     },
     {
       image:
-        "https://img.etimg.com/thumb/width-1200,height-900,imgsize-42502,resizemode-75/ai-in-hospitality-must-enhance-not-replace-human-intelligence.jpg",
+        "https://img.etimg.com/thumb/msid-128684606,width-1200,height-900,resizemode-4/ai-in-hospitality-must-enhance-not-replace-human-intelligence.jpg",
       isVideo: false,
       externalLink: "https://economictimes.indiatimes.com/ai-in-hospitality-must-enhance-not-replace-human-intelligence/videoshow/128684606.cms",
       category: "In the News",
@@ -1221,18 +1221,37 @@ export default function Index() {
                   onEnded={() => setIsVideoPlaying(false)}
                 />
               ) : currentFeatured.externalLink ? (
-                <a href={currentFeatured.externalLink} target="_blank" rel="noreferrer" className="block relative group">
+                <a
+                  href={currentFeatured.externalLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block relative group cursor-pointer"
+                >
                   <img
                     key={currentFeatured.image}
                     src={currentFeatured.image}
                     alt={currentFeatured.title}
                     loading="lazy"
-                    className="w-full max-h-[480px] object-cover group-hover:brightness-90 transition-all"
+                    className="w-full max-h-[480px] object-cover transition-all duration-300 group-hover:brightness-75"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src =
+                        "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200";
+                    }}
                   />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="bg-black/70 text-white text-sm font-semibold px-4 py-2 rounded-full flex items-center gap-2">
-                      <ArrowRight className="w-4 h-4" /> Read on Economic Times
-                    </span>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-white/90 text-gray-900 text-sm font-bold px-6 py-3 rounded-full flex items-center gap-2 shadow-lg">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      Open in Economic Times
+                    </div>
+                  </div>
+                  {/* Always-visible badge */}
+                  <div className="absolute top-3 right-3 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Economic Times
                   </div>
                 </a>
               ) : (
@@ -1248,13 +1267,28 @@ export default function Index() {
               {/* Info bar */}
               <div className="p-5 space-y-2">
                 <div className="flex items-center gap-2">
-                  <Badge className="bg-brand-blue/20 text-brand-blue text-xs">{currentFeatured.category}</Badge>
+                  <Badge className={`text-xs ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : "bg-brand-blue/20 text-brand-blue"}`}>
+                    {currentFeatured.category}
+                  </Badge>
                   <span className="text-xs text-foreground/60 font-body flex items-center gap-1">
                     <CalendarDays className="w-3 h-3" />{currentFeatured.date}
                   </span>
                 </div>
                 <h3 className="text-lg font-semibold text-foreground font-display">{currentFeatured.title}</h3>
                 <p className="text-sm text-foreground/70 font-body">{currentFeatured.excerpt}</p>
+                {currentFeatured.externalLink && (
+                  <a
+                    href={currentFeatured.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-2 text-sm font-semibold text-brand-orange hover:underline"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Read full article on Economic Times
+                  </a>
+                )}
               </div>
             </div>
 
