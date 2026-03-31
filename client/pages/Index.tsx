@@ -50,31 +50,26 @@ import {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     const video = videoRef.current;
     if (video) {
-      const newMutedState = !video.muted;
-      video.muted = newMutedState;
-      video.volume = newMutedState ? 0 : 1;
-      setIsMuted(newMutedState);
-      console.log("Mute toggled:", newMutedState);
+      const newMuted = !video.muted;
+      video.muted = newMuted;
+      video.volume = newMuted ? 0 : 1;
+      setIsMuted(newMuted);
     }
   };
 
   const togglePlayPause = () => {
     const video = videoRef.current;
-    if (video) {
-      if (video.paused) {
-        video.play().catch(() => {});
-        setIsPlaying(true);
-      } else {
-        video.pause();
-        setIsPlaying(false);
-      }
+    if (!video) return;
+    if (video.paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
     }
   };
 
@@ -82,33 +77,27 @@ function HeroVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Video loaded, start playing after 2 seconds
-    const loadTimer = setTimeout(() => {
-      setIsLoading(false);
-
-      // Play video at normal speed after delay
-      video.playbackRate = 1;
-      video.play().catch((error) => {
-        console.warn("Video autoplay failed:", error);
-        // Try again when user interacts with page
-        const playOnInteraction = () => {
-          video.play().catch(() => {});
-          document.removeEventListener("click", playOnInteraction);
-          document.removeEventListener("scroll", playOnInteraction);
-        };
-        document.addEventListener("click", playOnInteraction);
-        document.addEventListener("scroll", playOnInteraction);
-      });
-    }, 2000);
-
     const handlePlay = () => setIsPlaying(true);
     const handlePause = () => setIsPlaying(false);
-
     video.addEventListener("play", handlePlay);
     video.addEventListener("pause", handlePause);
 
+    // Autoplay after 2 seconds so poster image shows first
+    const timer = setTimeout(() => {
+      video.playbackRate = 1;
+      video.play().catch(() => {
+        const resume = () => {
+          video.play().catch(() => {});
+          document.removeEventListener("click", resume);
+          document.removeEventListener("scroll", resume);
+        };
+        document.addEventListener("click", resume);
+        document.addEventListener("scroll", resume);
+      });
+    }, 2000);
+
     return () => {
-      clearTimeout(loadTimer);
+      clearTimeout(timer);
       video.removeEventListener("play", handlePlay);
       video.removeEventListener("pause", handlePause);
     };
@@ -117,28 +106,18 @@ function HeroVideo() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-
     video.volume = isMuted ? 0 : 1;
     video.muted = isMuted;
   }, [isMuted]);
 
   return (
     <div className="w-full h-full relative overflow-hidden">
-      {/* Loading State / Placeholder */}
-      {isLoading && (
-        <div className="absolute inset-0 bg-black/80 flex items-center justify-center z-10">
-          <div className="text-center">
-            <div className="w-16 h-16 border-4 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-white/60 text-sm">Loading video...</p>
-          </div>
-        </div>
-      )}
-
       <div ref={containerRef} className="w-full h-full relative">
-        {/* Video */}
+        {/* Video — poster shows until video plays */}
         <video
           ref={videoRef}
           src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878"
+          poster="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=1600"
           muted={isMuted}
           loop
           playsInline
@@ -158,44 +137,15 @@ function HeroVideo() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
       </div>
 
-      {/* Controls: Pause/Play and Mute/Unmute Buttons */}
-      <div
-        style={{
-          position: "absolute",
-          top: "16px",
-          right: "16px",
-          zIndex: 99999,
-          display: "flex",
-          gap: "8px",
-          pointerEvents: "auto",
-        }}
-      >
-        {/* Play/Pause Button */}
+      {/* Video Controls — bottom-right, always visible */}
+      <div className="absolute bottom-6 right-6 flex gap-2" style={{ zIndex: 99999 }}>
+        {/* Play/Pause */}
         <button
           onClick={togglePlayPause}
-          style={{
-            width: "48px",
-            height: "48px",
-            borderRadius: "50%",
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            color: "white",
-            border: "1px solid rgba(255, 255, 255, 0.3)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            padding: 0,
-            margin: 0,
-            transition: "all 0.2s ease",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
-          }}
-          aria-label={isPlaying ? "Pause" : "Play"}
           type="button"
+          aria-label={isPlaying ? "Pause video" : "Play video"}
+          className="w-11 h-11 rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+          style={{ backgroundColor: "rgba(0,0,0,0.65)", border: "1px solid rgba(255,255,255,0.35)" }}
         >
           {isPlaying ? (
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -208,32 +158,13 @@ function HeroVideo() {
           )}
         </button>
 
-        {/* Mute/Unmute Button */}
+        {/* Mute/Unmute */}
         <button
           onClick={toggleMute}
-          style={{
-            width: "48px",
-            height: "48px",
-            borderRadius: "50%",
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            color: "white",
-            border: "1px solid rgba(255, 255, 255, 0.3)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            padding: 0,
-            margin: 0,
-            transition: "all 0.2s ease",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
-          }}
-          aria-label={isMuted ? "Unmute" : "Mute"}
           type="button"
+          aria-label={isMuted ? "Unmute" : "Mute"}
+          className="w-11 h-11 rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+          style={{ backgroundColor: "rgba(0,0,0,0.65)", border: "1px solid rgba(255,255,255,0.35)" }}
         >
           {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
         </button>
@@ -760,7 +691,7 @@ export default function Index() {
       {/* Hero Section with Full-Screen Video Background */}
       <section
         className="hero-section relative flex flex-col justify-between overflow-hidden"
-        style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)", minHeight: "100vh" }}
+        style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)", height: "100vh", minHeight: "600px" }}
       >
         {/* Full-screen Background Video */}
         <div className="absolute inset-0 w-full h-full">
