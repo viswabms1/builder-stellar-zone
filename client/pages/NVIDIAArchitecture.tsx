@@ -138,7 +138,7 @@ export default function NVIDIAArchitecture() {
               </span>
             </h2>
             <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground/70 max-w-4xl mx-auto leading-relaxed mb-8 font-body">
-              Dayananda Sagar University has partnered with NVIDIA to create a AI architecture enables students to build, train, and deploy large-scale AI systems across vision, language, and data-intensive domains.
+              Dayananda Sagar University has partnered with NVIDIA to create an AI architecture that enables students to build, train, and deploy large-scale AI systems across vision, language, and data-intensive domains.
             </p>
           </div>
 
